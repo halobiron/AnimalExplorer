@@ -1,0 +1,452 @@
+[
+  {
+    "label": "antelope",
+    "vietnameseName": "Linh dương",
+    "description": "Linh dương là những vận động viên điền kinh cừ khôi của thế giới động vật, sinh sống chủ yếu ở các vùng đồng cỏ và savan rộng lớn. Chúng sở hữu đôi chân thon dài, vô cùng nhanh nhẹn, giúp chúng dễ dàng chạy thoát khỏi các loài thú săn mồi nguy hiểm. Điểm nổi bật nhất của linh dương là những cặp sừng mang nhiều hình dáng tuyệt đẹp, cùng với đôi mắt to tròn, tinh anh giúp chúng quan sát mọi thứ xung quanh thật rõ ràng."
+  },
+  {
+    "label": "badger",
+    "vietnameseName": "Lửng",
+    "description": "Lửng là những thợ đào đất tài ba với bộ lông dày dặn và móng vuốt vô cùng sắc nhọn. Chúng thường xây dựng những 'ngôi nhà' kiên cố bằng cách đào các hang động sâu thẳm dưới lòng đất để sinh sống và nghỉ ngơi. Tuy có vẻ ngoài khá hiền lành, nhưng lửng lại vô cùng dũng cảm và sẵn sàng chiến đấu để bảo vệ gia đình khi gặp nguy hiểm."
+  },
+  {
+    "label": "bat",
+    "vietnameseName": "Dơi",
+    "description": "Dơi là loài động vật có vú duy nhất trên thế giới có khả năng bay lượn trên bầu trời như những chú chim. Chúng là những sinh vật của bóng đêm, thường thức giấc và đi kiếm ăn khi mặt trời đã lặn. Dơi có một siêu năng lực vô cùng đặc biệt, đó là phát ra sóng siêu âm để tìm đường và săn mồi trong bóng tối mù mịt mà không bao giờ bị va đập."
+  },
+  {
+    "label": "bear",
+    "vietnameseName": "Gấu",
+    "description": "Gấu là những gã khổng lồ của khu rừng với thân hình to lớn, bộ lông dày ấm áp và đôi chân vô cùng khỏe mạnh. Mặc dù trông có vẻ nặng nề, nhưng gấu lại leo trèo cây rất giỏi và bơi lội cực kỳ tài khôi dưới các dòng sông. Khi mùa đông giá rét đến, nhiều loài gấu sẽ tìm một hang động ấm áp để chìm vào giấc ngủ đông dài cho đến khi mùa xuân ấm áp gõ cửa."
+  },
+  {
+    "label": "bee",
+    "vietnameseName": "Ong",
+    "description": "Ong là những người thợ chăm chỉ và kỷ luật nhất trong thế giới tự nhiên, đóng vai trò cực kỳ quan trọng trong việc thụ phấn cho các loài hoa rực rỡ. Chúng sống cùng nhau thành những bầy đàn đông đúc, đoàn kết trong những chiếc tổ hình lục giác tuyệt đẹp. Hàng ngày, ong bay đi khắp nơi hút mật hoa mang về tổ để tạo ra những giọt mật ong vàng óng, ngọt ngào và bổ dưỡng."
+  },
+  {
+    "label": "beetle",
+    "vietnameseName": "Bọ cánh cứng",
+    "description": "Bọ cánh cứng giống như những hiệp sĩ tí hon mang trên mình bộ áo giáp cứng cáp để bảo vệ cơ thể mỏng manh bên trong. Ẩn dưới lớp áo giáp ấy là một đôi cánh mỏng giúp chúng bay lượn từ cành cây này sang cành cây khác. Gia đình bọ cánh cứng vô cùng đông đúc với hàng ngàn loài khác nhau, mang đủ mọi màu sắc sặc sỡ và sinh sống ở khắp mọi nơi trên Trái Đất."
+  },
+  {
+    "label": "bison",
+    "vietnameseName": "Bò rừng",
+    "description": "Bò rừng là biểu tượng sức mạnh của những thảo nguyên bao la với thân hình khổng lồ, chắc nịch và bộ lông nâu rậm rạp. Chúng có một cái bướu to trên lưng và chiếc đầu rất lớn, thường đi dạo và gặm cỏ theo những bầy đàn đông đúc. Dù có vẻ ngoài to lớn và đáng sợ, nhưng bò rừng thực chất là những sinh vật hiền lành, chỉ thích ăn cỏ và tận hưởng ánh nắng mặt trời."
+  },
+  {
+    "label": "boar",
+    "vietnameseName": "Lợn rừng",
+    "description": "Lợn rừng chính là tổ tiên hoang dã của những chú lợn nhà quen thuộc, nhưng chúng sở hữu bộ lông cứng cáp và hai chiếc răng nanh dài cong vút. Chúng là những sinh vật cực kỳ thông minh, có chiếc mũi thính nhạy giúp đào bới đất để tìm kiếm thức ăn như rễ cây, quả mọng hay nấm trong các khu rừng rậm. Lợn rừng sống theo đàn và rất biết cách chăm sóc, bảo vệ lẫn nhau."
+  },
+  {
+    "label": "butterfly",
+    "vietnameseName": "Bướm",
+    "description": "Bướm là những nàng tiên lộng lẫy của tự nhiên, mang trên mình đôi cánh mỏng manh được tô điểm bởi vô vàn màu sắc rực rỡ và hoa văn tinh tế. Trước khi trở thành bướm xinh đẹp, chúng phải trải qua một hành trình kỳ diệu: từ một chú sâu bướm nhỏ bé ăn lá cây, sau đó cuộn mình trong kén chật hẹp, để rồi một ngày phá kén bay lên bầu trời và đi hút mật hoa ngọt ngào."
+  },
+  {
+    "label": "cat",
+    "vietnameseName": "Mèo",
+    "description": "Mèo là những người bạn nhỏ nhắn, đáng yêu và vô cùng thân thuộc trong các gia đình của chúng ta. Chúng sở hữu sự nhanh nhẹn đáng kinh ngạc, bộ lông mềm mại và bước đi nhẹ nhàng không hề phát ra tiếng động. Mèo có đôi mắt tinh anh có thể nhìn xuyên thấu màn đêm tĩnh lặng, cùng với kỹ năng rình rập và bắt chuột vô cùng điệu nghệ giúp bảo vệ ngôi nhà của bạn."
+  },
+  {
+    "label": "caterpillar",
+    "vietnameseName": "Sâu bướm",
+    "description": "Sâu bướm là giai đoạn tuổi thơ đầy thú vị của những chú bướm xinh đẹp sau này. Nhiệm vụ chính của chúng mỗi ngày là ăn thật nhiều lá cây tươi xanh để cơ thể lớn nhanh như thổi và tích trữ thật nhiều năng lượng. Khi đã ăn no nê và đủ lớn, sâu bướm sẽ nhả tơ tự dệt cho mình một chiếc túi ngủ gọi là kén, bắt đầu quá trình biến đổi kỳ diệu."
+  },
+  {
+    "label": "chimpanzee",
+    "vietnameseName": "Tinh tinh",
+    "description": "Tinh tinh là loài linh trưởng cực kỳ thông minh và có rất nhiều đặc điểm, thói quen giống với con người chúng ta. Chúng sống trong các khu rừng nhiệt đới thành từng nhóm lớn, rất thích leo trèo, đu dây và chải lông cho nhau để thể hiện tình cảm. Tinh tinh còn vô cùng khéo léo khi biết dùng các nhành cây hay hòn đá làm công cụ để tìm kiếm thức ăn, đập hạt hay bắt kiến."
+  },
+  {
+    "label": "cockroach",
+    "vietnameseName": "Gián",
+    "description": "Gián là những sinh vật nhỏ bé nhưng lại nổi tiếng với sức sống vô cùng mãnh liệt và dẻo dai từ thời tiền sử. Chúng có khả năng sinh tồn đáng kinh ngạc trong đủ loại môi trường khắc nghiệt, từ những góc tối tăm nhất cho đến những nơi khô cằn. Dù không được nhiều người yêu mến, nhưng gián lại có đôi chân chạy cực nhanh và chiếc râu rất nhạy cảm để dò đường."
+  },
+  {
+    "label": "cow",
+    "vietnameseName": "Bò cái",
+    "description": "Bò cái là những người bạn hiền lành ở nông trại, mang đến cho chúng ta dòng sữa tươi thơm ngon và giàu canxi mỗi ngày. Chúng có một dạ dày đặc biệt giúp nhai lại thức ăn, nên bạn thường thấy chúng nhẩn nha gặm cỏ trên những cánh đồng xanh mướt. Bò có đôi mắt to dịu dàng và chiếc đuôi dài thường phẩy qua phẩy lại để xua đuổi ruồi muỗi."
+  },
+  {
+    "label": "coyote",
+    "vietnameseName": "Sói đồng cỏ",
+    "description": "Sói đồng cỏ là những thợ săn nhanh nhẹn và khôn ngoan, sinh sống rải rác khắp các vùng hoang dã rộng lớn ở Bắc Mỹ. Chúng có thân hình thon gọn, đôi tai nhọn và tiếng hú dài vang vọng trong đêm vắng để giao tiếp với các thành viên trong đàn. Mặc dù là loài săn mồi, sói đồng cỏ cũng rất thích ăn các loại quả mọng và đôi khi ăn cả côn trùng để lấp đầy chiếc bụng đói."
+  },
+  {
+    "label": "crab",
+    "vietnameseName": "Cua",
+    "description": "Cua là những anh chàng mặc áo giáp cứng cáp, sống ở các bãi biển đầy cát hoặc sâu dưới đáy đại dương xanh thẳm. Chúng di chuyển rất buồn cười bằng cách bò ngang thay vì đi thẳng về phía trước. Cua có hai chiếc càng to khỏe, sắc bén giống như những chiếc kẹp khổng lồ, vừa dùng để tự vệ trước kẻ thù, vừa để kẹp chặt và đưa thức ăn vào miệng."
+  },
+  {
+    "label": "crow",
+    "vietnameseName": "Quạ",
+    "description": "Quạ khoác trên mình bộ lông màu đen tuyền bí ẩn và là một trong những loài chim thông minh bậc nhất trên thế giới. Chúng có bộ não rất phát triển, biết cách giải quyết các vấn đề khó, thậm chí biết nhận diện và ghi nhớ khuôn mặt của từng người. Quạ rất thân thiết với bầy đàn của mình, chúng hay bay cùng nhau và gọi nhau bằng những tiếng kêu 'quạ, quạ' vô cùng đặc trưng."
+  },
+  {
+    "label": "deer",
+    "vietnameseName": "Nai",
+    "description": "Nai là loài động vật mang vẻ đẹp dịu dàng, hiền lành và đôi chút nhút nhát trong các khu rừng rậm rạp. Chúng có đôi tai vô cùng thính nhạy để lắng nghe tiếng động từ xa, kết hợp cùng đôi chân dài thanh mảnh giúp nai có thể phóng đi như bay khi phát hiện ra kẻ thù. Những chú nai đực trưởng thành còn tự hào khoe bộ gạc lộng lẫy và phân nhánh trên đỉnh đầu."
+  },
+  {
+    "label": "dog",
+    "vietnameseName": "Chó",
+    "description": "Chó là người bạn trung thành và tình cảm nhất của loài người, luôn sẵn sàng quấn quýt và bảo vệ chủ nhân của mình. Chúng sở hữu chiếc mũi siêu nhạy và đôi tai cực thính, có thể đánh hơi và nghe thấy những âm thanh mà con người không thể. Không chỉ giúp canh giữ nhà cửa bình yên, những chú chó còn có thể học được rất nhiều trò chơi thú vị và giúp đỡ con người trong nhiều công việc quan trọng."
+  },
+  {
+    "label": "dolphin",
+    "vietnameseName": "Cá heo",
+    "description": "Cá heo là những thiên thần của đại dương, nổi tiếng với sự thông minh tuyệt đỉnh và bản tính vô cùng thân thiện. Chúng rất thích bơi lội tung tăng, nhảy múa nhào lộn trên những ngọn sóng và thường xuyên tò mò làm quen với con người. Cá heo không nói chuyện bằng lời mà giao tiếp với nhau qua những tiếng huýt sáo và âm thanh đặc biệt vang dội dưới nước."
+  },
+  {
+    "label": "donkey",
+    "vietnameseName": "Lừa",
+    "description": "Lừa là loài vật vô cùng chăm chỉ và ngoan ngoãn, đã gắn bó với nông dân trong công việc đồng áng từ hàng ngàn năm qua. Chúng có đôi tai dài ngộ nghĩnh, sức chịu đựng dẻo dai và có thể thồ những kiện hàng nặng trĩu đi qua những con đường núi gập ghềnh. Lừa có tiếng kêu rất to và đặc trưng, luôn vui vẻ gặm cỏ và kết bạn với những loài gia súc khác trong trang trại."
+  },
+  {
+    "label": "dragonfly",
+    "vietnameseName": "Chuồn chuồn",
+    "description": "Chuồn chuồn là những phi công tài ba của thế giới côn trùng, mang trên lưng bốn chiếc cánh mỏng trong suốt và rực rỡ như pha lê. Chúng có cặp mắt khổng lồ giúp quan sát mọi thứ xung quanh bao quát nhất. Chuồn chuồn thường bay lượn vun vút trên mặt ao hồ, có thể bay thẳng, bay lùi hoặc lơ lửng một chỗ một cách thần kỳ để săn bắt các loài côn trùng nhỏ khác."
+  },
+  {
+    "label": "duck",
+    "vietnameseName": "Vịt",
+    "description": "Vịt là những cư dân quen thuộc của ao hồ, với chiếc mỏ dẹt màu vàng và bộ lông không bao giờ bị ướt nhờ có một lớp dầu đặc biệt. Đặc biệt hơn, đôi chân của vịt có lớp màng giúp chúng bơi lội dưới nước dễ dàng như những chiếc chân vịt của thợ lặn. Chúng rất thích lạch bạch đi tìm thức ăn trên cạn và tạo ra những tiếng kêu 'cạp cạp' rộn ràng khắp sân vườn."
+  },
+  {
+    "label": "eagle",
+    "vietnameseName": "Đại bàng",
+    "description": "Đại bàng được tôn vinh là chúa tể kiêu hãnh của bầu trời cao rộng, sở hữu đôi cánh sải dài mạnh mẽ giúp chúng bay lượn trượt trên những tầng mây. Với đôi mắt sáng và cực kỳ tinh anh, đại bàng có thể phát hiện ra con mồi nhỏ xíu từ độ cao hàng ngàn mét. Chiếc mỏ quặp nhọn hoắt cùng đôi móng vuốt sắc bén biến chúng thành một thợ săn vô song của tự nhiên."
+  },
+  {
+    "label": "elephant",
+    "vietnameseName": "Voi",
+    "description": "Voi là loài động vật trên cạn khổng lồ nhất trên Trái Đất, mang vẻ đẹp oai vệ nhưng lại có trái tim vô cùng hiền hòa. Điểm đặc biệt nhất của voi là chiếc vòi dài ngoằng, thực chất là mũi và môi trên kéo dài, dùng để thở, hút nước uống, hái lá cây hay thậm chí là ôm ấp nhau. Voi có đôi tai vĩ đại như hai chiếc quạt khổng lồ, thường phe phẩy để làm mát cơ thể trong những ngày nắng nóng."
+  },
+  {
+    "label": "flamingo",
+    "vietnameseName": "Hồng hạc",
+    "description": "Hồng hạc là những vũ công lộng lẫy của vùng sông nước với bộ lông màu hồng rực rỡ tuyệt đẹp được tạo ra từ thức ăn của chúng. Chúng sải bước điệu đà trên đôi chân dài miên man và gầy guộc. Có một điều vô cùng thú vị là khi nghỉ ngơi hay ngủ, hồng hạc rất thích co một chân lên và chỉ đứng vững vàng trên một chân duy nhất giữa mặt nước êm ả."
+  },
+  {
+    "label": "fly",
+    "vietnameseName": "Ruồi",
+    "description": "Ruồi là những vị khách bé nhỏ nhưng lại bay cực kỳ nhanh nhẹn, thường xuất hiện xung quanh chúng ta mỗi ngày. Chúng có đôi mắt to gồm hàng ngàn mắt nhỏ xíu gộp lại, giúp ruồi có thể nhìn thấy mọi chuyển động xung quanh để né tránh nguy hiểm. Dù đôi khi gây phiền toái, nhưng ruồi lại là những công nhân dọn dẹp môi trường khi giúp phân hủy các chất hữu cơ trong tự nhiên."
+  },
+  {
+    "label": "fox",
+    "vietnameseName": "Cáo",
+    "description": "Cáo là những nhân vật thông minh, lanh lợi và vô cùng tinh ranh trong các câu chuyện cổ tích. Ở ngoài đời thực, chúng khoác lên mình bộ lông mềm mại tuyệt đẹp cùng một chiếc đuôi xù to và êm ái để giữ ấm khi trời lạnh. Cáo có thính giác và khứu giác tuyệt vời, giúp chúng trở thành những thợ săn khéo léo, di chuyển nhẹ nhàng trong rừng rậm mà không ai hay biết."
+  },
+  {
+    "label": "goat",
+    "vietnameseName": "Dê",
+    "description": "Dê là những nhà leo núi chuyên nghiệp của thế giới động vật, với bộ móng guốc đặc biệt giúp chúng đứng vững trên những vách đá dựng đứng, cheo leo. Chúng có bộ râu nhỏ dưới cằm trông rất ngộ nghĩnh và cặp sừng cong trên đỉnh đầu. Dê rất thích hoạt động, leo trèo và thường dành cả ngày dài để thưởng thức món ăn khoái khẩu là lá cây, chồi non và cỏ dại."
+  },
+  {
+    "label": "goldfish",
+    "vietnameseName": "Cá vàng",
+    "description": "Cá vàng là loài thú cưng bơi lội tung tăng trong nước được rất nhiều gia đình yêu thích và nuôi trong các bể kính trong suốt. Chúng có thân hình nhỏ nhắn, lấp lánh với lớp vảy rực rỡ màu cam, đỏ hoặc vàng ươm. Cá vàng mang đến vẻ đẹp sinh động, vui mắt và tĩnh lặng cho ngôi nhà, chúng cũng bơi lội rất uyển chuyển với chiếc đuôi xòe rộng như chiếc váy dạ hội."
+  },
+  {
+    "label": "goose",
+    "vietnameseName": "Ngỗng",
+    "description": "Ngỗng là những người bạn họ hàng của loài vịt nhưng có kích thước to lớn hơn, cổ dài hơn và dáng đi bệ vệ hơn rất nhiều. Chúng có tính cách vô cùng dũng cảm và thường được các bác nông dân nuôi để canh gác nhà cửa, bởi ngỗng sẽ kêu thật to khi thấy người lạ đến. Vào mùa đông, ngỗng hoang dã thường tụ tập thành đàn lớn bay theo hình chữ V để di cư tránh rét."
+  },
+  {
+    "label": "gorilla",
+    "vietnameseName": "Khỉ đột",
+    "description": "Khỉ đột là loài linh trưởng to lớn và sở hữu sức mạnh cơ bắp đáng nể nhất trong các khu rừng rậm ở châu Phi. Mặc dù có vẻ ngoài khổng lồ và đôi khi hay vỗ ngực dầm dập, nhưng khỉ đột thực chất rất hiền lành và chỉ thích ăn thực vật. Chúng sống thành những gia đình đầm ấm, yêu thương, nơi những con khỉ đột mẹ luôn ôm ấp và chăm sóc chu đáo cho đàn con nhỏ của mình."
+  },
+  {
+    "label": "grasshopper",
+    "vietnameseName": "Châu chấu",
+    "description": "Châu chấu là những vận động viên nhảy xa vô địch của thế giới tự nhiên, nhờ vào đôi chân sau cực kỳ to khỏe và nhiều gai nhọn. Mỗi khi bị đe dọa, chúng chỉ cần nhún nhẹ một cái là có thể bay vút đi một quãng đường rất xa so với cơ thể bé nhỏ của mình. Ngoài ra, châu chấu còn là những nhạc công đồng quê, tạo ra âm thanh rả rích bằng cách cọ xát đôi chân vào cánh."
+  },
+  {
+    "label": "hamster",
+    "vietnameseName": "Chuột hamster",
+    "description": "Chuột hamster là những bé thú cưng nhỏ xíu, tròn xoe và vô cùng đáng yêu với lớp lông tơ mềm mại. Điểm thú vị nhất của hamster là hai chiếc túi má phúng phính như hai chiếc bong bóng nhỏ, được chúng dùng để giấu và tích trữ thật nhiều hạt dưa, hạt hướng dương. Chúng rất thích chạy lon ton trên chiếc vòng quay đồ chơi trong lồng vào ban đêm để tập thể dục."
+  },
+  {
+    "label": "hare",
+    "vietnameseName": "Thỏ rừng",
+    "description": "Thỏ rừng là anh em họ với thỏ nhà nhưng có dáng vẻ gầy gò hơn, đôi tai dài hơn và đôi chân cực kỳ khỏe mạnh. Để tồn tại trên các cánh đồng cỏ rộng lớn đầy rẫy nguy hiểm, thỏ rừng được tự nhiên ban tặng cho tốc độ chạy siêu tốc. Chúng hiếm khi đào hang dưới đất mà thường làm tổ ngay trên các bụi cỏ cao và luôn trong trạng thái cảnh giác với đôi tai vểnh lên."
+  },
+  {
+    "label": "hedgehog",
+    "vietnameseName": "Nhím",
+    "description": "Nhím là loài sinh vật nhỏ bé khoác trên lưng một chiếc áo giáp đặc biệt được làm từ hàng ngàn chiếc gai cứng và nhọn hoắt. Khi phải đối mặt với kẻ thù nguy hiểm, nhím sẽ lập tức cuộn tròn cơ thể lại thành một quả bóng gai kín bưng, khiến không ai có thể làm hại được. Ban ngày nhím thích ngủ nướng và đến đêm mới bắt đầu lạch bạch đi tìm kiếm giun đất, sâu bọ để ăn."
+  },
+  {
+    "label": "hippopotamus",
+    "vietnameseName": "Hà mã",
+    "description": "Hà mã là loài động vật có thân hình khổng lồ, béo tròn và sống phần lớn thời gian ngâm mình dưới những con sông mát mẻ ở châu Phi. Mặc dù trông có vẻ nặng nề và chậm chạp, nhưng khi lên bờ, hà mã lại có thể chạy với tốc độ kinh ngạc. Chúng có chiếc miệng rộng đến mức có thể nuốt trọn một quả dưa hấu lớn và thường ngáp thật to để khoe những chiếc răng nanh đáng sợ."
+  },
+  {
+    "label": "hornbill",
+    "vietnameseName": "Chim mỏ sừng",
+    "description": "Chim mỏ sừng là loài chim mang vẻ đẹp độc đáo và lạ mắt nhất của các khu rừng nhiệt đới. Điểm nhấn ấn tượng nhất của chúng là chiếc mỏ cực lớn, màu sắc sặc sỡ và thường có một khối sừng rỗng nhô cao lên ngay trên đỉnh mỏ. Chim mỏ sừng ăn quả và côn trùng, chúng cũng là những kiến trúc sư tài ba khi biết xây tổ rất an toàn bên trong các thân cây cổ thụ rỗng."
+  },
+  {
+    "label": "horse",
+    "vietnameseName": "Ngựa",
+    "description": "Ngựa là loài động vật mang vẻ đẹp oai phong, mạnh mẽ và vô cùng duyên dáng với chiếc bờm dài bay trong gió. Từ xa xưa, ngựa đã là người bạn đồng hành trung thành của con người, giúp vận chuyển hàng hóa, di chuyển những chặng đường xa và tham gia vào các môn thể thao. Chúng có thể phi nước đại với tốc độ rất nhanh trên những đồng cỏ và có tuổi thọ khá cao."
+  },
+  {
+    "label": "hummingbird",
+    "vietnameseName": "Chim ruồi",
+    "description": "Chim ruồi là những viên ngọc quý bé xíu của bầu trời, tự hào là loài chim nhỏ bé nhất trên thế giới. Chúng có đôi cánh bay cực kỳ điêu luyện, đập nhanh đến mức tạo ra tiếng vo ve và có thể bay lùi, lơ lửng trên không một cách thần kỳ. Với chiếc mỏ dài và mỏng manh, chim ruồi chuyên hút những giọt mật hoa ngọt ngào sâu bên trong các nụ hoa rực rỡ."
+  },
+  {
+    "label": "hyena",
+    "vietnameseName": "Linh cẩu",
+    "description": "Linh cẩu là những thợ săn đầy chiến thuật ở các vùng đồng cỏ thảo nguyên rộng lớn, thường đi săn theo những bầy đàn đông đúc. Chúng có bộ hàm mạnh mẽ khủng khiếp có thể cắn vỡ cả những khúc xương cứng nhất. Đặc biệt, linh cẩu nổi tiếng với những tiếng kêu độc đáo nghe giống hệt như tiếng cười lanh lảnh của con người vang vọng giữa màn đêm."
+  },
+  {
+    "label": "jellyfish",
+    "vietnameseName": "Sứa",
+    "description": "Sứa là những sinh vật biển kỳ diệu, có thân hình mềm mại, trong suốt như pha lê và thường phát ra ánh sáng lung linh dưới đáy đại dương. Chúng không có xương, không có tim hay não bộ, mà chỉ trôi nổi nhịp nhàng theo dòng nước bập bềnh. Bên dưới chiếc ô trong suốt ấy là những xúc tu mỏng manh nhưng lại chứa chất độc để làm tê liệt những chú cá nhỏ bé xui xẻo."
+  },
+  {
+    "label": "kangaroo",
+    "vietnameseName": "Chuột túi",
+    "description": "Chuột túi là loài vật mang tính biểu tượng vô cùng đáng yêu của đất nước Australia xinh đẹp. Mẹ chuột túi có một chiếc túi nhỏ bé và ấm áp trước bụng, dùng làm chiếc nôi êm ái để nuôi dưỡng và bảo vệ đàn con bé bỏng của mình. Nhờ đôi chân sau to khỏe và chiếc đuôi dài giúp giữ thăng bằng, chuột túi có thể nhảy từng bước cực kỳ xa và nhanh nhạy trên thảo nguyên."
+  },
+  {
+    "label": "koala",
+    "vietnameseName": "Gấu túi koala",
+    "description": "Gấu túi koala là loài vật siêu cấp đáng yêu với bộ lông xám bạc êm ái, chiếc mũi đen to tròn và đôi tai đầy lông tơ. Chúng dành gần như toàn bộ cuộc đời của mình để sống an toàn trên những cành cây bạch đàn cao vút. Koala là những bé 'sâu ngủ' thực sự khi chúng có thể ngủ say sưa đến 20 tiếng mỗi ngày, thức dậy chỉ để nhẩn nha nhai những chiếc lá bạch đàn thơm mùi tinh dầu."
+  },
+  {
+    "label": "ladybugs",
+    "vietnameseName": "Bọ rùa",
+    "description": "Bọ rùa là những người bạn nhỏ vô cùng có ích của các bác nông dân và người làm vườn. Chúng khoác trên mình lớp vỏ tròn xoe, bóng bẩy với màu đỏ, cam nổi bật được tô điểm bởi những chấm đen xinh xắn. Bọ rùa bay lượn từ chiếc lá này sang chiếc lá khác để săn bắt những loài rệp cây có hại, giúp bảo vệ mùa màng luôn xanh tốt lành mạnh."
+  },
+  {
+    "label": "leopard",
+    "vietnameseName": "Báo hoa mai",
+    "description": "Báo hoa mai là loài mèo lớn mang vẻ đẹp hoang dã đầy quyến rũ với bộ lông màu vàng óng điểm xuyết những đốm đen tinh tế giống như những bông hoa. Chúng là những vận động viên leo trèo xuất sắc nhất của rừng rậm nhiệt đới. Nhờ sức mạnh vượt trội, báo hoa mai có thói quen độc đáo là tha con mồi nặng trĩu lên tít các cành cây cao chót vót để cất giấu và thong thả thưởng thức."
+  },
+  {
+    "label": "lion",
+    "vietnameseName": "Sư tử",
+    "description": "Sư tử tự hào khoác lên mình danh hiệu chúa tể kiêu hãnh của muôn loài, mang sức mạnh vô song và phong thái uy nghi rực rỡ. Những chú sư tử đực sở hữu chiếc bờm rậm rạp lộng lẫy quanh cổ và có tiếng gầm thị uy vang dội xa hàng km. Sư tử sống thành những đại gia đình lớn gọi là bầy đàn, trong đó các cô sư tử cái mới thực sự là những thợ săn chủ lực và khéo léo nhất."
+  },
+  {
+    "label": "lizard",
+    "vietnameseName": "Thằn lằn",
+    "description": "Thằn lằn là những loài bò sát vô cùng nhanh nhẹn, thường được nhìn thấy phơi mình dưới nắng ấm hoặc chạy thoăn thoắt trên các bức tường, thân cây. Nhờ có những cấu tạo đặc biệt dưới bàn chân, chúng có khả năng bám dính cực tốt để leo trèo trên nhiều bề mặt trơn trượt. Thức ăn yêu thích của thằn lằn là những loại côn trùng nhỏ, giúp cân bằng hệ sinh thái tự nhiên."
+  },
+  {
+    "label": "lobster",
+    "vietnameseName": "Tôm hùm",
+    "description": "Tôm hùm là những cư dân khổng lồ và quý giá ẩn mình sâu dưới các rạn san hô dưới đáy đại dương bao la. Chúng được bao bọc bởi một lớp vỏ cứng cáp như áo giáp và sở hữu đôi càng to bự, vô cùng mạnh mẽ để tự vệ. Tôm hùm thường đi dạo dưới đáy biển tìm kiếm thức ăn và sẽ thay vỏ nhiều lần trong đời để cơ thể ngày càng lớn mạnh hơn."
+  },
+  {
+    "label": "mosquito",
+    "vietnameseName": "Muỗi",
+    "description": "Muỗi là những côn trùng bay nhỏ xíu nhưng lại gây ra những tiếng vo ve vô cùng khó chịu bên tai chúng ta. Muỗi cái sử dụng chiếc vòi dài và nhọn của mình để chích vào da người hoặc động vật nhằm hút máu, lấy dinh dưỡng nuôi trứng. Chúng sinh sản rất nhanh trong những khu vực có nước đọng, vì vậy chúng ta cần giữ gìn môi trường luôn khô ráo và sạch sẽ."
+  },
+  {
+    "label": "moth",
+    "vietnameseName": "Bướm đêm",
+    "description": "Bướm đêm giống như những người anh em sinh đôi tĩnh lặng của loài bướm, nhưng chúng chọn màn đêm làm thời điểm để thức giấc và bay lượn. Chúng thường có màu sắc tối giản hơn như xâu xám hoặc nâu để dễ dàng ngụy trang và lẩn trốn trên thân cây vào ban ngày. Bướm đêm có một đặc điểm thú vị là luôn bị thu hút và bay lượn xung quanh những nguồn ánh sáng rực rỡ."
+  },
+  {
+    "label": "mouse",
+    "vietnameseName": "Chuột",
+    "description": "Chuột là loài gặm nhấm nhỏ bé với chiếc đuôi dài, đôi tai tròn xoe và hai chiếc răng cửa vô cùng sắc nhọn luôn mọc dài ra mỗi ngày. Chúng có sự linh hoạt đáng kinh ngạc, có thể luồn lách chui qua những khe hở bé tẹo để len lỏi khắp nơi tìm kiếm thức ăn. Dù khá rụt rè, chuột lại rất thông minh và luôn tìm cách sinh tồn khéo léo ở cả nông thôn lẫn thành thị."
+  },
+  {
+    "label": "octopus",
+    "vietnameseName": "Bạch tuộc",
+    "description": "Bạch tuộc là những bộ óc thiên tài của thế giới dưới nước, không có một mảnh xương nào trong cơ thể nên chúng mềm mại đến không ngờ. Chúng có tới 8 chiếc xúc tu dài ngoằng phủ đầy những giác hút mạnh mẽ để di chuyển và tóm lấy con mồi. Đỉnh cao kỹ năng của bạch tuộc là khả năng đổi màu và kết cấu da siêu nhanh, biến hình hoàn hảo vào các tảng đá hay rạn san hô để trốn tìm."
+  },
+  {
+    "label": "okapi",
+    "vietnameseName": "Hươu okapi",
+    "description": "Hươu okapi là một loài động vật vô cùng quý hiếm và bí ẩn, ẩn mình sâu thẳm trong các khu rừng nhiệt đới ở đất nước Congo. Nhìn từ xa, chúng trông giống như một sự kết hợp kỳ lạ giữa hươu và ngựa vằn, với những sọc đen trắng nổi bật bao quanh đôi chân. Hươu okapi có chiếc lưỡi dài và linh hoạt đến mức có thể dùng để lau sạch tai hoặc quấn lấy những cành lá non tít trên cao."
+  },
+  {
+    "label": "orangutan",
+    "vietnameseName": "Đười ươi",
+    "description": "Đười ươi là những người vượn khổng lồ dịu dàng của rừng già, khoác trên mình bộ lông màu cam đỏ vô cùng rực rỡ và đặc trưng. Tên của chúng có nghĩa là 'Người rừng', bởi chúng sở hữu trí thông minh vượt trội, biết bộc lộ tình cảm và cách chăm con rất chu đáo. Đười ươi có cánh tay rất dài và khỏe mạnh, giúp chúng đu đưa mượt mà từ cành cây này sang cành cây khác một cách dễ dàng."
+  },
+  {
+    "label": "otter",
+    "vietnameseName": "Rái cá",
+    "description": "Rái cá là những vận động viên bơi lội cừ khôi và vui nhộn nhất, sinh sống ở cả sông hồ nước ngọt lẫn dọc theo các bờ biển. Bộ lông dày mượt của chúng chống thấm nước hoàn hảo, giúp rái cá luôn giữ được thân nhiệt ấm áp khi ngụp lặn dưới dòng nước băng giá. Rái cá vô cùng tinh nghịch, thường rượt đuổi nhau, trượt trên bùn lầy hay thả mình nằm ngửa trôi bồng bềnh trên mặt nước."
+  },
+  {
+    "label": "owl",
+    "vietnameseName": "Cú mèo",
+    "description": "Cú mèo là những thợ săn của bóng đêm, sở hữu khuôn mặt hình trái tim hoặc tròn xoe vô cùng ngộ nghĩnh cùng đôi mắt to tròn, tinh anh thấu thị bóng tối. Bộ lông của chúng được cấu tạo đặc biệt giúp chúng bay lượn êm ái mà không phát ra bất kỳ một tiếng động nhỏ nào. Với khả năng xoay đầu linh hoạt gần như một vòng tròn, cú mèo luôn sẵn sàng bắt gọn những chú chuột đồng bất cẩn."
+  },
+  {
+    "label": "ox",
+    "vietnameseName": "Bò đực",
+    "description": "Bò đực là những người khổng lồ có sức mạnh đáng nể, với cặp sừng dài, thân hình vạm vỡ, rắn chắc và cơ bắp cuồn cuộn. Từ xa xưa, chúng đã là cánh tay phải đắc lực của người nông dân, cần mẫn kéo những chiếc cày nặng trĩu lật tung từng lớp đất gieo hạt, hay thồ những chuyến hàng nông sản lớn. Bò đực mang tính cách trầm tĩnh, kiên nhẫn, đóng góp công sức to lớn để tạo ra những vụ mùa bội thu."
+  },
+  {
+    "label": "oyster",
+    "vietnameseName": "Hàu",
+    "description": "Hàu là những sinh vật hiền lành giấu mình bên trong hai lớp vỏ đá sần sùi và cứng cáp, bám chặt vào các rạn đá sâu dưới đáy biển. Mặc dù vẻ ngoài không hề bắt mắt, nhưng thịt hàu bên trong lại là một món quà của đại dương, chứa đựng rất nhiều chất dinh dưỡng quý giá. Điều kỳ diệu nhất ở một số loài hàu là khả năng biến những hạt cát lọt vào bên trong thành những viên ngọc trai lấp lánh, tuyệt đẹp."
+  },
+  {
+    "label": "panda",
+    "vietnameseName": "Gấu trúc",
+    "description": "Gấu trúc là sứ giả của sự dễ thương và hòa bình, nổi bật với hai mảng lông màu đen quanh mắt giống như đang đeo kính râm, cùng thân hình mập mạp bọc trong lớp lông đen trắng. Thay vì ăn thịt như các loài gấu khác, gấu trúc lại là những người ăn chay đích thực, dành cả ngày chỉ để nhai lá và măng trúc giòn rụm. Chúng khá lười biếng, rất thích nằm ườn lăn lộn trên các thảm cỏ xanh để ngủ một giấc thật sâu."
+  },
+  {
+    "label": "parrot",
+    "vietnameseName": "Vẹt",
+    "description": "Vẹt là những chú chim nghệ sĩ lắm lời và vô cùng thông minh, luôn mặc trên mình những bộ lông rực rỡ mang đầy đủ các màu sắc của cầu vồng. Chúng có chiếc mỏ quặp rất khỏe dùng để cắn vỡ các loại hạt cứng và sử dụng đôi chân khéo léo y như đôi tay để cầm nắm thức ăn. Vẹt có một tài năng đặc biệt làm ai cũng thích thú, đó là khả năng bắt chước tiếng người, tiếng huýt sáo hay tiếng nhạc vô cùng điêu luyện."
+  },
+  {
+    "label": "pelecaniformes",
+    "vietnameseName": "Bộ bồ nông",
+    "description": "Bộ bồ nông là đại gia đình của những loài chim nước có kích thước lớn, nổi bật nhất với chiếc túi da khổng lồ co giãn linh hoạt nằm ngay dưới mỏ. Chiếc túi này hoạt động giống như một chiếc vợt bắt cá tự nhiên, cho phép chúng xúc gọn hàng lít nước cùng với đàn cá nhỏ chỉ trong một cú lặn. Khi đã no nê, bồ nông thường đậu trên bờ hoặc nổi trên mặt nước để phơi khô những bộ lông dày mượt của mình."
+  },
+  {
+    "label": "penguin",
+    "vietnameseName": "Chim cánh cụt",
+    "description": "Chim cánh cụt là những quý ông diện áo tuxedo đen trắng lịch lãm của thế giới băng giá, dù có đôi cánh nhưng chúng lại không thể bay lượn trên không trung. Thay vào đó, đôi cánh ấy trở thành những chiếc mái chèo hoàn hảo, giúp chúng bơi lội với tốc độ đáng kinh ngạc dưới lòng đại dương sâu thẳm. Trên cạn, chim cánh cụt có dáng đi lạch bạch vô cùng ngộ nghĩnh và thường trượt dài bằng bụng trên những tảng băng trơn trượt."
+  },
+  {
+    "label": "pig",
+    "vietnameseName": "Lợn",
+    "description": "Lợn là những người bạn thân thiết ở nông trại, với thân hình mập mạp đáng yêu, chiếc mũi đánh hơi cực thính và cái đuôi nhỏ xoắn tít lại. Nhiều người thường nghĩ lợn rất bẩn, nhưng thực chất chúng là một trong những loài động vật cực kỳ thông minh, biết cách giữ gìn sự sạch sẽ và giao tiếp với nhau bằng những tiếng 'ụt ịt' vui tai. Chúng có tính cách hòa đồng, rất thích được vuốt ve và tắm mát vào những ngày hè nóng nực."
+  },
+  {
+    "label": "pigeon",
+    "vietnameseName": "Bồ câu",
+    "description": "Bồ câu mang trong mình biểu tượng vĩ đại của tình yêu, sự bình yên và hòa bình trên toàn thế giới, thường thân thiện đi dạo quanh các quảng trường ở thành phố. Chúng có bản năng định vị phương hướng cực kỳ thần kỳ, dù bị thả ở một nơi rất xa nhưng vẫn có thể tìm đúng đường bay thẳng về nhà. Nhờ trí thông minh đó, bồ câu đã từng làm công việc của những người đưa thư dũng cảm, mang những tin tức quan trọng vượt qua bao dặm đường dài."
+  },
+  {
+    "label": "porcupine",
+    "vietnameseName": "Nhím gai",
+    "description": "Nhím gai là loài động vật có ngoại hình rất ngầu với bộ áo khoác được dệt nên từ hàng ngàn chiếc lông siêu dài, nhọn hoắt và cứng cáp mọc lởm chởm. Khi có bất kỳ kẻ thù nào dám tiến lại gần đe dọa, nhím gai sẽ lập tức xù lông lên rũ rượi tạo ra những tiếng lạch cạch cảnh báo, sẵn sàng đâm những chiếc gai sắc nhọn để bảo vệ bản thân. Ban đêm, chúng điềm tĩnh bò ra khỏi hang để tìm kiếm các loại rễ cây, vỏ cây và trái cây ngọt ngào."
+  },
+  {
+    "label": "possum",
+    "vietnameseName": "Thú có túi possum",
+    "description": "Thú có túi possum là những sinh vật hoạt động trong đêm vô cùng linh hoạt, có đôi mắt to để nhìn rõ bóng tối và chiếc đuôi bám chắc vào cành cây giống như một cánh tay thứ năm. Các bà mẹ possum rất yêu thương con, thường cõng cả đàn con nhỏ xíu, bám chặt trên lưng dạo chơi khắp các cành cây cao. Một khả năng vô cùng hài hước và diễn sâu của possum là chúng sẽ giả vờ chết cứng đờ để qua mặt kẻ thù mỗi khi bị hoảng sợ tột độ."
+  },
+  {
+    "label": "raccoon",
+    "vietnameseName": "Gấu mèo",
+    "description": "Gấu mèo trông giống như những tên trộm nhí đáng yêu với hai quầng lông đen xì quanh mắt như đeo mặt nạ và chiếc đuôi lông rậm rạp có nhiều khoang màu. Chân trước của gấu mèo cực kỳ khéo léo, linh hoạt không kém gì bàn tay con người, giúp chúng có thể dễ dàng mở cửa, mở nắp thùng rác hay nhặt nhạnh đồ vật. Trước khi ăn một món gì đó, gấu mèo thường có thói quen ngộ nghĩnh là mang ra suối nhúng nước vò vò như đang giặt đồ."
+  },
+  {
+    "label": "rat",
+    "vietnameseName": "Chuột cống",
+    "description": "Chuột cống là những nhà thám hiểm tí hon sở hữu trí tuệ vô cùng nhạy bén và khả năng sinh tồn mạnh mẽ ở hầu khắp mọi nơi, từ những cánh đồng lúa cho đến các ngõ ngách sâu trong lòng thành phố. Chúng có khứu giác tuyệt vời, giúp nhanh chóng phát hiện ra những kho thức ăn béo bở giấu kín. Loài chuột này sống rất đoàn kết, luôn chia sẻ thức ăn và giúp đỡ lẫn nhau xây dựng những mạng lưới hang động phức tạp và an toàn."
+  },
+  {
+    "label": "reindeer",
+    "vietnameseName": "Tuần lộc",
+    "description": "Tuần lộc là loài động vật mang phép màu của mùa đông, sinh sống ở những vùng Bắc Cực lạnh giá tuyết phủ trắng xóa. Chúng khoác trên mình lớp lông dày ấm áp, đôi guốc lớn giúp không bị lún sâu trong tuyết trắng và có bộ gạc phân nhánh khổng lồ cực kỳ ấn tượng trên đỉnh đầu. Tuần lộc cũng là những người bạn thân thiết của ông già Noel, luôn chăm chỉ kéo cỗ xe bay đi phát quà cho trẻ em ngoan trên khắp thế giới."
+  },
+  {
+    "label": "rhinoceros",
+    "vietnameseName": "Tê giác",
+    "description": "Tê giác là những cỗ xe tăng sống của thế giới hoang dã với lớp da dày cộp, nhăn nheo như mặc giáp sắt và thân hình đồ sộ đáng nể. Nổi bật nhất trên khuôn mặt của chúng là một hoặc hai chiếc sừng lớn vững chãi làm từ chất sừng, giúp chúng phòng vệ và đào rễ cây cực kỳ mạnh mẽ. Tuy mang vẻ ngoài bặm trợn và cục cằn, nhưng tê giác lại là loài động vật hiền lành chỉ yêu thích việc ăn cỏ và ngâm mình thỏa thích trong bùn mát."
+  },
+  {
+    "label": "sandpiper",
+    "vietnameseName": "Chim choắt",
+    "description": "Chim choắt là những chú chim nhỏ nhắn, nhanh nhẹn mang đôi chân dài gầy guộc thường chạy loăn choăn dọc theo mép nước trên các bãi biển đầy nắng gió. Chúng có thói quen rất dễ thương là chạy theo những đợt sóng biển lúc vừa rút xuống để dùng chiếc mỏ nhọn và dài mổ liên tục vào cát ướt. Cách mổ này giúp chim choắt tìm kiếm những chú tôm, cua hay trùn nhỏ trốn dưới lớp cát làm bữa ăn ngon lành cho mình."
+  },
+  {
+    "label": "seahorse",
+    "vietnameseName": "Cá ngựa",
+    "description": "Cá ngựa mang vẻ đẹp kỳ lạ, độc nhất vô nhị dưới đáy biển với chiếc đầu cong cong trông hệt như đầu của một quân cờ ngựa và chiếc đuôi có khả năng quấn chặt vào các nhành san hô rực rỡ. Thay vì bơi ngang như các loài cá thông thường, cá ngựa lại vỗ những chiếc vây nhỏ xíu trong suốt để bơi theo tư thế đứng thẳng đầy kiêu hãnh. Điều đặc biệt và kỳ diệu nhất là ở loài này, cá ngựa đực sẽ là người mang chiếc túi trước bụng để ấp trứng và sinh ra những chú cá ngựa con."
+  },
+  {
+    "label": "seal",
+    "vietnameseName": "Hải cẩu",
+    "description": "Hải cẩu là những tay bơi lội siêu phàm của các vùng biển lạnh giá, với cơ thể được thiết kế hoàn hảo mang hình thoi mượt mà và các chi biến thành những chiếc vây nhịp nhàng bơi lội dưới nước. Chúng sở hữu một lớp mỡ dưới da vô cùng dày dặn, giúp cơ thể hải cẩu luôn ấm áp dù phải ngụp lặn trong vùng nước đóng băng lạnh buốt. Khi lên trên bờ băng, hải cẩu thường nằm phơi nắng, dùng cái bụng tròn trĩnh để trườn đi và giao tiếp bằng những tiếng kêu 'oạp oạp' rất vui tai."
+  },
+  {
+    "label": "shark",
+    "vietnameseName": "Cá mập",
+    "description": "Cá mập là những thợ săn đáng gờm nhất của đại dương xanh thẳm, mang vẻ ngoài oai phong, bơi lội thần tốc và có sức mạnh không đối thủ. Vùng miệng của chúng vô cùng đáng sợ với hàng trăm chiếc răng sắc nhọn mọc thành nhiều lớp, nếu có chiếc nào rụng đi thì chiếc khác sẽ mọc lên thay thế ngay lập tức. Khứu giác của cá mập nhạy bén đến mức kinh ngạc, có thể ngửi thấy mùi con mồi từ cách xa hàng dặm hòa lẫn trong dòng nước lớn."
+  },
+  {
+    "label": "sheep",
+    "vietnameseName": "Cừu",
+    "description": "Cừu là những người bạn đáng yêu với tính cách ngoan ngoãn, hiền lành và thường tụ tập sống thành những bầy đàn đông đúc trên những sườn đồi xanh ngát. Chúng sở hữu một bộ lông dày dặn, mềm xốp và vô cùng ấm áp để có thể chịu đựng được cái lạnh của mùa đông sương giá. Lớp lông tuyệt vời ấy của bầy cừu, sau khi được xén cẩn thận, sẽ được kéo sợi và dệt thành những chiếc áo len xinh xắn sưởi ấm cho con người chúng ta."
+  },
+  {
+    "label": "snake",
+    "vietnameseName": "Rắn",
+    "description": "Rắn là những sinh vật bí ẩn, di chuyển hoàn toàn bằng cách trườn mình ngoằn ngoèo trên mặt đất hoặc luồn lách qua các cành cây do không hề có chân tay. Chúng có một chiếc lưỡi chẻ đôi cực kỳ linh hoạt, thường xuyên thè ra để ngửi và thu thập các mùi hương từ môi trường xung quanh một cách chính xác. Mặc dù nhiều loài rắn mang nọc độc để săn mồi, nhưng chúng lại đóng vai trò là những vệ sĩ diệt chuột tuyệt vời giúp bảo vệ mùa màng."
+  },
+  {
+    "label": "sparrow",
+    "vietnameseName": "Chim sẻ",
+    "description": "Chim sẻ là những người bạn nhỏ xíu, quen thuộc luôn có mặt quanh quẩn ở khắp các làng quê thanh bình cho đến những khu đô thị nhộn nhịp đông đúc. Chúng khoác trên mình bộ lông mang những vệt màu nâu, xám và trắng giản dị, với dáng vẻ nhảy nhót bằng cả hai chân vô cùng nhanh nhẹn. Cứ mỗi buổi sáng thức dậy, chim sẻ lại đậu trên những cành cây hay mái nhà cao râm ran hót những khúc ca líu lo, tràn trề năng lượng chào đón một ngày mới."
+  },
+  {
+    "label": "squid",
+    "vietnameseName": "Mực",
+    "description": "Mực là những tay bơi cừ khôi mang dáng vẻ độc đáo với chiếc đầu hình tên lửa và vô số những xúc tu vươn dài đầy mạnh mẽ lướt đi trong lòng đại dương. Ở phía cuối thân, chúng sử dụng một chiếc ống phun nước giống hệt như một chiếc động cơ phản lực, giúp mực phóng đi với tốc độ cực nhanh. Đặc biệt, khi gặp phải nguy hiểm, mực sẽ phun ra một đám mây mực màu đen kịt vào dòng nước, tạo thành một màn khói mù mịt để an toàn trốn thoát kẻ thù."
+  },
+  {
+    "label": "squirrel",
+    "vietnameseName": "Sóc",
+    "description": "Sóc là những nghệ sĩ đu cây nhanh nhẹn, linh hoạt với chiếc đuôi xù to và bồng bềnh như một chiếc chổi nhỏ xinh. Đặc điểm nổi bật của chúng là hàm răng vô cùng chắc khỏe để dễ dàng cắn vỡ lớp vỏ cứng của các loại hạt dẻ hay quả thông thơm ngon. Sóc còn có trí nhớ cực tốt và thói quen rất cẩn thận, luôn dành thời gian đào đất chôn giấu các loại hạt đi khắp nơi để dành làm thức ăn dự trữ cho những ngày mùa đông khắc nghiệt."
+  },
+  {
+    "label": "starfish",
+    "vietnameseName": "Sao biển",
+    "description": "Sao biển là một món trang sức tuyệt đẹp của đại dương sâu thẳm, sở hữu hình dạng đối xứng giống y hệt như những ngôi sao lấp lánh có năm cánh trải đều. Dưới mỗi cánh sao biển có gắn hàng trăm chiếc ống chân hút nhỏ xíu giúp chúng di chuyển chậm rãi qua các rạn san hô và bám chặt vào bề mặt những tảng đá lớn. Điều kỳ diệu nhất ở sao biển là khả năng tái sinh thần kỳ, nếu chúng vô tình bị đứt đi một cánh thì theo thời gian, một chiếc cánh mới sẽ tự động mọc ra tại vị trí đó."
+  },
+  {
+    "label": "swan",
+    "vietnameseName": "Thiên nga",
+    "description": "Thiên nga là biểu tượng tối cao cho vẻ đẹp kiêu sa, sang trọng và quý phái của các loài chim nước lớn với bộ lông trắng muốt như những bông tuyết tinh khôi. Chúng có chiếc cổ thon dài vô cùng uyển chuyển, luôn nhẹ nhàng uốn cong gập xuống khi thanh lịch lướt đi trên mặt hồ phẳng lặng lấp lánh ánh mặt trời. Thiên nga là loài chim rất tình cảm và thủy chung, khi đã kết đôi, chúng sẽ gắn bó với người bạn đời của mình mãi mãi trong suốt quãng thời gian còn lại."
+  },
+  {
+    "label": "tiger",
+    "vietnameseName": "Hổ",
+    "description": "Hổ là chúa tể dũng mãnh của những khu rừng nhiệt đới âm u, sở hữu thân hình cơ bắp to lớn và sức mạnh phi thường. Chúng khoác lên mình bộ lông màu cam rực rỡ nổi bật cùng những sọc vằn màu đen đặc trưng giúp hổ ngụy trang hoàn hảo khi rình rập, lẻn lỏi trong những đám cỏ cao. Trái ngược với sư tử, hổ là những thợ săn thích hành động một mình đơn độc, di chuyển không tiếng động và chớp lấy cơ hội vồ gọn con mồi trong chớp mắt."
+  },
+  {
+    "label": "turkey",
+    "vietnameseName": "Gà tây",
+    "description": "Gà tây là loài chim có vóc dáng đồ sộ mang nguồn gốc từ lục địa Bắc Mỹ, với phần đầu và cổ mang một lớp da nhăn nheo, đỏ rực rất dễ nhận biết. Những chú gà tây đực còn có một tài năng vô cùng lộng lẫy, đó là khả năng xòe rộng toàn bộ bộ lông đuôi của mình ra tạo thành một chiếc quạt khổng lồ rực rỡ để thu hút các nàng gà cái. Chúng thường có những tiếng kêu 'ục ục' rộn rã và đóng vai trò là tâm điểm của những bữa tiệc tưng bừng trong ngày Lễ Tạ ơn."
+  },
+  {
+    "label": "turtle",
+    "vietnameseName": "Rùa",
+    "description": "Rùa là những ông lão hiền lành mang trong mình sự trầm mặc và bền bỉ của thế giới bò sát, tuổi thọ của chúng có thể lên tới cả trăm năm đằng đẵng. Chở che cho cơ thể rùa là một chiếc mai cứng cáp, vững chãi tựa như một ngôi nhà bằng đá, nơi rùa có thể rụt đầu và tứ chi vào để trốn mỗi khi gặp hiểm nguy. Mặc dù bước đi trên cạn có phần nặng nề và chậm chạp, nhưng khi rùa lặn xuống nước, chúng lại bơi lội thoăn thoắt và duyên dáng vô cùng."
+  },
+  {
+    "label": "whale",
+    "vietnameseName": "Cá voi",
+    "description": "Cá voi là những gã khổng lồ hiền từ của biển khơi bát ngát, được mệnh danh là loài động vật có kích thước vĩ đại nhất từng xuất hiện trên Trái Đất thân yêu này. Tuy sống ngập chìm dưới đáy đại dương mênh mông, nhưng cá voi không phải là loài cá mà lại là một loài thú có vú tuyệt vời, chúng bắt buộc phải trồi lên mặt nước để thở không khí thông qua lỗ phun nước trên đỉnh đầu. Cá voi giao tiếp bằng những tiếng hát trầm bổng, du dương và vô cùng thiêng liêng có thể vang xa lướt qua hàng vạn dặm dưới lòng biển sâu."
+  },
+  {
+    "label": "wolf",
+    "vietnameseName": "Sói",
+    "description": "Sói là tổ tiên dũng mãnh và hoang dã của những chú chó nhà đáng yêu, khoác trên mình vẻ ngoài đầy uy nghiêm với bộ lông bờm xờm ấm áp. Chúng có tính kỷ luật cực cao, luôn sống và săn mồi với tinh thần đồng đội tuyệt đối trong các đàn có một con sói đầu đàn vô cùng mạnh mẽ dẫn dắt. Đêm đến, dưới ánh trăng mờ ảo, đàn sói sẽ cất cao giọng hú dài vang vọng khắp núi rừng tuyết phủ trắng xóa, như một bản hùng ca gọi bầy và khẳng định lãnh thổ đầy oai phong."
+  },
+  {
+    "label": "wombat",
+    "vietnameseName": "Wombat",
+    "description": "Wombat là những chú gấu túi béo mũm mĩm, lùn tịt và mang đôi chân ngắn cũn vô cùng dễ thương đến từ vùng đất Australia hoang sơ xa xôi. Chúng là những chuyên gia đào hầm thực thụ với bộ móng vuốt mạnh mẽ sắc nhọn, có khả năng kiến tạo ra những hệ thống hang động dưới lòng đất dài dằng dặc và rối rắm như một mê cung khổng lồ. Một đặc điểm đặc biệt thú vị của wombat là chiếc túi nuôi con của gấu mẹ lại được thiết kế quay ngược ra phía sau, mục đích là để đất cát không bị văng trúng vào mặt gấu con khi mẹ đang hì hục đào bới."
+  },
+  {
+    "label": "woodpecker",
+    "vietnameseName": "Chim gõ kiến",
+    "description": "Chim gõ kiến là những tay trống cừ khôi nhất của khu rừng già xanh thẳm, được trang bị một chiếc mỏ dài, cứng cáp và sắc nhọn như một chiếc mũi khoan thực thụ. Chúng bám chặt cơ thể vào thân cây bằng đôi chân vững chãi cùng chiếc đuôi cứng để chống đỡ, rồi liên tục dùng mỏ gõ những nhịp điệu dồn dập vào lớp vỏ gỗ sần sùi dội vang khắp không gian. Mục đích của điệu gõ đó chính là khoét ra những lỗ nhỏ sâu thẳm nhằm tìm kiếm và thưởng thức những đàn côn trùng béo ngậy đang lẩn trốn kín đáo ở bên trong."
+  },
+  {
+    "label": "zebra",
+    "vietnameseName": "Ngựa vằn",
+    "description": "Ngựa vằn là biểu tượng quyến rũ không thể nhầm lẫn của thảo nguyên bao la, tự hào với lớp áo khoác nổi bần bật mang những sọc vằn đen trắng kẻ xen kẽ lôi cuốn rực rỡ. Mỗi chú ngựa vằn sinh ra lại sở hữu một họa tiết sọc vằn độc quyền và duy nhất, giống hệt như dấu vân tay phức tạp của con người chúng ta vậy. Khi có một đàn ngựa vằn đông đúc chạy phi nước đại, vô vàn những sọc vằn ấy sẽ hòa quyện nhòe vào nhau, tạo thành một ảo giác quang học xuất sắc khiến cho kẻ săn mồi như sư tử hay báo bị hoa mắt và bối rối không biết nên nhắm vào mục tiêu nào."
+  }
+]

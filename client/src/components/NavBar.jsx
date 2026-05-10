@@ -1,9 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useApp } from "../context/AppContext";
-import { LogOut, User, Clock, ChevronDown, Menu, X, Compass } from "lucide-react";
+import { LogOut, BookMarked, ChevronDown, Menu, X, Compass } from "lucide-react";
 import toast from "react-hot-toast";
 import logo from "../assets/AnimalExplorer_NavBarLogo.png";
+
+const NAV_LINKS = [
+  { to: "/", label: "Trang chủ" },
+  { to: "/dictionary", label: "Từ điển" },
+  { to: "/identify", label: "Nhận diện ảnh", icon: Compass },
+];
 
 const NavBar = () => {
   const { user, logout } = useApp();
@@ -13,17 +19,15 @@ const NavBar = () => {
   const dropdownRef = useRef(null);
   const location = useLocation();
 
-  // Scroll shadow effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown on outside click
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsDropdownOpen(false);
       }
     };
@@ -31,10 +35,7 @@ const NavBar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsMobileOpen(false);
-  }, [location]);
+  useEffect(() => setIsMobileOpen(false), [location]);
 
   const handleLogout = async () => {
     setIsDropdownOpen(false);
@@ -43,6 +44,20 @@ const NavBar = () => {
   };
 
   const isActive = (path) => location.pathname === path;
+
+  const navLinkClass = (path) =>
+    `relative px-5 py-2.5 text-base font-semibold rounded-xl transition-all duration-200 flex items-center gap-1.5 ${
+      isActive(path)
+        ? "text-green-700 bg-green-50"
+        : "text-gray-600 hover:text-green-700 hover:bg-green-50/80"
+    }`;
+
+  const mobileNavLinkClass = (path) =>
+    `px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+      isActive(path)
+        ? "bg-green-50 text-green-700 border-l-2 border-green-500 pl-3.5"
+        : "text-gray-700 hover:bg-gray-50"
+    }`;
 
   return (
     <>
@@ -53,48 +68,26 @@ const NavBar = () => {
             : "bg-white/90 backdrop-blur-sm shadow-md"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between">
-          {/* Logo */}
+        <div className="max-w-[1700px] mx-auto px-10 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition group">
             <img src={logo} alt="Animal Explorer Logo" className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              to="/"
-              className={`relative px-5 py-2.5 text-base font-medium rounded-xl transition-all duration-200 ${
-                isActive("/")
-                  ? "text-green-700 bg-green-50"
-                  : "text-gray-600 hover:text-green-700 hover:bg-green-50"
-              }`}
-            >
-              Trang chủ
-              {isActive("/") && (
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-green-600 rounded-full" />
-              )}
-            </Link>
+          <div className="hidden md:flex items-center gap-1">
+            {NAV_LINKS.map(({ to, label, icon: Icon }) => (
+              <Link key={to} to={to} className={navLinkClass(to)}>
+                {Icon && <Icon className="w-4 h-4" />}
+                {label}
+                {isActive(to) && (
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-green-500 rounded-full" />
+                )}
+              </Link>
+            ))}
 
-            <Link
-              to="/identify"
-              className={`relative px-5 py-2.5 text-base font-medium rounded-xl transition-all duration-200 flex items-center gap-1.5 ${
-                isActive("/identify")
-                  ? "text-green-700 bg-green-50"
-                  : "text-gray-600 hover:text-green-700 hover:bg-green-50"
-              }`}
-            >
-              <Compass className="w-4 h-4" />
-              Nhận diện ảnh
-              {isActive("/identify") && (
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-green-600 rounded-full" />
-              )}
-            </Link>
-
-            {/* Auth area */}
             {user ? (
               <div className="relative ml-2" ref={dropdownRef}>
                 <button
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  onClick={() => setIsDropdownOpen((prev) => !prev)}
                   className="flex items-center gap-2 bg-green-50 hover:bg-green-100 border border-green-200 px-3 py-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-1"
                 >
                   <div className="w-7 h-7 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -104,7 +97,6 @@ const NavBar = () => {
                   <ChevronDown className={`w-3.5 h-3.5 text-green-600 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
                 </button>
 
-                {/* Dropdown */}
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 animate-fade-in origin-top-right">
                     <div className="px-4 py-3 border-b border-gray-50">
@@ -113,14 +105,14 @@ const NavBar = () => {
                     </div>
 
                     <Link
-                      to="/history"
+                      to="/collection"
                       onClick={() => setIsDropdownOpen(false)}
                       className="flex items-center gap-2.5 px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
                     >
                       <div className="w-7 h-7 bg-green-100 rounded-lg flex items-center justify-center">
-                        <Clock className="w-4 h-4 text-green-600" />
+                        <BookMarked className="w-4 h-4 text-green-600" />
                       </div>
-                      Lịch sử nhận diện
+                      Bộ sưu tập
                     </Link>
 
                     <div className="border-t border-gray-50 mt-1 pt-1">
@@ -147,28 +139,32 @@ const NavBar = () => {
             )}
           </div>
 
-          {/* Mobile menu button */}
           <button
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            onClick={() => setIsMobileOpen((prev) => !prev)}
             className="md:hidden p-2 rounded-xl text-gray-600 hover:bg-gray-100 transition"
           >
             {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile menu */}
         {isMobileOpen && (
           <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 animate-fade-in">
-            <div className="flex flex-col gap-2">
-              <Link to="/" className={`px-4 py-3 rounded-xl text-sm font-medium transition ${isActive("/") ? "bg-green-50 text-green-700" : "text-gray-700 hover:bg-gray-50"}`}>Trang chủ</Link>
-              <Link to="/identify" className={`px-4 py-3 rounded-xl text-sm font-medium transition ${isActive("/identify") ? "bg-green-50 text-green-700" : "text-gray-700 hover:bg-gray-50"}`}>Nhận diện ảnh</Link>
+            <div className="flex flex-col gap-1">
+              {NAV_LINKS.map(({ to, label }) => (
+                <Link key={to} to={to} className={mobileNavLinkClass(to)}>{label}</Link>
+              ))}
               {user ? (
                 <>
-                  <Link to="/history" className="px-4 py-3 rounded-xl text-sm font-medium text-gray-700 hover:bg-gray-50 transition">Lịch sử nhận diện</Link>
-                  <button onClick={handleLogout} className="text-left px-4 py-3 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 transition">Đăng xuất</button>
+                  <Link to="/collection" className={mobileNavLinkClass("/collection")}>Bộ sưu tập</Link>
+                  <div className="my-1 h-px bg-gray-100" />
+                  <button onClick={handleLogout} className="text-left px-4 py-3 rounded-xl text-sm font-semibold text-red-500 hover:bg-red-50 transition">
+                    Đăng xuất
+                  </button>
                 </>
               ) : (
-                <Link to="/login" className="px-4 py-3 rounded-xl text-sm font-bold text-white bg-green-600 text-center">Đăng nhập / Đăng ký</Link>
+                <Link to="/login" className="mt-1 px-4 py-3 rounded-xl text-sm font-bold text-white bg-green-600 hover:bg-green-700 text-center transition-colors">
+                  Đăng nhập / Đăng ký
+                </Link>
               )}
             </div>
           </div>

@@ -1,9 +1,9 @@
 import express from "express";
-import { getHistory } from "../controllers/historyController.js";
+import { getCollection } from "../controllers/collectionController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-router.get("/", authMiddleware, getHistory);
+router.get("/", authMiddleware, getCollection);
 
 export default router;

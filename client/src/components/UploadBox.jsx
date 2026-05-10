@@ -1,27 +1,24 @@
 import { useCallback, useState } from "react";
 import { UploadCloud, X, ImageIcon, CheckCircle2 } from "lucide-react";
 
-// Props:
-//   onFileSelect(file) — callback khi user chọn / kéo thả ảnh
-//   disabled — vô hiệu hóa khi đang loading
 const UploadBox = ({ onFileSelect, disabled = false }) => {
   const [preview, setPreview] = useState(null);
   const [dragging, setDragging] = useState(false);
   const [fileName, setFileName] = useState("");
 
-  const handleFile = (file) => {
+  const processFile = (file) => {
     if (!file || !file.type.startsWith("image/")) return;
     setPreview(URL.createObjectURL(file));
     setFileName(file.name);
     onFileSelect(file);
   };
 
-  const handleChange = (e) => handleFile(e.target.files[0]);
+  const handleChange = (e) => processFile(e.target.files[0]);
 
   const handleDrop = useCallback((e) => {
     e.preventDefault();
     setDragging(false);
-    handleFile(e.dataTransfer.files[0]);
+    processFile(e.dataTransfer.files[0]);
   }, []);
 
   const handleDragOver = (e) => { e.preventDefault(); setDragging(true); };
@@ -34,27 +31,24 @@ const UploadBox = ({ onFileSelect, disabled = false }) => {
     onFileSelect(null);
   };
 
+  const containerClass = [
+    "relative flex flex-col items-center justify-center w-full min-h-64 rounded-2xl border-2 border-dashed cursor-pointer transition-all duration-200 overflow-hidden",
+    dragging
+      ? "border-green-500 bg-green-50 scale-[1.01]"
+      : preview
+        ? "border-green-400 bg-green-50/50"
+        : "border-gray-200 bg-gray-50 hover:bg-green-50/60 hover:border-green-400",
+    disabled ? "opacity-60 pointer-events-none" : "",
+  ].join(" ");
+
   return (
     <label
-      className={`relative flex flex-col items-center justify-center w-full min-h-64 rounded-2xl border-2 border-dashed cursor-pointer transition-all duration-200 overflow-hidden
-        ${dragging
-          ? "border-green-500 bg-green-50 scale-[1.01]"
-          : preview
-            ? "border-green-400 bg-green-50/50"
-            : "border-gray-200 bg-gray-50 hover:bg-green-50/60 hover:border-green-400"
-        }
-        ${disabled ? "opacity-60 pointer-events-none" : ""}`}
+      className={containerClass}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
     >
-      <input
-        type="file"
-        accept="image/*"
-        className="hidden"
-        onChange={handleChange}
-        disabled={disabled}
-      />
+      <input type="file" accept="image/*" className="hidden" onChange={handleChange} disabled={disabled} />
 
       {preview ? (
         <>
@@ -68,7 +62,6 @@ const UploadBox = ({ onFileSelect, disabled = false }) => {
               <X className="w-4 h-4" />
             </button>
           )}
-          {/* File name bar */}
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent px-4 py-3">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0" />

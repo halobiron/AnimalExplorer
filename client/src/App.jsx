@@ -4,19 +4,19 @@ import { useApp } from "./context/AppContext";
 
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
+import Dictionary from "./pages/Dictionary";
 import Identify from "./pages/Identify";
 import Login from "./pages/Login";
-import History from "./pages/History";
+import Collection from "./pages/Collection";
 
-// Route yêu cầu đăng nhập
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useApp();
+  const location = useLocation();
   if (loading) return null;
-  if (!user) return <Navigate to="/login" replace />;
+  if (!user) return <Navigate to="/login" state={{ from: location.pathname }} replace />;
   return children;
 };
 
-// Layout có NavBar (hầu hết các trang)
 const WithNav = ({ children }) => (
   <>
     <NavBar />
@@ -29,22 +29,27 @@ const App = () => {
     <BrowserRouter>
       <Toaster position="top-center" />
       <Routes>
-        {/* Trang Login — KHÔNG có NavBar, chiếm full viewport */}
         <Route path="/login" element={<Login />} />
 
-        {/* Các trang có NavBar */}
         <Route path="/" element={<WithNav><Home /></WithNav>} />
-        <Route path="/identify" element={<WithNav><Identify /></WithNav>} />
+        <Route path="/dictionary" element={<WithNav><Dictionary /></WithNav>} />
         <Route
-          path="/history"
+          path="/identify"
           element={
             <WithNav>
-              <ProtectedRoute><History /></ProtectedRoute>
+              <ProtectedRoute><Identify /></ProtectedRoute>
+            </WithNav>
+          }
+        />
+        <Route
+          path="/collection"
+          element={
+            <WithNav>
+              <ProtectedRoute><Collection /></ProtectedRoute>
             </WithNav>
           }
         />
 
-        {/* Trang không tồn tại → về Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

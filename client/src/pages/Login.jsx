@@ -1,13 +1,17 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { authAPI } from "../services/api";
 import { useApp } from "../context/AppContext";
 import toast from "react-hot-toast";
 import { Eye, EyeOff, User, Lock, ArrowRight, ArrowLeft } from "lucide-react";
 
+const ANIMAL_EMOJIS = ["🦁", "🐬", "🦅", "🐯", "🦋"];
+
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useApp();
+  const from = location.state?.from || "/";
 
   const [form, setForm] = useState({ username: "", password: "" });
   const [isRegister, setIsRegister] = useState(false);
@@ -29,8 +33,8 @@ const Login = () => {
         ? await authAPI.register(form)
         : await authAPI.login(form);
       login(res.data.user);
-      toast.success(isRegister ? "Đăng ký thành công! 🎉" : "Chào mừng trở lại! 👋");
-      navigate("/");
+      toast.success(isRegister ? "Đăng ký thành công!" : "Chào mừng trở lại!");
+      navigate(from, { replace: true });
     } catch (err) {
       toast.error(err.response?.data?.message || "Có lỗi xảy ra");
     } finally {
@@ -39,15 +43,11 @@ const Login = () => {
   };
 
   return (
-    /* h-screen + overflow-hidden: trang chiếm đúng 1 viewport, không cuộn */
     <div className="h-screen overflow-hidden flex">
-
-      {/* ── Cột trái: trang trí (chỉ hiện trên desktop) ── */}
       <div
         className="hidden lg:flex w-[45%] flex-shrink-0 flex-col items-center justify-center relative overflow-hidden"
         style={{ background: "linear-gradient(145deg, #052e16, #14532d, #15803d)" }}
       >
-        {/* Blob decorations */}
         <div className="absolute top-16 -left-16 w-64 h-64 bg-green-400 rounded-full opacity-10 blur-3xl" />
         <div className="absolute bottom-16 -right-16 w-56 h-56 bg-yellow-300 rounded-full opacity-10 blur-3xl" />
 
@@ -62,8 +62,8 @@ const Login = () => {
           </p>
 
           <div className="mt-8 flex justify-center gap-3">
-            {["🦁", "🐬", "🦅", "🐯", "🦋"].map((emoji, i) => (
-              <div key={i} className="w-9 h-9 rounded-full glass flex items-center justify-center text-base border border-white/20">
+            {ANIMAL_EMOJIS.map((emoji) => (
+              <div key={emoji} className="w-9 h-9 rounded-full glass flex items-center justify-center text-base border border-white/20">
                 {emoji}
               </div>
             ))}
@@ -72,9 +72,7 @@ const Login = () => {
         </div>
       </div>
 
-      {/* ── Cột phải: form ── */}
       <div className="flex-1 flex flex-col bg-white">
-        {/* Back link */}
         <div className="px-8 pt-6">
           <Link
             to="/"
@@ -85,10 +83,8 @@ const Login = () => {
           </Link>
         </div>
 
-        {/* Form area — căn giữa theo phần còn lại */}
         <div className="flex-1 flex items-center justify-center px-8">
           <div className="w-full max-w-sm">
-            {/* Header */}
             <div className="mb-7">
               <p className="text-xs font-bold text-green-600 uppercase tracking-widest mb-2">
                 Animal Explorer
@@ -98,14 +94,12 @@ const Login = () => {
               </h1>
               <p className="text-sm text-gray-500 mt-1">
                 {isRegister
-                  ? "Đăng ký để lưu lịch sử nhận diện"
+                  ? "Đăng ký để bắt đầu bộ sưu tập của bạn"
                   : "Đăng nhập để tiếp tục hành trình"}
               </p>
             </div>
 
-            {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Username */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-1.5">
                   Tên đăng nhập
@@ -124,7 +118,6 @@ const Login = () => {
                 </div>
               </div>
 
-              {/* Password */}
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-1.5">
                   Mật khẩu
@@ -150,7 +143,6 @@ const Login = () => {
                 </div>
               </div>
 
-              {/* Submit */}
               <button
                 type="submit"
                 disabled={loading}
@@ -174,7 +166,6 @@ const Login = () => {
               </button>
             </form>
 
-            {/* Toggle */}
             <p className="text-center text-sm text-gray-500 mt-5">
               {isRegister ? "Đã có tài khoản? " : "Chưa có tài khoản? "}
               <button
@@ -187,7 +178,6 @@ const Login = () => {
           </div>
         </div>
 
-        {/* Bottom spacing */}
         <div className="pb-6" />
       </div>
     </div>
