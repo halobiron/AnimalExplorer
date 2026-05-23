@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { identifyAPI } from "../services/api";
 import UploadBox from "../components/UploadBox";
-import { Sparkles, AlertCircle, CheckCircle2, Info, RefreshCw, Camera, Leaf, Dna } from "lucide-react";
+import CameraCapture from "../components/CameraCapture";
+import { Sparkles, AlertCircle, CheckCircle2, Info, RefreshCw, Camera, Leaf, Dna, Camera as CameraIcon } from "lucide-react";
 
 const ConfidenceBadge = ({ value }) => {
   const color =
@@ -28,6 +29,7 @@ const Identify = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
+  const [showCamera, setShowCamera] = useState(false);
 
   const handleFileSelect = (selectedFile) => {
     setFile(selectedFile);
@@ -57,6 +59,19 @@ const Identify = () => {
     setFile(null);
     setResult(null);
     setError("");
+    setShowCamera(false);
+  };
+
+  const handleCameraCapture = (capturedFile) => {
+    setFile(capturedFile);
+    setShowCamera(false);
+    setError("");
+  };
+
+  const openCamera = () => {
+    setShowCamera(true);
+    setError("");
+    setResult(null);
   };
 
   return (
@@ -81,9 +96,19 @@ const Identify = () => {
         </div>
 
         {/* ── Upload card ── */}
-        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 mb-4 animate-fade-in-up delay-100">
-          <UploadBox onFileSelect={handleFileSelect} disabled={loading} />
-        </div>
+        {!showCamera ? (
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 mb-4 animate-fade-in-up delay-100">
+            <UploadBox onFileSelect={handleFileSelect} disabled={loading} initialFile={file} />
+          </div>
+        ) : (
+          <div className="mb-4 animate-fade-in-up delay-100">
+            <CameraCapture
+              onCapture={handleCameraCapture}
+              onClose={() => setShowCamera(false)}
+              disabled={loading}
+            />
+          </div>
+        )}
 
         {/* ── Tips (no file selected) ── */}
         {!file && !result && (
@@ -107,6 +132,18 @@ const Identify = () => {
 
         {/* ── Identify button ── */}
         <div className="flex gap-3 animate-fade-in-up delay-200">
+          {/* Camera button - only show when not in camera mode */}
+          {!showCamera && !file && (
+            <button
+              onClick={openCamera}
+              disabled={loading}
+              className="px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-base rounded-2xl flex items-center justify-center gap-2.5 transition-all duration-200 shadow-md hover:shadow-blue-200"
+            >
+              <CameraIcon className="w-5 h-5" />
+              <span className="hidden sm:inline">Mở Camera</span>
+            </button>
+          )}
+
           <button
             onClick={handleIdentify}
             disabled={!file || loading}

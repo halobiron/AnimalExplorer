@@ -17,7 +17,7 @@ const collectionSchema = new mongoose.Schema(
     },
     imageUrl: {
       type: String,
-      required: true,
+      default: "",
     },
     count: {
       type: Number,

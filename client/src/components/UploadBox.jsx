@@ -1,10 +1,18 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { UploadCloud, X, ImageIcon, CheckCircle2 } from "lucide-react";
 
-const UploadBox = ({ onFileSelect, disabled = false }) => {
+const UploadBox = ({ onFileSelect, disabled = false, initialFile = null }) => {
   const [preview, setPreview] = useState(null);
   const [dragging, setDragging] = useState(false);
   const [fileName, setFileName] = useState("");
+
+  // Update preview when initialFile changes (from camera)
+  useEffect(() => {
+    if (initialFile) {
+      setPreview(URL.createObjectURL(initialFile));
+      setFileName(initialFile.name);
+    }
+  }, [initialFile]);
 
   const processFile = (file) => {
     if (!file || !file.type.startsWith("image/")) return;

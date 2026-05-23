@@ -27,7 +27,7 @@ const addToCollection = async (userId, label, vietnameseName, confidence, imageU
     userId,
     label,
     vietnameseName,
-    imageUrl,
+    ...(imageUrl ? { imageUrl } : {}),
     count: 1,
     bestConfidence: confidence,
     lastSeenAt: new Date(),

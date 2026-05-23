@@ -340,11 +340,6 @@
     "description": "Ô tác là loài chim có những đặc điểm riêng về mỏ, lông và tập tính sống, thường được nhận biết khá dễ qua hình dáng bên ngoài."
   },
   {
-    "label": "butterfly",
-    "vietnameseName": "Bướm",
-    "description": "Bướm là những nàng tiên lộng lẫy của tự nhiên, mang trên mình đôi cánh mỏng manh được tô điểm bởi vô vàn màu sắc rực rỡ và hoa văn tinh tế. Trước khi trở thành bướm xinh đẹp, chúng phải trải qua một hành trình kỳ diệu: từ một chú sâu bướm nhỏ bé ăn lá cây, sau đó cuộn mình trong kén chật hẹp, để rồi một ngày phá kén bay lên bầu trời và đi hút mật hoa ngọt ngào."
-  },
-  {
     "label": "cabbage_butterfly",
     "vietnameseName": "Bướm bắp cải",
     "description": "Cabbage Butterfly là loài bướm có cánh mỏng, màu sắc bắt mắt và thường bay lượn quanh các khu vực có nhiều hoa."
@@ -1290,11 +1285,6 @@
     "description": "Muỗi là côn trùng nhỏ hút máu động vật và con người. Chúng có vòi dài để xuyên da và hút máu. Muỗi cái mới là loài hút máu và cần protein từ máu để phát triển trứng. Một số loài muỗi truyền bệnh nguy hiểm."
   },
   {
-    "label": "moth",
-    "vietnameseName": "Bướm đêm",
-    "description": "Bướm đêm giống như những người anh em sinh đôi tĩnh lặng của loài bướm, nhưng chúng chọn màn đêm làm thời điểm để thức giấc và bay lượn. Chúng thường có màu sắc tối giản hơn như xâu xám hoặc nâu để dễ dàng ngụy trang và lẩn trốn trên thân cây vào ban ngày. Bướm đêm có một đặc điểm thú vị là luôn bị thu hút và bay lượn xung quanh những nguồn ánh sáng rực rỡ."
-  },
-  {
     "label": "mud_turtle",
     "vietnameseName": "Rùa Mud Turtle",
     "description": "Mud Turtle là loài bò sát có mai bảo vệ cơ thể, di chuyển chậm nhưng rất bền bỉ và sống lâu."
@@ -1473,11 +1463,6 @@
     "label": "pomeranian",
     "vietnameseName": "Chó Pomeranian",
     "description": "Pomeranian là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
-  },
-  {
-    "label": "porcupine",
-    "vietnameseName": "Nhím gai",
-    "description": "Nhím gai là loài động vật có ngoại hình rất ngầu với bộ áo khoác được dệt nên từ hàng ngàn chiếc lông siêu dài, nhọn hoắt và cứng cáp mọc lởm chởm. Khi có bất kỳ kẻ thù nào dám tiến lại gần đe dọa, nhím gai sẽ lập tức xù lông lên rũ rượi tạo ra những tiếng lạch cạch cảnh báo, sẵn sàng đâm những chiếc gai sắc nhọn để bảo vệ bản thân. Ban đêm, chúng điềm tĩnh bò ra khỏi hang để tìm kiếm các loại rễ cây, vỏ cây và trái cây ngọt ngào."
   },
   {
     "label": "possum",
