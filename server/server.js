@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoutes.js";
 import identifyRoutes from "./routes/identifyRoutes.js";
 import collectionRoutes from "./routes/collectionRoutes.js";
 import animalRoutes from "./routes/animalRoutes.js";
+import quizRoutes from "./routes/quizRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,6 +23,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/identify", identifyRoutes);
 app.use("/api/collection", collectionRoutes);
 app.use("/api/animals", animalRoutes);
+app.use("/api/quiz", quizRoutes);
 
 app.get("/", (req, res) => res.json({ message: "Species API is running" }));
 

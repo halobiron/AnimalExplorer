@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useApp } from "../context/AppContext";
-import { LogOut, BookMarked, ChevronDown, Menu, X, Compass } from "lucide-react";
+import { LogOut, BookMarked, ChevronDown, Menu, X, Compass, Gamepad2 } from "lucide-react";
 import toast from "react-hot-toast";
 import logo from "../assets/AnimalExplorer_NavBarLogo.png";
 
@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { to: "/", label: "Trang chủ" },
   { to: "/dictionary", label: "Từ điển" },
   { to: "/identify", label: "Nhận diện ảnh", icon: Compass },
+  { to: "/quiz", label: "Trò chơi", icon: Gamepad2 },
 ];
 
 const NavBar = () => {

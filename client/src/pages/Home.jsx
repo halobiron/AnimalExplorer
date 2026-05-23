@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Camera, BrainCircuit, BookOpen, ArrowRight, Leaf, Shield, Zap, Sparkles } from "lucide-react";
+import { Camera, BrainCircuit, BookOpen, ArrowRight, Leaf, Shield, Zap, Sparkles, Gamepad2 } from "lucide-react";
 
 const STEPS = [
   {
@@ -75,6 +75,13 @@ const Home = () => {
               >
                 <BookOpen className="w-5 h-5" />
                 Xem từ điển
+              </Link>
+              <Link
+                to="/quiz"
+                className="text-amber-700 font-semibold text-base px-7 py-3.5 rounded-2xl border-2 border-amber-200 bg-amber-50 hover:bg-amber-100 hover:border-amber-300 hover:text-amber-800 transition-all shadow-sm flex items-center gap-2"
+              >
+                <Gamepad2 className="w-5 h-5 text-amber-600" />
+                Chơi Game Đoán Tên
               </Link>
             </div>
           </div>
@@ -168,6 +175,7 @@ const Home = () => {
               <Link to="/" className="hover:text-green-400 transition-colors">Trang chủ</Link>
               <Link to="/dictionary" className="hover:text-green-400 transition-colors">Từ điển</Link>
               <Link to="/identify" className="hover:text-green-400 transition-colors">Nhận diện</Link>
+              <Link to="/quiz" className="hover:text-green-400 transition-colors">Trò chơi</Link>
               <Link to="/collection" className="hover:text-green-400 transition-colors">Bộ sưu tập</Link>
             </div>
           </div>

@@ -25,4 +25,9 @@ export const animalAPI = {
   getAll: () => api.get("/animals"),
 };
 
+export const quizAPI = {
+  saveHistory: (data) => api.post("/quiz/history", data),
+  getHistory: () => api.get("/quiz/history"),
+};
+
 export default api;

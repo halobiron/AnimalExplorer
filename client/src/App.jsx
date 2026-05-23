@@ -8,6 +8,8 @@ import Dictionary from "./pages/Dictionary";
 import Identify from "./pages/Identify";
 import Login from "./pages/Login";
 import Collection from "./pages/Collection";
+import Quiz from "./pages/Quiz";
+import QuizHistory from "./pages/QuizHistory";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useApp();
@@ -33,6 +35,7 @@ const App = () => {
 
         <Route path="/" element={<WithNav><Home /></WithNav>} />
         <Route path="/dictionary" element={<WithNav><Dictionary /></WithNav>} />
+        <Route path="/quiz" element={<WithNav><Quiz /></WithNav>} />
         <Route
           path="/identify"
           element={
@@ -46,6 +49,14 @@ const App = () => {
           element={
             <WithNav>
               <ProtectedRoute><Collection /></ProtectedRoute>
+            </WithNav>
+          }
+        />
+        <Route
+          path="/quiz/history"
+          element={
+            <WithNav>
+              <ProtectedRoute><QuizHistory /></ProtectedRoute>
             </WithNav>
           }
         />
