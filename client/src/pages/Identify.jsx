@@ -215,7 +215,7 @@ const Identify = () => {
                       className="w-32 h-32 object-cover rounded-2xl flex-shrink-0 shadow-md ring-2 ring-green-100"
                     />
                   )}
-                  <div className="flex-1 min-w-0">
+                  <div className={`${result.details.imageUrl ? "flex-1 min-w-0" : "flex-1"}`}>
                     <div className="flex items-start justify-between gap-2 flex-wrap mb-3">
                       <h3 className="font-extrabold text-gray-900 text-lg leading-tight capitalize">
                         {result.details.vietnameseName}

@@ -61,7 +61,7 @@ export const identifySpecies = async (req, res) => {
       animalDetails = {
         vietnameseName: dbAnimal.vietnameseName,
         description: dbAnimal.description,
-        imageUrl: dbAnimal.imageUrl,
+        imageUrl: dbAnimal.imageUrl || "",
       };
     }
 

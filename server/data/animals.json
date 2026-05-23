@@ -1,8 +1,128 @@
 [
   {
+    "label": "admiral",
+    "vietnameseName": "Bướm Đô đốc đỏ",
+    "description": "Bướm Đô đốc đỏ là tên gọi của một nhóm bướm sặc sỡ, thường có cánh đen với dải đỏ hoặc cam nổi bật. Chúng bay nhanh, sống ở nơi có nhiều cây bụi và hoa dại, và là một trong những loài bướm dễ nhận ra nhất nhờ hoa văn tương phản trên cánh."
+  },
+  {
+    "label": "affenpinscher",
+    "vietnameseName": "Chó khỉ Affenpinscher",
+    "description": "Chó khỉ Affenpinscher là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "afghan_hound",
+    "vietnameseName": "Chó săn Afghan",
+    "description": "Chó săn Afghan là giống chó săn cổ có thân hình thanh thoát, chân dài và bộ lông dài mượt rất đặc trưng. Chúng vừa có vẻ ngoài sang trọng vừa có tốc độ tốt, phù hợp với việc săn đuổi trên địa hình rộng."
+  },
+  {
+    "label": "african_chameleon",
+    "vietnameseName": "Tắc kè hoa châu Phi",
+    "description": "Tắc kè hoa châu Phi là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "african_crocodile",
+    "vietnameseName": "Cá sấu châu Phi",
+    "description": "Cá sấu châu Phi là loài bò sát khổng lồ sinh sống ở các vùng sông ngòi, hồ và đầm lầy châu Phi. Chúng là những kẻ săn mồi đáng sợ với hàm răng sắc nhọn và khả năng lao tới cực nhanh dưới nước. Cá sấu châu Phi có thể sống tới 70 năm và đạt chiều dài lên đến 6 mét."
+  },
+  {
+    "label": "african_grey",
+    "vietnameseName": "Vẹt xám châu Phi",
+    "description": "Vẹt xám châu Phi là loài chim nhiệt đới có mỏ nổi bật, màu lông đẹp và tập tính sống rất sinh động."
+  },
+  {
+    "label": "african_hunting_dog",
+    "vietnameseName": "Chó hoang châu Phi",
+    "description": "Chó hoang châu Phi là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "agama",
+    "vietnameseName": "Thằn lằn Agama",
+    "description": "Thằn lằn Agama là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "airedale",
+    "vietnameseName": "Chó sục Airedale",
+    "description": "Chó sục Airedale là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "albatross",
+    "vietnameseName": "Hải âu",
+    "description": "Hải âu là loài chim biển lớn nhất với sải cánh lên đến 3.7 mét, có thể bay lượn trên đại dương hàng giờ đồng hồ mà không cần vỗ cánh. Chúng sống phần lớn cuộc đời trên biển, chỉ về đất để sinh sản. Hải âu là biểu tượng của tự do và sự kiên định."
+  },
+  {
+    "label": "alligator",
+    "vietnameseName": "Cá sấu mõm ngắn",
+    "description": "Cá sấu mõm ngắn là loài cá sấu với mõm rộng, chỉ sống ở nước ngọt. Chúng khác cá sấu thường ở răng - chỉ răng hàm trên lộ ra khi miệng đóng. Cá sấu alligator sống ở Mỹ và Trung Quốc, là thợ săn phục kích và là biểu tượng của vùng đầm lầy."
+  },
+  {
+    "label": "alligator_lizard",
+    "vietnameseName": "Thằn lằn cá sấu",
+    "description": "Thằn lằn cá sấu là loài bò sát lớn, da dày và là thợ săn phục kích rất hiệu quả trong tự nhiên."
+  },
+  {
+    "label": "american_alligator",
+    "vietnameseName": "Cá sấu Mỹ",
+    "description": "Cá sấu Mỹ là loài bò sát lớn, da dày và là thợ săn phục kích rất hiệu quả trong tự nhiên."
+  },
+  {
+    "label": "american_black_bear",
+    "vietnameseName": "Gấu đen Mỹ",
+    "description": "Gấu đen Mỹ là loài gấu phổ biến nhất ở Bắc Mỹ, nhỏ hơn gấu nâu và leo trèo cây giỏi. Chúng có bộ lông đen, thính giác tuyệt vời và là loài ăn tạp chủ yếu ăn thực vật. Gấu đen thường tránh con người nhưng có thể gây hại nếu bị khiêu khích."
+  },
+  {
+    "label": "american_chameleon",
+    "vietnameseName": "Tắc kè hoa Mỹ",
+    "description": "Tắc kè hoa Mỹ là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "american_coot",
+    "vietnameseName": "Cò mỏ đỏ Mỹ",
+    "description": "Cò mỏ đỏ Mỹ là loài chim có những đặc điểm riêng về mỏ, lông và tập tính sống, thường được nhận biết khá dễ qua hình dáng bên ngoài."
+  },
+  {
+    "label": "american_egret",
+    "vietnameseName": "Diệc trắng Mỹ",
+    "description": "American Egret là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
+    "label": "american_lobster",
+    "vietnameseName": "Tôm hùm Mỹ",
+    "description": "Tôm hùm Mỹ là loài giáp xác biển lớn, có đôi càng khỏe, lớp vỏ cứng và đuôi dài chắc nịch. Chúng sống ở đáy biển lạnh, di chuyển chậm nhưng có khả năng tự vệ rất tốt."
+  },
+  {
+    "label": "american_staffordshire_terrier",
+    "vietnameseName": "Chó American Staffordshire terrier",
+    "description": "American Staffordshire Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "angora",
+    "vietnameseName": "Thỏ Angora",
+    "description": "Angora là một trong những giống thỏ nhà lâu đời nhất, nổi bật với bộ lông siêu dài, mềm mại như len."
+  },
+  {
+    "label": "ant",
+    "vietnameseName": "Kiến",
+    "description": "Kiến là loài côn trùng xã hội, sống thành bầy đàn với hàng triệu cá nhân và phân chia lao động chuyên sâu. Chúng là kỹ sư thiên nhiên - xây tổ, làm vườn nấm, chăn nuôi rầy. Kiến có sức mạnh tương đương 50 lần trọng lượng cơ thể và là biểu tượng của sự cần cù."
+  },
+  {
     "label": "antelope",
     "vietnameseName": "Linh dương",
     "description": "Linh dương là những vận động viên điền kinh cừ khôi của thế giới động vật, sinh sống chủ yếu ở các vùng đồng cỏ và savan rộng lớn. Chúng sở hữu đôi chân thon dài, vô cùng nhanh nhẹn, giúp chúng dễ dàng chạy thoát khỏi các loài thú săn mồi nguy hiểm. Điểm nổi bật nhất của linh dương là những cặp sừng mang nhiều hình dáng tuyệt đẹp, cùng với đôi mắt to tròn, tinh anh giúp chúng quan sát mọi thứ xung quanh thật rõ ràng."
+  },
+  {
+    "label": "arctic_fox",
+    "vietnameseName": "Cáo Bắc Cực",
+    "description": "Arctic Fox là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "australian_terrier",
+    "vietnameseName": "Chó Australian terrier",
+    "description": "Australian Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "axolotl",
+    "vietnameseName": "Kỳ giông Mexico",
+    "description": "Kỳ giông Mexico là loài lưỡng cư sống trong môi trường ẩm hoặc gần nước, có da mềm và vòng đời gắn với cả nước lẫn cạn."
   },
   {
     "label": "badger",
@@ -10,9 +130,34 @@
     "description": "Lửng là những thợ đào đất tài ba với bộ lông dày dặn và móng vuốt vô cùng sắc nhọn. Chúng thường xây dựng những 'ngôi nhà' kiên cố bằng cách đào các hang động sâu thẳm dưới lòng đất để sinh sống và nghỉ ngơi. Tuy có vẻ ngoài khá hiền lành, nhưng lửng lại vô cùng dũng cảm và sẵn sàng chiến đấu để bảo vệ gia đình khi gặp nguy hiểm."
   },
   {
+    "label": "bald_eagle",
+    "vietnameseName": "Đại bàng đầu trắng",
+    "description": "Bald Eagle là loài chim săn mồi mạnh mẽ, có thị lực cực tốt và móng vuốt sắc để bắt mồi."
+  },
+  {
+    "label": "barn_spider",
+    "vietnameseName": "Nhện chuồng",
+    "description": "Barn Spider là loài chân khớp nhỏ, có tập tính riêng để săn mồi hoặc bám ký sinh trong môi trường sống của nó."
+  },
+  {
+    "label": "basenji",
+    "vietnameseName": "Chó Basenji",
+    "description": "Basenji là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "basset",
+    "vietnameseName": "Chó Basset",
+    "description": "Basset là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
     "label": "bat",
     "vietnameseName": "Dơi",
-    "description": "Dơi là loài động vật có vú duy nhất trên thế giới có khả năng bay lượn trên bầu trời như những chú chim. Chúng là những sinh vật của bóng đêm, thường thức giấc và đi kiếm ăn khi mặt trời đã lặn. Dơi có một siêu năng lực vô cùng đặc biệt, đó là phát ra sóng siêu âm để tìm đường và săn mồi trong bóng tối mù mịt mà không bao giờ bị va đập."
+    "description": "Dơi là loài động vật có vú duy nhất biết bay thật sự. Chúng hoạt động chủ yếu vào ban đêm và sử dụng hệ thống âm thanh (sonar) để định vị và tìm kiếm con mồi. Dơi đóng vai trò quan trọng trong hệ sinh thái bằng cách thụ phấn hoa và kiểm soát côn trùng."
+  },
+  {
+    "label": "beagle",
+    "vietnameseName": "Chó Beagle",
+    "description": "Beagle là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
   },
   {
     "label": "bear",
@@ -20,9 +165,19 @@
     "description": "Gấu là những gã khổng lồ của khu rừng với thân hình to lớn, bộ lông dày ấm áp và đôi chân vô cùng khỏe mạnh. Mặc dù trông có vẻ nặng nề, nhưng gấu lại leo trèo cây rất giỏi và bơi lội cực kỳ tài khôi dưới các dòng sông. Khi mùa đông giá rét đến, nhiều loài gấu sẽ tìm một hang động ấm áp để chìm vào giấc ngủ đông dài cho đến khi mùa xuân ấm áp gõ cửa."
   },
   {
+    "label": "bedlington_terrier",
+    "vietnameseName": "Chó sục Bedlington",
+    "description": "Chó sục Bedlington là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
     "label": "bee",
     "vietnameseName": "Ong",
     "description": "Ong là những người thợ chăm chỉ và kỷ luật nhất trong thế giới tự nhiên, đóng vai trò cực kỳ quan trọng trong việc thụ phấn cho các loài hoa rực rỡ. Chúng sống cùng nhau thành những bầy đàn đông đúc, đoàn kết trong những chiếc tổ hình lục giác tuyệt đẹp. Hàng ngày, ong bay đi khắp nơi hút mật hoa mang về tổ để tạo ra những giọt mật ong vàng óng, ngọt ngào và bổ dưỡng."
+  },
+  {
+    "label": "bee_eater",
+    "vietnameseName": "Chim ăn ong",
+    "description": "Bee Eater là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
   },
   {
     "label": "beetle",
@@ -30,9 +185,69 @@
     "description": "Bọ cánh cứng giống như những hiệp sĩ tí hon mang trên mình bộ áo giáp cứng cáp để bảo vệ cơ thể mỏng manh bên trong. Ẩn dưới lớp áo giáp ấy là một đôi cánh mỏng giúp chúng bay lượn từ cành cây này sang cành cây khác. Gia đình bọ cánh cứng vô cùng đông đúc với hàng ngàn loài khác nhau, mang đủ mọi màu sắc sặc sỡ và sinh sống ở khắp mọi nơi trên Trái Đất."
   },
   {
+    "label": "bernese_mountain_dog",
+    "vietnameseName": "Chó núi Bern",
+    "description": "Chó núi Bern là giống chó to lớn, khỏe và thường được dùng để canh gác hoặc hỗ trợ công việc nặng."
+  },
+  {
     "label": "bison",
     "vietnameseName": "Bò rừng",
     "description": "Bò rừng là biểu tượng sức mạnh của những thảo nguyên bao la với thân hình khổng lồ, chắc nịch và bộ lông nâu rậm rạp. Chúng có một cái bướu to trên lưng và chiếc đầu rất lớn, thường đi dạo và gặm cỏ theo những bầy đàn đông đúc. Dù có vẻ ngoài to lớn và đáng sợ, nhưng bò rừng thực chất là những sinh vật hiền lành, chỉ thích ăn cỏ và tận hưởng ánh nắng mặt trời."
+  },
+  {
+    "label": "bittern",
+    "vietnameseName": "Cò lửa",
+    "description": "Bittern là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
+    "label": "black-and-tan_coonhound",
+    "vietnameseName": "Chó săn gấu mèo nâu đen",
+    "description": "Chó săn gấu mèo nâu đen là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "black_and_gold_garden_spider",
+    "vietnameseName": "Nhện vườn vàng đen",
+    "description": "Nhện vườn vàng đen Spider là loài chân khớp nhỏ, có tập tính riêng để săn mồi hoặc bám ký sinh trong môi trường sống của nó."
+  },
+  {
+    "label": "black_grouse",
+    "vietnameseName": "Gà gô đen",
+    "description": "Gà gô đen là loài chim sống chủ yếu trên mặt đất, nhanh nhẹn và thường bay quãng ngắn để thoát hiểm."
+  },
+  {
+    "label": "black_stork",
+    "vietnameseName": "Cò đen",
+    "description": "Black Stork là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
+    "label": "black_swan",
+    "vietnameseName": "Thiên nga đen",
+    "description": "Black Swan là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
+    "label": "black_widow",
+    "vietnameseName": "Nhện góa phụ đen",
+    "description": "Nhện góa phụ đen là loài nhện nhỏ có màu đen bóng và dấu đỏ đặc trưng ở bụng. Chúng nổi tiếng vì nọc độc mạnh và những chiếc mạng tơ chắc, dính."
+  },
+  {
+    "label": "blenheim_spaniel",
+    "vietnameseName": "Chó Blenheim spaniel",
+    "description": "Blenheim Spaniel là giống chó săn chim có tai dài, tính cách thân thiện và khả năng làm việc linh hoạt."
+  },
+  {
+    "label": "bloodhound",
+    "vietnameseName": "Chó bloodhound",
+    "description": "Bloodhound là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "bluetick",
+    "vietnameseName": "Chó Bluetick",
+    "description": "Bluetick là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "boa_constrictor",
+    "vietnameseName": "Trăn xiết",
+    "description": "Boa Constrictor là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
   },
   {
     "label": "boar",
@@ -40,9 +255,104 @@
     "description": "Lợn rừng chính là tổ tiên hoang dã của những chú lợn nhà quen thuộc, nhưng chúng sở hữu bộ lông cứng cáp và hai chiếc răng nanh dài cong vút. Chúng là những sinh vật cực kỳ thông minh, có chiếc mũi thính nhạy giúp đào bới đất để tìm kiếm thức ăn như rễ cây, quả mọng hay nấm trong các khu rừng rậm. Lợn rừng sống theo đàn và rất biết cách chăm sóc, bảo vệ lẫn nhau."
   },
   {
+    "label": "border_collie",
+    "vietnameseName": "Chó Border Collie",
+    "description": "Chó Border Collie là giống chó thông minh nhất thế giới, với khả năng học lệnh cực nhanh. Chúng được sinh ra để chăn cừu, có bản năng làm việc cao và năng lượng dồi dào. Border Collie cần nhiều vận động và stimulant trí tuệ để hạnh phúc."
+  },
+  {
+    "label": "border_terrier",
+    "vietnameseName": "Chó Border terrier",
+    "description": "Border Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "borzoi",
+    "vietnameseName": "Chó Borzoi",
+    "description": "Borzoi là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "boston_bull",
+    "vietnameseName": "Chó Boston Bull",
+    "description": "Boston Bull là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "bouvier_des_flandres",
+    "vietnameseName": "Chó Bouvier des Flandres",
+    "description": "Bouvier Des Flandres là giống chó chăn đàn thông minh, cảnh giác và làm việc bền bỉ với gia súc."
+  },
+  {
+    "label": "boxer",
+    "vietnameseName": "Chó Boxer",
+    "description": "Chó Boxer là giống chó trung thành, năng động và vui vẻ. Chúng có tên 'Boxer' vì thích đứng lên hai chân sau và 'đấm' như võ sĩ. Boxer tuyệt vời với trẻ em, bảo vệ gia đình và cần vận động hàng ngày để hạnh phúc."
+  },
+  {
+    "label": "brabancon_griffon",
+    "vietnameseName": "Chó Brabancon Griffon",
+    "description": "Brabancon Griffon là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "brain_coral",
+    "vietnameseName": "San hô não",
+    "description": "San hô não là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
+  },
+  {
+    "label": "brambling",
+    "vietnameseName": "Chim sẻ núi",
+    "description": "Sẻ núi là một loài nổi bật với bộ lông sặc sỡ và tập tính sống theo đàn lớn vào mùa đông."
+  },
+  {
+    "label": "briard",
+    "vietnameseName": "Chó Briard",
+    "description": "Briard là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "brittany_spaniel",
+    "vietnameseName": "Chó Brittany Spaniel",
+    "description": "Brittany Spaniel là giống chó săn chim có tai dài, tính cách thân thiện và khả năng làm việc linh hoạt."
+  },
+  {
+    "label": "brown_bear",
+    "vietnameseName": "Gấu nâu",
+    "description": "Gấu nâu là loài gấu phân bố rộng khắp Bắc Mỹ và Eurasia, bao gồm cả gấu grizzly. Chúng là loài gấu lớn nhất, có thể nặng đến 600 kg và sống đơn độc. Gấu nâu là loài ăn tạp, ăn từ quả mọng đến cá hồi và cực kỳ bảo vệ lãnh thổ."
+  },
+  {
+    "label": "bulbul",
+    "vietnameseName": "Chích bông",
+    "description": "Bulbul là loài chim nhỏ đến trung bình, thường sống theo đàn, ăn hạt hoặc côn trùng và có tiếng hót đặc trưng."
+  },
+  {
+    "label": "bull_mastiff",
+    "vietnameseName": "Chó Bull Mastiff",
+    "description": "Bull Mastiff là giống chó to lớn, khỏe và thường được dùng để canh gác hoặc hỗ trợ công việc nặng."
+  },
+  {
+    "label": "bulldog",
+    "vietnameseName": "Chó Bulldog",
+    "description": "Chó Bulldog là giống chó trung thành, dũng cảm với vẻ ngoài 'xấu xí' đáng yêu. Chúng có thân hình thấp, mặt nhăn và chân ngắn. Bulldog ban đầu được dùng để đấu bò nhưng giờ là thú cưng hiền lành, thích nằm lười và rất yêu trẻ em."
+  },
+  {
+    "label": "bullfrog",
+    "vietnameseName": "Ếch yêu tinh",
+    "description": "Ếch yêu tinh là loài lưỡng cư sống trong môi trường ẩm hoặc gần nước, có da mềm và vòng đời gắn với cả nước lẫn cạn."
+  },
+  {
+    "label": "bustard",
+    "vietnameseName": "Ô tác",
+    "description": "Ô tác là loài chim có những đặc điểm riêng về mỏ, lông và tập tính sống, thường được nhận biết khá dễ qua hình dáng bên ngoài."
+  },
+  {
     "label": "butterfly",
     "vietnameseName": "Bướm",
     "description": "Bướm là những nàng tiên lộng lẫy của tự nhiên, mang trên mình đôi cánh mỏng manh được tô điểm bởi vô vàn màu sắc rực rỡ và hoa văn tinh tế. Trước khi trở thành bướm xinh đẹp, chúng phải trải qua một hành trình kỳ diệu: từ một chú sâu bướm nhỏ bé ăn lá cây, sau đó cuộn mình trong kén chật hẹp, để rồi một ngày phá kén bay lên bầu trời và đi hút mật hoa ngọt ngào."
+  },
+  {
+    "label": "cabbage_butterfly",
+    "vietnameseName": "Bướm bắp cải",
+    "description": "Cabbage Butterfly là loài bướm có cánh mỏng, màu sắc bắt mắt và thường bay lượn quanh các khu vực có nhiều hoa."
+  },
+  {
+    "label": "cairn",
+    "vietnameseName": "Chó Cairn",
+    "description": "Cairn là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
   },
   {
     "label": "cat",
@@ -52,7 +362,37 @@
   {
     "label": "caterpillar",
     "vietnameseName": "Sâu bướm",
-    "description": "Sâu bướm là giai đoạn tuổi thơ đầy thú vị của những chú bướm xinh đẹp sau này. Nhiệm vụ chính của chúng mỗi ngày là ăn thật nhiều lá cây tươi xanh để cơ thể lớn nhanh như thổi và tích trữ thật nhiều năng lượng. Khi đã ăn no nê và đủ lớn, sâu bướm sẽ nhả tơ tự dệt cho mình một chiếc túi ngủ gọi là kén, bắt đầu quá trình biến đổi kỳ diệu."
+    "description": "Sâu bướm là ấu trùng của bướm và moth. Chúng có cơ thể dài mềm mại và thường ăn lá cây. Sâu bướm trải qua quá trình biến thái hoàn toàn trong kén để trở thành bướm trưởng thành. Chúng có nhiều màu sắc và hoa văn khác nhau để ngụy trang."
+  },
+  {
+    "label": "centipede",
+    "vietnameseName": "Rết",
+    "description": "Centipede là loài côn trùng hoặc chân khớp có đặc điểm nhận diện riêng về hình dáng, màu sắc và tập tính."
+  },
+  {
+    "label": "chambered_nautilus",
+    "vietnameseName": "Ốc anh vũ",
+    "description": "Chambered Nautilus là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
+  },
+  {
+    "label": "cheetah",
+    "vietnameseName": "Báo săn",
+    "description": "Báo săn là loài động vật chạy nhanh nhất đất liền với tốc độ lên đến 120 km/h. Chúng có cơ thể thon suôn, móng không rút được để bám đường và đuôi làm bánh lái. Báo săn có mắt đen đặc trưng để giảm chói và là thợ săn ban ngày xuất sắc."
+  },
+  {
+    "label": "chesapeake_bay_retriever",
+    "vietnameseName": "Chó Chesapeake Bay Retriever",
+    "description": "Chesapeake Bay Retriever là giống chó săn thân thiện, có khả năng bơi tốt và thường được nuôi để mang mồi về cho chủ."
+  },
+  {
+    "label": "chickadee",
+    "vietnameseName": "Chim chích chòe",
+    "description": "Chickadee là loài chim nhỏ đến trung bình, thường sống theo đàn, ăn hạt hoặc côn trùng và có tiếng hót đặc trưng."
+  },
+  {
+    "label": "chihuahua",
+    "vietnameseName": "Chó Chihuahua",
+    "description": "Chihuahua là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
   },
   {
     "label": "chimpanzee",
@@ -60,14 +400,79 @@
     "description": "Tinh tinh là loài linh trưởng cực kỳ thông minh và có rất nhiều đặc điểm, thói quen giống với con người chúng ta. Chúng sống trong các khu rừng nhiệt đới thành từng nhóm lớn, rất thích leo trèo, đu dây và chải lông cho nhau để thể hiện tình cảm. Tinh tinh còn vô cùng khéo léo khi biết dùng các nhành cây hay hòn đá làm công cụ để tìm kiếm thức ăn, đập hạt hay bắt kiến."
   },
   {
+    "label": "chinese_water_dragon",
+    "vietnameseName": "Rồng nước Trung Quốc",
+    "description": "Rồng nước Trung Quốc là loài thằn lằn lớn sinh sống ở vùng ven sông và hồ nước. Chúng có khả năng bơi lội tuyệt vời và thường trốn mình dưới nước khi gặp nguy hiểm. Loài này có vảy xanh đẹp mắt và cái mào đặc trưng trên đầu và lưng."
+  },
+  {
+    "label": "chiton",
+    "vietnameseName": "Chiton",
+    "description": "Chiton là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
+  },
+  {
+    "label": "chow",
+    "vietnameseName": "Chó Chow Chow",
+    "description": "Chow là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "cicada",
+    "vietnameseName": "Ve sầu",
+    "description": "Cicada là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "clumber",
+    "vietnameseName": "Chó Clumber",
+    "description": "Clumber là giống chó săn lớn nhất, nặng nhất và trầm tính nhất trong dòng Spaniel, nổi tiếng với lòng trung thành và tính cách điềm đạm."
+  },
+  {
+    "label": "cock",
+    "vietnameseName": "Gà trống",
+    "description": "Gà trống là con đực của loài gà, nổi tiếng với bộ lông đuôi rực rỡ, mào đỏ và tiếng gáy vào buổi sáng. Chúng là người canh gác thiên nhiên, bảo vệ bầy gà khỏi kẻ thù và có tính lãnh đạo mạnh mẽ. Gà trống còn là biểu tượng của sự can trường và lòng dũng cảm."
+  },
+  {
     "label": "cockroach",
     "vietnameseName": "Gián",
     "description": "Gián là những sinh vật nhỏ bé nhưng lại nổi tiếng với sức sống vô cùng mãnh liệt và dẻo dai từ thời tiền sử. Chúng có khả năng sinh tồn đáng kinh ngạc trong đủ loại môi trường khắc nghiệt, từ những góc tối tăm nhất cho đến những nơi khô cằn. Dù không được nhiều người yêu mến, nhưng gián lại có đôi chân chạy cực nhanh và chiếc râu rất nhạy cảm để dò đường."
   },
   {
+    "label": "collie",
+    "vietnameseName": "Chó Collie",
+    "description": "Collie là giống chó chăn đàn thông minh, cảnh giác và làm việc bền bỉ với gia súc."
+  },
+  {
+    "label": "common_iguana",
+    "vietnameseName": "Iguana thường",
+    "description": "Common Iguana là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "common_newt",
+    "vietnameseName": "Kỳ giông thường",
+    "description": "Common Newt là loài lưỡng cư sống trong môi trường ẩm hoặc gần nước, có da mềm và vòng đời gắn với cả nước lẫn cạn."
+  },
+  {
+    "label": "common_squirrel",
+    "vietnameseName": "Sóc thường",
+    "description": "Common Squirrel là loài thú nhỏ, nhanh nhẹn và thường có khả năng kiếm ăn, trốn tránh kẻ thù rất tốt."
+  },
+  {
+    "label": "conch",
+    "vietnameseName": "Ốc xà cừ",
+    "description": "Conch là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
+  },
+  {
+    "label": "coucal",
+    "vietnameseName": "Chim cúc cu",
+    "description": "Coucal là loài chim nhiệt đới có mỏ nổi bật, màu lông đẹp và tập tính sống rất sinh động."
+  },
+  {
+    "label": "cougar",
+    "vietnameseName": "Sư tử núi",
+    "description": "Sư tử núi (Puma) là loài mèo lớn có phạm vi phân bố rộng nhất - từ Canada đến Patagonia. Chúng còn gọi là Puma, Mountain Lion và là thợ săn đơn độc, nhảy cao đến 5.5 mét. Sư tử núi thích nghi tốt với nhiều môi trường sống khác nhau."
+  },
+  {
     "label": "cow",
-    "vietnameseName": "Bò cái",
-    "description": "Bò cái là những người bạn hiền lành ở nông trại, mang đến cho chúng ta dòng sữa tươi thơm ngon và giàu canxi mỗi ngày. Chúng có một dạ dày đặc biệt giúp nhai lại thức ăn, nên bạn thường thấy chúng nhẩn nha gặm cỏ trên những cánh đồng xanh mướt. Bò có đôi mắt to dịu dàng và chiếc đuôi dài thường phẩy qua phẩy lại để xua đuổi ruồi muỗi."
+    "vietnameseName": "Bò",
+    "description": "Bò là động vật gia súc quan trọng nhất cho con người. Chúng cung cấp sữa, thịt và sức kéo. Bò có thân hình to lớn, bốn chân chắc khỏe và dạ dày có 4 ngăn để tiêu hóa cellulose từ cỏ. Bò là loài động vật xã hội, thường sống thành bầy."
   },
   {
     "label": "coyote",
@@ -80,29 +485,94 @@
     "description": "Cua là những anh chàng mặc áo giáp cứng cáp, sống ở các bãi biển đầy cát hoặc sâu dưới đáy đại dương xanh thẳm. Chúng di chuyển rất buồn cười bằng cách bò ngang thay vì đi thẳng về phía trước. Cua có hai chiếc càng to khỏe, sắc bén giống như những chiếc kẹp khổng lồ, vừa dùng để tự vệ trước kẻ thù, vừa để kẹp chặt và đưa thức ăn vào miệng."
   },
   {
+    "label": "crane",
+    "vietnameseName": "Sếu",
+    "description": "Sếu là loài chim cao lớn với cổ dài, đôi chân dài và bộ lông sang trọng. Nhiều loài sếu là biểu tượng của sự trường thọ trong văn hóa Á Đông. Sếu là loài chim trung thành, sống thành đôi một vợ một chồng suốt đời và có màn khiêu vũ cầu hôn tuyệt đẹp."
+  },
+  {
+    "label": "crayfish",
+    "vietnameseName": "Tôm càng",
+    "description": "Crayfish là loài cá biển có cơ thể thích nghi mạnh với môi trường nước mặn và khả năng di chuyển rất linh hoạt."
+  },
+  {
+    "label": "cricket",
+    "vietnameseName": "Dế",
+    "description": "Dế là loài côn trùng nổi tiếng với tiếng kêu vào ban đêm - con đực cào cánh để thu hút con mái. Tiếng kêu của dế còn được dùng để đo nhiệt độ: số lần kêu trong 15 giây cộng 40 bằng nhiệt độ ấm độ Fahrenheit. Dế là biểu tượng của mùa thu và may mắn."
+  },
+  {
+    "label": "crocodile",
+    "vietnameseName": "Cá sấu",
+    "description": "Cá sấu là loài bò sát săn mồi đỉnh cao, tồn tại gần không thay đổi trong 200 triệu năm. Chúng có hàm răng sắc nhọn, da dày và là thợ săn phục kích tuyệt vời. Cá sấu quan hệ với con con rất tốt và là biểu tượng của sức mạnh nguyên thủy."
+  },
+  {
     "label": "crow",
     "vietnameseName": "Quạ",
-    "description": "Quạ khoác trên mình bộ lông màu đen tuyền bí ẩn và là một trong những loài chim thông minh bậc nhất trên thế giới. Chúng có bộ não rất phát triển, biết cách giải quyết các vấn đề khó, thậm chí biết nhận diện và ghi nhớ khuôn mặt của từng người. Quạ rất thân thiết với bầy đàn của mình, chúng hay bay cùng nhau và gọi nhau bằng những tiếng kêu 'quạ, quạ' vô cùng đặc trưng."
+    "description": "Quạ là loài chim thông minh nhất trong thế giới chim. Chúng có bộ lông đen bóng, kích thước trung bình và tiếng kêu đặc trưng 'caw'. Quạ có thể sử dụng công cụ, giải quyết vấn đề và thậm chí nhận biết khuôn mặt con người."
+  },
+  {
+    "label": "curly-coated_retriever",
+    "vietnameseName": "Chó săn lông xoăn",
+    "description": "Curly Coated Retriever là giống chó săn thân thiện, có khả năng bơi tốt và thường được nuôi để mang mồi về cho chủ."
+  },
+  {
+    "label": "dalmatian",
+    "vietnameseName": "Chó Dalmatia",
+    "description": "Chó Dalmatia là giống chó nổi tiếng với bộ lông trắng đốm đen đặc trưng. Chúng năng động, vui vẻ và cần nhiều vận động. Dalmatia được biết đến qua phim 101 Chó Dalmatia và là giống chó kéo xe, canh gác và đồng hành cùng ngựa."
+  },
+  {
+    "label": "damselfly",
+    "vietnameseName": "Chuồn chuồn kim",
+    "description": "Damselfly là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "dandie_dinmont",
+    "vietnameseName": "Chó Dandie Dinmont",
+    "description": "Dandie Dinmont là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
   },
   {
     "label": "deer",
-    "vietnameseName": "Nai",
-    "description": "Nai là loài động vật mang vẻ đẹp dịu dàng, hiền lành và đôi chút nhút nhát trong các khu rừng rậm rạp. Chúng có đôi tai vô cùng thính nhạy để lắng nghe tiếng động từ xa, kết hợp cùng đôi chân dài thanh mảnh giúp nai có thể phóng đi như bay khi phát hiện ra kẻ thù. Những chú nai đực trưởng thành còn tự hào khoe bộ gạc lộng lẫy và phân nhánh trên đỉnh đầu."
+    "vietnameseName": "Hươu",
+    "description": "Hươu là động vật có vú nhai lại với đôi chân thon dài và thân hình thanh mảnh. Nhiều loài hươu có gạc - một cấu trúc xương phát triển và rụng hàng năm. Hưu có thính giác và khứu giác tuyệt vời để phát hiện kẻ thù."
+  },
+  {
+    "label": "dhole",
+    "vietnameseName": "Chó hoang châu Á",
+    "description": "Dhole là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "diamondback",
+    "vietnameseName": "Rắn đuôi chuông kim cương",
+    "description": "Diamondback là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "dingo",
+    "vietnameseName": "Chó dingo",
+    "description": "Dingo là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "doberman",
+    "vietnameseName": "Chó Doberman",
+    "description": "Chó Doberman là giống chó thông minh, nhanh nhẹn và trung thành tuyệt đối với chủ. Chúng được lai tạo bởi một người thu thuế Đức để bảo vệ ông trong chuyến thu thuế. Doberman có vẻ ngoài oai vệ, tính cách quyết đoán và là giống chó bảo vệ xuất sắc."
   },
   {
     "label": "dog",
     "vietnameseName": "Chó",
-    "description": "Chó là người bạn trung thành và tình cảm nhất của loài người, luôn sẵn sàng quấn quýt và bảo vệ chủ nhân của mình. Chúng sở hữu chiếc mũi siêu nhạy và đôi tai cực thính, có thể đánh hơi và nghe thấy những âm thanh mà con người không thể. Không chỉ giúp canh giữ nhà cửa bình yên, những chú chó còn có thể học được rất nhiều trò chơi thú vị và giúp đỡ con người trong nhiều công việc quan trọng."
+    "description": "Chó là loài động vật nuôi đầu tiên và thân thiết nhất với con người. Chúng có khả năng học tập cao, tính trung thành và đa dạng về kích thước, hình dáng. Chó được sử dụng để giữ nhà, săn bắn, dẫn đường và trị liệu."
   },
   {
     "label": "dolphin",
     "vietnameseName": "Cá heo",
-    "description": "Cá heo là những thiên thần của đại dương, nổi tiếng với sự thông minh tuyệt đỉnh và bản tính vô cùng thân thiện. Chúng rất thích bơi lội tung tăng, nhảy múa nhào lộn trên những ngọn sóng và thường xuyên tò mò làm quen với con người. Cá heo không nói chuyện bằng lời mà giao tiếp với nhau qua những tiếng huýt sáo và âm thanh đặc biệt vang dội dưới nước."
+    "description": "Cá heo là loài động vật có vú thông minh sống dưới nước. Chúng có cơ thể thon suôn, khả năng bơi lội xuất sắc và sử dụng âm thanh để giao tiếp và định vị. Cá heo sống theo bầy đàn và có mối quan hệ xã hội phức tạp."
   },
   {
     "label": "donkey",
     "vietnameseName": "Lừa",
-    "description": "Lừa là loài vật vô cùng chăm chỉ và ngoan ngoãn, đã gắn bó với nông dân trong công việc đồng áng từ hàng ngàn năm qua. Chúng có đôi tai dài ngộ nghĩnh, sức chịu đựng dẻo dai và có thể thồ những kiện hàng nặng trĩu đi qua những con đường núi gập ghềnh. Lừa có tiếng kêu rất to và đặc trưng, luôn vui vẻ gặm cỏ và kết bạn với những loài gia súc khác trong trang trại."
+    "description": "Lừa là động vật nuôi được sử dụng để chở hàng và cày ruộng. Chúng có tai dài, thân hình nhỏ hơn ngựa và cực kỳ kiên nhẫn, chịu đựng được thời tiết khắc nghiệt. Lừa có trí nhớ tốt và rất thông minh."
+  },
+  {
+    "label": "dowitcher",
+    "vietnameseName": "Chim mỏ dài dowitcher",
+    "description": "Dowitcher là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
   },
   {
     "label": "dragonfly",
@@ -110,14 +580,64 @@
     "description": "Chuồn chuồn là những phi công tài ba của thế giới côn trùng, mang trên lưng bốn chiếc cánh mỏng trong suốt và rực rỡ như pha lê. Chúng có cặp mắt khổng lồ giúp quan sát mọi thứ xung quanh bao quát nhất. Chuồn chuồn thường bay lượn vun vút trên mặt ao hồ, có thể bay thẳng, bay lùi hoặc lơ lửng một chỗ một cách thần kỳ để săn bắt các loài côn trùng nhỏ khác."
   },
   {
+    "label": "drake",
+    "vietnameseName": "Vịt đực",
+    "description": "Drake là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
     "label": "duck",
     "vietnameseName": "Vịt",
-    "description": "Vịt là những cư dân quen thuộc của ao hồ, với chiếc mỏ dẹt màu vàng và bộ lông không bao giờ bị ướt nhờ có một lớp dầu đặc biệt. Đặc biệt hơn, đôi chân của vịt có lớp màng giúp chúng bơi lội dưới nước dễ dàng như những chiếc chân vịt của thợ lặn. Chúng rất thích lạch bạch đi tìm thức ăn trên cạn và tạo ra những tiếng kêu 'cạp cạp' rộn ràng khắp sân vườn."
+    "description": "Vịt là loài thủy cầm sống ở cả nước ngọt và nước mặn. Chúng có bàn chân có màng để bơi tốt, bộ lông chống thấm nước và mỏ rộng để lọc thức ăn. Vịt là loài gia cầm phổ biến cung cấp thịt và trứng."
+  },
+  {
+    "label": "dugong",
+    "vietnameseName": "Cá voi chuột",
+    "description": "Cá voi chuột là loài động vật biển ăn cỏ thân thiện, còn gọi là 'bò biển'. Chúng sống ở vùng biển ấm của Ấn Độ Dương - Thái Bình Dương, ăn cỏ biển và sống đơn độc hoặc thành nhóm nhỏ. Cá voi chuột còn họ hàng với lợn biển và bị đe dọa bởi mất habitat."
+  },
+  {
+    "label": "dung_beetle",
+    "vietnameseName": "Bọ hung",
+    "description": "Dung Beetle là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "dungeness_crab",
+    "vietnameseName": "Cua Dungeness",
+    "description": "Dungeness Crab là loài giáp xác có lớp vỏ cứng và đôi càng khỏe, thường sống ở đáy biển hoặc vùng nước mặn, nước lợ."
   },
   {
     "label": "eagle",
     "vietnameseName": "Đại bàng",
-    "description": "Đại bàng được tôn vinh là chúa tể kiêu hãnh của bầu trời cao rộng, sở hữu đôi cánh sải dài mạnh mẽ giúp chúng bay lượn trượt trên những tầng mây. Với đôi mắt sáng và cực kỳ tinh anh, đại bàng có thể phát hiện ra con mồi nhỏ xíu từ độ cao hàng ngàn mét. Chiếc mỏ quặp nhọn hoắt cùng đôi móng vuốt sắc bén biến chúng thành một thợ săn vô song của tự nhiên."
+    "description": "Đại bàng là loài chim săn mồi mạnh mẽ nhất với tầm nhìn tuyệt vời và móng vuốt sắc nhọn. Chúng có đôi cánh rộng, có thể bay cao và lao xuống với tốc độ hơn 300 km/h để bắt con mồi. Đại bàng thường sống ở vùng núi cao."
+  },
+  {
+    "label": "echidna",
+    "vietnameseName": "Thú mỏ nhím",
+    "description": "Echidna là loài thú đặc trưng, có hình thể riêng biệt và thích nghi rất tốt với môi trường sống bản địa."
+  },
+  {
+    "label": "eft",
+    "vietnameseName": "Ấu trùng kỳ giông",
+    "description": "Eft là loài lưỡng cư sống trong môi trường ẩm hoặc gần nước, có da mềm và vòng đời gắn với cả nước lẫn cạn."
+  },
+  {
+    "label": "egyptian_cat",
+    "vietnameseName": "Mèo Ai Cập",
+    "description": "Egyptian Cat là loài mèo lớn hoặc mèo hoang có cơ thể linh hoạt, phản xạ nhanh và khả năng săn mồi rất tốt."
+  },
+  {
+    "label": "egyptian_crocodile",
+    "vietnameseName": "Cá sấu Ai Cập",
+    "description": "Egyptian Crocodile là loài bò sát lớn, da dày và là thợ săn phục kích rất hiệu quả trong tự nhiên."
+  },
+  {
+    "label": "egyptian_mau",
+    "vietnameseName": "Mèo Ai Cập",
+    "description": "Mèo Ai Cập (Mau) là giống mèo tự nhiên có nguồn gốc từ Ai Cập cổ đại, với bộ lông đốm tự nhiên và mắt màu xanh lục bảo. Chúng là giống mèo nhanh nhất, có thể chạy 48 km/h. Mèo Mau trung thành, năng động và là một trong những giống mèo cổ nhất."
+  },
+  {
+    "label": "electric_ray",
+    "vietnameseName": "Cá đuối điện",
+    "description": "Cá đuối điện là loài cá đuối có khả năng tạo ra điện áp lên đến 220 volt để phòng vệ và bắt mồi. Chúng có cơ thể dẹt, tròn và sống ở đáy biển. Các cơ quan điện nằm ở hai bên đầu, giúp chúng gây choáng kẻ thù và phát hiện con mồi trong môi trường nước đục."
   },
   {
     "label": "elephant",
@@ -125,9 +645,64 @@
     "description": "Voi là loài động vật trên cạn khổng lồ nhất trên Trái Đất, mang vẻ đẹp oai vệ nhưng lại có trái tim vô cùng hiền hòa. Điểm đặc biệt nhất của voi là chiếc vòi dài ngoằng, thực chất là mũi và môi trên kéo dài, dùng để thở, hút nước uống, hái lá cây hay thậm chí là ôm ấp nhau. Voi có đôi tai vĩ đại như hai chiếc quạt khổng lồ, thường phe phẩy để làm mát cơ thể trong những ngày nắng nóng."
   },
   {
+    "label": "elongated_tortoise",
+    "vietnameseName": "Rùa lưng xanh",
+    "description": "Rùa lưng xanh là loài rùa cạn có mai hình bầu dục dài và màu nâu xanh. Chúng sống ở vùng rừng và đất nông nghiệp. Loài này bị đe dọa do mất habitat và buôn bán trái phép."
+  },
+  {
+    "label": "english_foxhound",
+    "vietnameseName": "Chó săn cáo Anh",
+    "description": "English Foxhound là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "english_setter",
+    "vietnameseName": "Chó setter Anh",
+    "description": "English Setter là giống chó săn chim có khả năng đánh hơi và chỉ điểm con mồi rất hiệu quả."
+  },
+  {
+    "label": "english_springer",
+    "vietnameseName": "Chó spaniel Anh",
+    "description": "English Springer là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "entlebucher",
+    "vietnameseName": "Chó Entlebucher",
+    "description": "Entlebucher là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "eskimo_dog",
+    "vietnameseName": "Chó Eskimo dog",
+    "description": "Eskimo Dog là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "european_fire_salamander",
+    "vietnameseName": "Kỳ giông lửa châu Âu",
+    "description": "European Fire Salamander là loài lưỡng cư sống trong môi trường ẩm hoặc gần nước, có da mềm và vòng đời gắn với cả nước lẫn cạn."
+  },
+  {
+    "label": "european_gallinule",
+    "vietnameseName": "Gà nước châu Âu",
+    "description": "European Gallinule là loài chim có những đặc điểm riêng về mỏ, lông và tập tính sống, thường được nhận biết khá dễ qua hình dáng bên ngoài."
+  },
+  {
+    "label": "fiddler_crab",
+    "vietnameseName": "Cáy",
+    "description": "Cáy là loài giáp xác có lớp vỏ cứng và đôi càng khỏe, thường sống ở đáy biển hoặc vùng nước mặn, nước lợ."
+  },
+  {
     "label": "flamingo",
     "vietnameseName": "Hồng hạc",
     "description": "Hồng hạc là những vũ công lộng lẫy của vùng sông nước với bộ lông màu hồng rực rỡ tuyệt đẹp được tạo ra từ thức ăn của chúng. Chúng sải bước điệu đà trên đôi chân dài miên man và gầy guộc. Có một điều vô cùng thú vị là khi nghỉ ngơi hay ngủ, hồng hạc rất thích co một chân lên và chỉ đứng vững vàng trên một chân duy nhất giữa mặt nước êm ả."
+  },
+  {
+    "label": "flat-coated_retriever",
+    "vietnameseName": "Chó Retriever lông nhẵn",
+    "description": "Flat Coated Retriever là giống chó săn thân thiện, có khả năng bơi tốt và thường được nuôi để mang mồi về cho chủ."
+  },
+  {
+    "label": "flatworm",
+    "vietnameseName": "Giun dẹp",
+    "description": "Flatworm là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
   },
   {
     "label": "fly",
@@ -140,9 +715,79 @@
     "description": "Cáo là những nhân vật thông minh, lanh lợi và vô cùng tinh ranh trong các câu chuyện cổ tích. Ở ngoài đời thực, chúng khoác lên mình bộ lông mềm mại tuyệt đẹp cùng một chiếc đuôi xù to và êm ái để giữ ấm khi trời lạnh. Cáo có thính giác và khứu giác tuyệt vời, giúp chúng trở thành những thợ săn khéo léo, di chuyển nhẹ nhàng trong rừng rậm mà không ai hay biết."
   },
   {
+    "label": "fox_squirrel",
+    "vietnameseName": "Sóc cáo",
+    "description": "Fox Squirrel là loài thú nhỏ, nhanh nhẹn và thường có khả năng kiếm ăn, trốn tránh kẻ thù rất tốt."
+  },
+  {
+    "label": "french_bulldog",
+    "vietnameseName": "Chó bulldog Pháp",
+    "description": "French Bulldog là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "frilled_lizard",
+    "vietnameseName": "Thằn lằn mào",
+    "description": "Frilled Lizard là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "frog",
+    "vietnameseName": "Ếch nhái",
+    "description": "Ếch nhái là loài lưỡng cư sống cả trên cạn và dưới nước, với da nhám và ẩm để thở. Chúng có chân sau mạnh để nhảy xa và lưỡi dính để bắt côn trùng. Ếch nhái là chỉ số sức khỏe của môi trường sống và cực kỳ quan trọng cho hệ sinh thái."
+  },
+  {
+    "label": "garden_spider",
+    "vietnameseName": "Nhện vườn",
+    "description": "Garden Spider là loài chân khớp nhỏ, có tập tính riêng để săn mồi hoặc bám ký sinh trong môi trường sống của nó."
+  },
+  {
+    "label": "garter_snake",
+    "vietnameseName": "Rắn sọc",
+    "description": "Garter Snake là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "gaur",
+    "vietnameseName": "Bò tót",
+    "description": "Bò tót là loài bò khổng lồ sống trong rừng rậm châu Á. Chúng có thân hình vạm vỡ, vai cao và sừng màu trắng đặc trưng. Bò tót là loài động vật hoang dã lớn nhất châu Á, được bảo vệ nghiêm ngặt."
+  },
+  {
+    "label": "german_shepherd",
+    "vietnameseName": "Chó Đức",
+    "description": "Chó Đức là giống chó thông minh nhất, được sử dụng rộng rãi trong công tác, quân đội, và cứu hộ. Chúng trung thành, dũng cảm và có khả năng huấn luyện tuyệt vời. Chó Đức có bộ lông kép dày, màu đen nâu đặc trưng và là một trong những giống chó phổ biến nhất thế giới."
+  },
+  {
+    "label": "german_short-haired_pointer",
+    "vietnameseName": "Chó pointer lông ngắn Đức",
+    "description": "German Short Haired Pointer là giống chó săn chim có khả năng đánh hơi và chỉ điểm con mồi rất hiệu quả."
+  },
+  {
+    "label": "giant_schnauzer",
+    "vietnameseName": "Chó Schnauzer khổng lồ",
+    "description": "Giant Schnauzer là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "gila_monster",
+    "vietnameseName": "Thằn lằn Gila",
+    "description": "Gila Monster là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "giraffe",
+    "vietnameseName": "Hươu cao cổ",
+    "description": "Hươu cao cổ là loài động vật cao nhất thế giới với cái cổ dài độc đáo. Chúng sống ở vùng savan châu Phi và ăn lá cây cao. Cái cổ dài giúp chúng tiếp cận thức ăn mà các loài khác không với tới được."
+  },
+  {
     "label": "goat",
     "vietnameseName": "Dê",
-    "description": "Dê là những nhà leo núi chuyên nghiệp của thế giới động vật, với bộ móng guốc đặc biệt giúp chúng đứng vững trên những vách đá dựng đứng, cheo leo. Chúng có bộ râu nhỏ dưới cằm trông rất ngộ nghĩnh và cặp sừng cong trên đỉnh đầu. Dê rất thích hoạt động, leo trèo và thường dành cả ngày dài để thưởng thức món ăn khoái khẩu là lá cây, chồi non và cỏ dại."
+    "description": "Dê là động vật nuôi nhỏ nhắn, thông minh và tò mò. Chúng có sừng cong, râu dưới cằm và có khả năng leo trèo tuyệt vời. Dê có thể ăn nhiều loại cây khác nhau và được nuôi để lấy thịt, sữa và lông."
+  },
+  {
+    "label": "golden_retriever",
+    "vietnameseName": "Chó Golden Retriever",
+    "description": "Chó Golden Retriever là giống chó thân thiện, kiên nhẫn và tuyệt vời với trẻ em. Chúng có bộ lông vàng óng ả, rực rỡ và bản năng retrieving tuyệt vời. Golden Retriever được sử dụng làm chó cứu hộ, chó dẫn đường và là thú cưng lý tưởng cho gia đình."
+  },
+  {
+    "label": "goldfinch",
+    "vietnameseName": "Chim vàng anh",
+    "description": "Goldfinch là loài chim nhỏ đến trung bình, thường sống theo đàn, ăn hạt hoặc côn trùng và có tiếng hót đặc trưng."
   },
   {
     "label": "goldfish",
@@ -152,7 +797,12 @@
   {
     "label": "goose",
     "vietnameseName": "Ngỗng",
-    "description": "Ngỗng là những người bạn họ hàng của loài vịt nhưng có kích thước to lớn hơn, cổ dài hơn và dáng đi bệ vệ hơn rất nhiều. Chúng có tính cách vô cùng dũng cảm và thường được các bác nông dân nuôi để canh gác nhà cửa, bởi ngỗng sẽ kêu thật to khi thấy người lạ đến. Vào mùa đông, ngỗng hoang dã thường tụ tập thành đàn lớn bay theo hình chữ V để di cư tránh rét."
+    "description": "Ngỗng là loài thủy cầm lớn hơn vịt, với cổ dài và bộ lông dày. Chúng là loài bảo vệ lãnh thổ cực tốt và thường được nuôi để làm thịt, gan và làm vật canh gác."
+  },
+  {
+    "label": "gordon_setter",
+    "vietnameseName": "Chó Gordon Setter",
+    "description": "Gordon Setter là giống chó săn chim có khả năng đánh hơi và chỉ điểm con mồi rất hiệu quả."
   },
   {
     "label": "gorilla",
@@ -165,9 +815,69 @@
     "description": "Châu chấu là những vận động viên nhảy xa vô địch của thế giới tự nhiên, nhờ vào đôi chân sau cực kỳ to khỏe và nhiều gai nhọn. Mỗi khi bị đe dọa, chúng chỉ cần nhún nhẹ một cái là có thể bay vút đi một quãng đường rất xa so với cơ thể bé nhỏ của mình. Ngoài ra, châu chấu còn là những nhạc công đồng quê, tạo ra âm thanh rả rích bằng cách cọ xát đôi chân vào cánh."
   },
   {
-    "label": "hamster",
-    "vietnameseName": "Chuột hamster",
-    "description": "Chuột hamster là những bé thú cưng nhỏ xíu, tròn xoe và vô cùng đáng yêu với lớp lông tơ mềm mại. Điểm thú vị nhất của hamster là hai chiếc túi má phúng phính như hai chiếc bong bóng nhỏ, được chúng dùng để giấu và tích trữ thật nhiều hạt dưa, hạt hướng dương. Chúng rất thích chạy lon ton trên chiếc vòng quay đồ chơi trong lồng vào ban đêm để tập thể dục."
+    "label": "great_dane",
+    "vietnameseName": "Chó Great Dane",
+    "description": "Chó Great Dane là giống chó khổng lồ có nguồn gốc từ Đức, có thể cao đến 86 cm và nặng 90 kg. Dù kích thước to lớn, chúng là 'chú khổng lồ hiền lành' - thân thiện, kiên nhẫn và tuyệt vời với trẻ em. Great Dane còn được gọi là 'Apollo của loài chó'."
+  },
+  {
+    "label": "great_grey_owl",
+    "vietnameseName": "Cú xám lớn",
+    "description": "Great Grey Owl là loài chim săn mồi hoạt động về đêm, có mắt lớn, thính giác tốt và khả năng bay rất yên tĩnh."
+  },
+  {
+    "label": "great_pyrenees",
+    "vietnameseName": "Chó núi Pyrenees",
+    "description": "Great Pyrenees là giống chó to lớn, khỏe và thường được dùng để canh gác hoặc hỗ trợ công việc nặng."
+  },
+  {
+    "label": "great_white_shark",
+    "vietnameseName": "Cá mập trắng lớn",
+    "description": "Cá mập trắng lớn là loài cá mập nổi tiếng nhất thế giới, được biết đến qua bộ phim Jaws. Chúng là kẻ săn mồi đứng đầu đại dương với chiều dài lên đến 6 mét và tốc độ bơi 56 km/h. Cá mập trắng có khả năng phát hiện máu ở khoảng cách vài kilômet và là loài quan trọng trong hệ sinh thái biển."
+  },
+  {
+    "label": "greater_swiss_mountain_dog",
+    "vietnameseName": "Chó Greater Swiss Mountain",
+    "description": "Greater Swiss Mountain Dog là giống chó tam thể (đen, trắng, nâu đỏ) to lớn, mạnh mẽ."
+  },
+  {
+    "label": "green_lizard",
+    "vietnameseName": "Thằn lằn xanh",
+    "description": "Green Lizard là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "green_mamba",
+    "vietnameseName": "Rắn mamba xanh",
+    "description": "Green Mamba là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "green_snake",
+    "vietnameseName": "Rắn xanh",
+    "description": "Green Snake là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "grey_fox",
+    "vietnameseName": "Cáo xám",
+    "description": "Grey Fox là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "grey_whale",
+    "vietnameseName": "Cá voi xám",
+    "description": "Cá voi xám là loài cá voi di cư quãng đường dài nhất mỗi năm - từ Bắc Băng Dương đến Mexico. Chúng dài đến 15 mét, ăn sâu bọt đáy biển và rất thân thiện với tàu thuyền. Cá voi xám từng bị săn đuổi gần tuyệt chủng nhưng đã phục hồi nhờ bảo vệ."
+  },
+  {
+    "label": "groenendael",
+    "vietnameseName": "Chó Groenendael",
+    "description": "Chó Groenendael là giống chó chăn cừu Bỉ với bộ lông đen tuyền, dài và bóng mượt. Chúng rất thông minh, lanh lợi và trung thành, thường được dùng làm chó chăn gia súc hoặc chó nghiệp vụ nhờ khả năng huấn luyện xuất sắc và bản năng bảo vệ mạnh mẽ."
+  },
+  {
+    "label": "ground_beetle",
+    "vietnameseName": "Bọ cánh cứng đất",
+    "description": "Ground Beetle là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "hammerhead",
+    "vietnameseName": "Cá mập đầu búa",
+    "description": "Cá mập đầu búa là loài cá mập đặc biệt với đầu hình chữ T độc đáo. Đầu búa giúp chúng có tầm nhìn 360 độ và khả năng định hướng cực tốt. Chúng sống thành bầy lớn, di cư quãng đường xa và là loài cá mập thông minh nhất với khả năng học hỏi và giải quyết vấn đề."
   },
   {
     "label": "hare",
@@ -175,9 +885,24 @@
     "description": "Thỏ rừng là anh em họ với thỏ nhà nhưng có dáng vẻ gầy gò hơn, đôi tai dài hơn và đôi chân cực kỳ khỏe mạnh. Để tồn tại trên các cánh đồng cỏ rộng lớn đầy rẫy nguy hiểm, thỏ rừng được tự nhiên ban tặng cho tốc độ chạy siêu tốc. Chúng hiếm khi đào hang dưới đất mà thường làm tổ ngay trên các bụi cỏ cao và luôn trong trạng thái cảnh giác với đôi tai vểnh lên."
   },
   {
+    "label": "harvestman",
+    "vietnameseName": "Nhện chân dài",
+    "description": "Harvestman là loài chân khớp nhỏ, có tập tính riêng để săn mồi hoặc bám ký sinh trong môi trường sống của nó."
+  },
+  {
     "label": "hedgehog",
     "vietnameseName": "Nhím",
-    "description": "Nhím là loài sinh vật nhỏ bé khoác trên lưng một chiếc áo giáp đặc biệt được làm từ hàng ngàn chiếc gai cứng và nhọn hoắt. Khi phải đối mặt với kẻ thù nguy hiểm, nhím sẽ lập tức cuộn tròn cơ thể lại thành một quả bóng gai kín bưng, khiến không ai có thể làm hại được. Ban ngày nhím thích ngủ nướng và đến đêm mới bắt đầu lạch bạch đi tìm kiếm giun đất, sâu bọ để ăn."
+    "description": "Nhím là loài động vật nhỏ có gai nhọn trên lưng để tự vệ. Khi gặp nguy hiểm, chúng cuộn tròn thành quả cầu gai. Nhím hoạt động về đêm, ăn côn trùng và sâu bọ. Chúng có khả năng miễn dịch độc tự nhiên."
+  },
+  {
+    "label": "hen",
+    "vietnameseName": "Gà mái",
+    "description": "Gà mái là con cái của loài gà, được nuôi rộng rãi để lấy trứng và thịt. Chúng có bản năng làm mẹ mạnh mẽ, ấp trứng và chăm sóc gà con rất tận tụy. Gà mái thông minh, có thể nhận biết đến 100 khuôn mặt khác nhau và có hệ thống phân cấp xã hội phức tạp."
+  },
+  {
+    "label": "hermit_crab",
+    "vietnameseName": "Cua ẩn sĩ",
+    "description": "Hermit Crab là loài giáp xác có lớp vỏ cứng và đôi càng khỏe, thường sống ở đáy biển hoặc vùng nước mặn, nước lợ."
   },
   {
     "label": "hippopotamus",
@@ -185,14 +910,29 @@
     "description": "Hà mã là loài động vật có thân hình khổng lồ, béo tròn và sống phần lớn thời gian ngâm mình dưới những con sông mát mẻ ở châu Phi. Mặc dù trông có vẻ nặng nề và chậm chạp, nhưng khi lên bờ, hà mã lại có thể chạy với tốc độ kinh ngạc. Chúng có chiếc miệng rộng đến mức có thể nuốt trọn một quả dưa hấu lớn và thường ngáp thật to để khoe những chiếc răng nanh đáng sợ."
   },
   {
+    "label": "hognose_snake",
+    "vietnameseName": "Rắn mũi hếch",
+    "description": "Hognose Snake là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
     "label": "hornbill",
     "vietnameseName": "Chim mỏ sừng",
     "description": "Chim mỏ sừng là loài chim mang vẻ đẹp độc đáo và lạ mắt nhất của các khu rừng nhiệt đới. Điểm nhấn ấn tượng nhất của chúng là chiếc mỏ cực lớn, màu sắc sặc sỡ và thường có một khối sừng rỗng nhô cao lên ngay trên đỉnh mỏ. Chim mỏ sừng ăn quả và côn trùng, chúng cũng là những kiến trúc sư tài ba khi biết xây tổ rất an toàn bên trong các thân cây cổ thụ rỗng."
   },
   {
+    "label": "horned_viper",
+    "vietnameseName": "Rắn lục sừng",
+    "description": "Horned Viper là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
     "label": "horse",
     "vietnameseName": "Ngựa",
-    "description": "Ngựa là loài động vật mang vẻ đẹp oai phong, mạnh mẽ và vô cùng duyên dáng với chiếc bờm dài bay trong gió. Từ xa xưa, ngựa đã là người bạn đồng hành trung thành của con người, giúp vận chuyển hàng hóa, di chuyển những chặng đường xa và tham gia vào các môn thể thao. Chúng có thể phi nước đại với tốc độ rất nhanh trên những đồng cỏ và có tuổi thọ khá cao."
+    "description": "Ngựa là loài động vật nuôi quan trọng trong lịch sử nhân loại. Chúng được dùng để cưỡi, chở hàng, kéo cày và trong thể thao. Ngựa có thị lực tốt, thính giác nhạy bén và có thể ngủ cả đứng lẫn nằm."
+  },
+  {
+    "label": "house_finch",
+    "vietnameseName": "Chim sẻ nhà",
+    "description": "House Finch là loài chim nhỏ đến trung bình, thường sống theo đàn, ăn hạt hoặc côn trùng và có tiếng hót đặc trưng."
   },
   {
     "label": "hummingbird",
@@ -205,9 +945,94 @@
     "description": "Linh cẩu là những thợ săn đầy chiến thuật ở các vùng đồng cỏ thảo nguyên rộng lớn, thường đi săn theo những bầy đàn đông đúc. Chúng có bộ hàm mạnh mẽ khủng khiếp có thể cắn vỡ cả những khúc xương cứng nhất. Đặc biệt, linh cẩu nổi tiếng với những tiếng kêu độc đáo nghe giống hệt như tiếng cười lanh lảnh của con người vang vọng giữa màn đêm."
   },
   {
+    "label": "ibizan_hound",
+    "vietnameseName": "Chó Ibizan hound",
+    "description": "Ibizan Hound là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "ice_bear",
+    "vietnameseName": "Gấu Bắc Cực",
+    "description": "Ice Bear là loài gấu có thân hình mạnh mẽ, khứu giác rất tốt và khả năng thích nghi cao với nhiều môi trường sống."
+  },
+  {
+    "label": "iguana",
+    "vietnameseName": "Thằn lằn iguana",
+    "description": "Iguana là loài thằn lằn lớn có nguồn gốc từ vùng nhiệt đới Americas, với bờm gai sau lưng và mắt có thể vận động độc lập. Chúng là loài ăn thực vật, sống trên cây và là thú cưng phổ biến nhưng cần chăm sóc đặc biệt về nhiệt độ và ánh sáng."
+  },
+  {
+    "label": "impressed_tortoise",
+    "vietnameseName": "Rùa ấn độ",
+    "description": "Rùa ấn độ là loài rùa cạn có mai với các hoa văn đặc trưng hình lồng đèn. Chúng sống ở vùng rừng nhiệt đới và ăn chủ yếu là nấm và cây mọng. Loài này rất nhạy cảm với môi trường sống."
+  },
+  {
+    "label": "indian_cobra",
+    "vietnameseName": "Rắn hổ mang Ấn Độ",
+    "description": "Indian Cobra là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "indigo_bunting",
+    "vietnameseName": "Chim sẻ xanh chàm",
+    "description": "Indigo Bunting là loài chim nhỏ đến trung bình, thường sống theo đàn, ăn hạt hoặc côn trùng và có tiếng hót đặc trưng."
+  },
+  {
+    "label": "irish_setter",
+    "vietnameseName": "Chó Irish Setter",
+    "description": "Irish Setter là giống chó săn chim có khả năng đánh hơi và chỉ điểm con mồi rất hiệu quả."
+  },
+  {
+    "label": "irish_terrier",
+    "vietnameseName": "Chó sục Ireland",
+    "description": "Irish Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "irish_water_spaniel",
+    "vietnameseName": "Chó săn nước Ireland",
+    "description": "Irish Water Spaniel là giống chó săn chim có tai dài, tính cách thân thiện và khả năng làm việc linh hoạt."
+  },
+  {
+    "label": "irish_wolfhound",
+    "vietnameseName": "Chó săn sói Ireland",
+    "description": "Chó săn sói Ireland là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "isopod",
+    "vietnameseName": "Bọ chân đều",
+    "description": "Isopod là loài sinh vật biển có những đặc điểm hình thái và tập tính giúp chúng thích nghi tốt với môi trường nước."
+  },
+  {
+    "label": "italian_greyhound",
+    "vietnameseName": "Chó săn xám Ý",
+    "description": "Italian Greyhound là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "jacamar",
+    "vietnameseName": "Chim jacamar",
+    "description": "Jacamar là loài chim nhiệt đới có mỏ nổi bật, màu lông đẹp và tập tính sống rất sinh động."
+  },
+  {
+    "label": "jaguar",
+    "vietnameseName": "Báo đốm Mỹ",
+    "description": "Báo đốm Mỹ là loài mèo lớn nhất châu Mỹ và là loài mèo duy nhất sống ở Mỹ. Chúng có bộ lông đốm hoa hồng và cắn lực mạnh nhất trong loài mèo - có thể cắn xuyên cả mai rùa. Báo đốm Mỹ bơi lội giỏi và sống ở rừng mưa Nam Mỹ."
+  },
+  {
+    "label": "japanese_spaniel",
+    "vietnameseName": "Chó Japanese spaniel",
+    "description": "Japanese Spaniel là giống chó săn chim có tai dài, tính cách thân thiện và khả năng làm việc linh hoạt."
+  },
+  {
+    "label": "jay",
+    "vietnameseName": "Giẻ cùi",
+    "description": "Jay là loài chim nhỏ đến trung bình, thường sống theo đàn, ăn hạt hoặc côn trùng và có tiếng hót đặc trưng."
+  },
+  {
     "label": "jellyfish",
     "vietnameseName": "Sứa",
     "description": "Sứa là những sinh vật biển kỳ diệu, có thân hình mềm mại, trong suốt như pha lê và thường phát ra ánh sáng lung linh dưới đáy đại dương. Chúng không có xương, không có tim hay não bộ, mà chỉ trôi nổi nhịp nhàng theo dòng nước bập bềnh. Bên dưới chiếc ô trong suốt ấy là những xúc tu mỏng manh nhưng lại chứa chất độc để làm tê liệt những chú cá nhỏ bé xui xẻo."
+  },
+  {
+    "label": "junco",
+    "vietnameseName": "Chim junco",
+    "description": "Junco là một loài chim  nổi bật với thân hình tròn trịa (dài khoảng 15cm), mỏ màu hồng nhạt, đầu và lưng màu xám tro, cùng với lông đuôi viền trắng."
   },
   {
     "label": "kangaroo",
@@ -215,14 +1040,119 @@
     "description": "Chuột túi là loài vật mang tính biểu tượng vô cùng đáng yêu của đất nước Australia xinh đẹp. Mẹ chuột túi có một chiếc túi nhỏ bé và ấm áp trước bụng, dùng làm chiếc nôi êm ái để nuôi dưỡng và bảo vệ đàn con bé bỏng của mình. Nhờ đôi chân sau to khỏe và chiếc đuôi dài giúp giữ thăng bằng, chuột túi có thể nhảy từng bước cực kỳ xa và nhanh nhạy trên thảo nguyên."
   },
   {
+    "label": "keeshond",
+    "vietnameseName": "Chó Keeshond",
+    "description": "Keeshond là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "kelpie",
+    "vietnameseName": "Chó Kelpie",
+    "description": "Chó Kelpie là giống chó chăn cừu Úc cực kỳ thông minh và năng nổ. Chúng có khả năng chạy bền bỉ, nhảy cao và phản xạ rất nhanh, đặc biệt có tài khiên gia súc bằng cách chạy lên lưng cừu khi cần. Kelpie là những vận động viên bẩm sinh với bộ lông ngắn và cơ thể dẻo dai."
+  },
+  {
+    "label": "kerry_blue_terrier",
+    "vietnameseName": "Chó Kerry Blue Terrier",
+    "description": "Kerry Blue Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "killer_whale",
+    "vietnameseName": "Cá voi sát thủ",
+    "description": "Cá voi sát thủ (Orca) thực chất là loài cá heo lớn nhất, không phải cá voi. Chúng săn theo bầy đàn coordinated cực kỳ thông minh, ăn từ cá đến cá voi. Orca có màu đen trắng đặc trưng và là bậc thầy săn mồi của đại dương."
+  },
+  {
+    "label": "king_cobra",
+    "vietnameseName": "Hổ mang chúa",
+    "description": "Hổ mang chúa là loài rắn độc dài nhất thế giới, có thể đạt 5.5 mét. Chúng có nọc độc cực mạnh và có thể dựng đứng một phần ba cơ thể lên để nhìn đối phương trong mắt. Hổ mang chúa ăn chủ yếu là các loài rắn khác."
+  },
+  {
+    "label": "king_crab",
+    "vietnameseName": "Cua vua",
+    "description": "King Crab là loài giáp xác có lớp vỏ cứng và đôi càng khỏe, thường sống ở đáy biển hoặc vùng nước mặn, nước lợ."
+  },
+  {
+    "label": "king_penguin",
+    "vietnameseName": "Chim cánh cụt vua",
+    "description": "Chim cánh cụt vua là loài chim cánh cụt lớn thứ hai sau chim cánh cụt hoàng đế, cao khoảng 90 cm. Chúng sống ở vùng cận Nam Cực, có bộ lông màu xám bạc tuyệt đẹp và vằn sáng màu trên cổ. Chim cánh cụt vua ấp trứng trên chân trong mùa đông khắc nghiệt và có thể lặn sâu xuống 300 mét để bắt cá."
+  },
+  {
+    "label": "king_snake",
+    "vietnameseName": "Rắn vua",
+    "description": "King Snake là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "kit_fox",
+    "vietnameseName": "Cáo kit",
+    "description": "Kit Fox là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "kite",
+    "vietnameseName": "Khác (Kite)",
+    "description": "Chim diều hâu là loài chim săn mồi trung bình với đuôi dài chẻ ngọt, thường bay lượn trên cao và lao xuống bắt mồi. Chúng có thị lực tuyệt vời, cánh rộng và thường sinh sống gần các vùng nước, canh tác hoặc đồng cỏ."
+  },
+  {
     "label": "koala",
     "vietnameseName": "Gấu túi koala",
     "description": "Gấu túi koala là loài vật siêu cấp đáng yêu với bộ lông xám bạc êm ái, chiếc mũi đen to tròn và đôi tai đầy lông tơ. Chúng dành gần như toàn bộ cuộc đời của mình để sống an toàn trên những cành cây bạch đàn cao vút. Koala là những bé 'sâu ngủ' thực sự khi chúng có thể ngủ say sưa đến 20 tiếng mỗi ngày, thức dậy chỉ để nhẩn nha nhai những chiếc lá bạch đàn thơm mùi tinh dầu."
   },
   {
-    "label": "ladybugs",
+    "label": "komodo_dragon",
+    "vietnameseName": "Rồng Komodo",
+    "description": "Komodo Dragon là loài bò sát lớn, da dày và là thợ săn phục kích rất hiệu quả trong tự nhiên."
+  },
+  {
+    "label": "komondor",
+    "vietnameseName": "Chó Komondor",
+    "description": "Chó Komondor là giống chó chăn cừu Hungary với đặc điểm nổi bật nhất là bộ lông trắng dài xoắn tết thành dây như dây thừng. Chúng to lớn, mạnh mẽ và có bản năng bảo vệ lãnh thổ rất cao, thường được dùng để bảo vệ gia súc khỏi thú săn mồi."
+  },
+  {
+    "label": "kuvasz",
+    "vietnameseName": "Chó Kuvasz",
+    "description": "Kuvasz là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "labrador",
+    "vietnameseName": "Chó Labrador",
+    "description": "Chó Labrador là giống chó thân thiện nhất và được ưa chuộng làm chó dẫn đường, chó cứu hộ và thú cưng gia đình. Chúng thông minh, dễ huấn luyện và đặc biệt yêu thích nước. Labrador có bộ lông ngắn chống thấm và có 3 màu chính: đen, vàng và chocolate."
+  },
+  {
+    "label": "labrador_retriever",
+    "vietnameseName": "Chó Labrador",
+    "description": "Labrador Retriever là giống chó săn thân thiện, có khả năng bơi tốt và thường được nuôi để mang mồi về cho chủ."
+  },
+  {
+    "label": "lacewing",
+    "vietnameseName": "Bọ cánh ren",
+    "description": "Lacewing là loài côn trùng hoặc chân khớp có đặc điểm nhận diện riêng về hình dáng, màu sắc và tập tính."
+  },
+  {
+    "label": "ladybug",
     "vietnameseName": "Bọ rùa",
     "description": "Bọ rùa là những người bạn nhỏ vô cùng có ích của các bác nông dân và người làm vườn. Chúng khoác trên mình lớp vỏ tròn xoe, bóng bẩy với màu đỏ, cam nổi bật được tô điểm bởi những chấm đen xinh xắn. Bọ rùa bay lượn từ chiếc lá này sang chiếc lá khác để săn bắt những loài rệp cây có hại, giúp bảo vệ mùa màng luôn xanh tốt lành mạnh."
+  },
+  {
+    "label": "lakeland_terrier",
+    "vietnameseName": "Chó Lakeland terrier",
+    "description": "Lakeland Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "leaf_beetle",
+    "vietnameseName": "Bọ cánh cứng ăn lá",
+    "description": "Bọ cánh cứng ăn lá là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "leafhopper",
+    "vietnameseName": "Rầy lá",
+    "description": "Rầy lá là loài côn trùng hoặc chân khớp có đặc điểm nhận diện riêng về hình dáng, màu sắc và tập tính."
+  },
+  {
+    "label": "leatherback_turtle",
+    "vietnameseName": "Rùa da",
+    "description": "Rùa da là loài bò sát có mai bảo vệ cơ thể, di chuyển chậm nhưng rất bền bỉ và sống lâu."
+  },
+  {
+    "label": "leonberg",
+    "vietnameseName": "Chó Leonberg",
+    "description": "Leonberg là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
   },
   {
     "label": "leopard",
@@ -230,9 +1160,24 @@
     "description": "Báo hoa mai là loài mèo lớn mang vẻ đẹp hoang dã đầy quyến rũ với bộ lông màu vàng óng điểm xuyết những đốm đen tinh tế giống như những bông hoa. Chúng là những vận động viên leo trèo xuất sắc nhất của rừng rậm nhiệt đới. Nhờ sức mạnh vượt trội, báo hoa mai có thói quen độc đáo là tha con mồi nặng trĩu lên tít các cành cây cao chót vót để cất giấu và thong thả thưởng thức."
   },
   {
+    "label": "lhasa",
+    "vietnameseName": "Chó Lhasa Apso",
+    "description": "Lhasa là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "limpkin",
+    "vietnameseName": "Chim limpkin",
+    "description": "Limpkin là loài chim có những đặc điểm riêng về mỏ, lông và tập tính sống, thường được nhận biết khá dễ qua hình dáng bên ngoài."
+  },
+  {
     "label": "lion",
     "vietnameseName": "Sư tử",
     "description": "Sư tử tự hào khoác lên mình danh hiệu chúa tể kiêu hãnh của muôn loài, mang sức mạnh vô song và phong thái uy nghi rực rỡ. Những chú sư tử đực sở hữu chiếc bờm rậm rạp lộng lẫy quanh cổ và có tiếng gầm thị uy vang dội xa hàng km. Sư tử sống thành những đại gia đình lớn gọi là bầy đàn, trong đó các cô sư tử cái mới thực sự là những thợ săn chủ lực và khéo léo nhất."
+  },
+  {
+    "label": "little_blue_heron",
+    "vietnameseName": "Diệc xanh nhỏ",
+    "description": "Little Blue Heron là loài chim có những đặc điểm riêng về mỏ, lông và tập tính sống, thường được nhận biết khá dễ qua hình dáng bên ngoài."
   },
   {
     "label": "lizard",
@@ -245,9 +1190,104 @@
     "description": "Tôm hùm là những cư dân khổng lồ và quý giá ẩn mình sâu dưới các rạn san hô dưới đáy đại dương bao la. Chúng được bao bọc bởi một lớp vỏ cứng cáp như áo giáp và sở hữu đôi càng to bự, vô cùng mạnh mẽ để tự vệ. Tôm hùm thường đi dạo dưới đáy biển tìm kiếm thức ăn và sẽ thay vỏ nhiều lần trong đời để cơ thể ngày càng lớn mạnh hơn."
   },
   {
+    "label": "loggerhead",
+    "vietnameseName": "Rùa đầu to",
+    "description": "Loggerhead là loài bò sát có mai bảo vệ cơ thể, di chuyển chậm nhưng rất bền bỉ và sống lâu."
+  },
+  {
+    "label": "long-horned_beetle",
+    "vietnameseName": "Bọ cánh cứng sừng dài",
+    "description": "Long Horned Beetle là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "lorikeet",
+    "vietnameseName": "Vẹt lorikeet",
+    "description": "Lorikeet là loài chim nhiệt đới có mỏ nổi bật, màu lông đẹp và tập tính sống rất sinh động."
+  },
+  {
+    "label": "lycaenid",
+    "vietnameseName": "Bướm xanh",
+    "description": "Lycaenid là loài bướm có cánh mỏng, màu sắc bắt mắt và thường bay lượn quanh các khu vực có nhiều hoa."
+  },
+  {
+    "label": "lynx",
+    "vietnameseName": "Báo Lynx",
+    "description": "Báo Lynx là loài mèo kích thước trung bình với đặc điểm nhận dạng là búi lông ở đầu tai. Chúng có thị lực tuyệt vời, có thể phát hiện con mồi từ xa 75 mét. Báo Lynx sống ở vùng lạnh, có bàn chân lớn như 'giày tuyết' và là thợ săn thầm lặng."
+  },
+  {
+    "label": "macaw",
+    "vietnameseName": "Vẹt Macaw",
+    "description": "Vẹt Macaw là loài vẹt lớn nhất có nguồn gốc từ rừng mưa Nam Mỹ. Chúng có bộ lông rực rỡ với màu xanh dương, đỏ, vàng và mỏ đen khỏe mạnh. Vẹt Macaw rất thông minh, sống thọ hàng trăm năm và là loài vật nuôi phổ biến nhưng cần chăm sóc đặc biệt."
+  },
+  {
+    "label": "magpie",
+    "vietnameseName": "Ác là",
+    "description": "Magpie là loài chim nhỏ đến trung bình, thường sống theo đàn, ăn hạt hoặc côn trùng và có tiếng hót đặc trưng."
+  },
+  {
+    "label": "malamute",
+    "vietnameseName": "Chó Malamute",
+    "description": "Malamute là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "malinois",
+    "vietnameseName": "Chó Malinois",
+    "description": "Chó Malinois là giống chó chăn cừu Bỉ với bộ lông vàng nâu đốm đen, cực kỳ thông minh và năng nổ. Chúng là một trong những giống chó tốt nhất cho công việc nghiệp vụ như phát hiện ma túy, tìm kiếm cứu nạn hay chó bảo vệ nhờ khả năng huấn luyện tuyệt vời và trung thành tuyệt đối."
+  },
+  {
+    "label": "maltese_dog",
+    "vietnameseName": "Chó Maltese",
+    "description": "Chó Maltese là giống chó toy cổ xưa với bộ lông trắng dài, mượt mà tít xuống đất. Chúng nhỏ nhắn, tình cảm, tình nghĩa và được ưa chuộng làm chó cảnh trong triều đình từ thời La Mã cổ đại. Maltese không rụng lông nhiều và rất phù hợp làm thú cưng trong nhà."
+  },
+  {
+    "label": "mantis",
+    "vietnameseName": "Côn trùng Mantis",
+    "description": "Mantis là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "marmoset",
+    "vietnameseName": "Khỉ marmoset",
+    "description": "Khỉ marmoset là loài khỉ nhỏ nhất thế giới, sinh sống ở các khu rừng nhiệt đới Nam Mỹ. Chúng có móng vuốt sắc nhọn để leo trèo, ăn nhựa cây, trái cây và côn trùng. Khỉ marmoset sống theo bầy đàn gia đình nhỏ và giao tiếp bằng tiếng kêu cao và các tín hiệu hóa học."
+  },
+  {
+    "label": "meerkat",
+    "vietnameseName": "Cầy suricate",
+    "description": "Cầy Suricate là loài động vật nhỏ sống ở sa mạc châu Phi, sống theo bầy và canh gác rất tốt. Chúng đứng hai chân sau để quan sát kẻ thù trong khi nhóm khác ăn. Cầy Suricate cực kỳ xã hội, chia nhau việc canh gác và chăm sóc con cái."
+  },
+  {
+    "label": "mexican_hairless",
+    "vietnameseName": "Chó Mexican Hairless",
+    "description": "Mexican Hairless là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "miniature_pinscher",
+    "vietnameseName": "Chó Miniature Pinscher",
+    "description": "Miniature Pinscher là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "miniature_poodle",
+    "vietnameseName": "Chó miniature poodle",
+    "description": "Miniature Poodle là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "miniature_schnauzer",
+    "vietnameseName": "Chó Miniature Schnauzer",
+    "description": "Miniature Schnauzer là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "monarch",
+    "vietnameseName": "Bướm quân vương",
+    "description": "Monarch là loài bướm có cánh mỏng, màu sắc bắt mắt và thường bay lượn quanh các khu vực có nhiều hoa."
+  },
+  {
+    "label": "mongoose",
+    "vietnameseName": "Cầy mangut",
+    "description": "Mongoose là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
     "label": "mosquito",
     "vietnameseName": "Muỗi",
-    "description": "Muỗi là những côn trùng bay nhỏ xíu nhưng lại gây ra những tiếng vo ve vô cùng khó chịu bên tai chúng ta. Muỗi cái sử dụng chiếc vòi dài và nhọn của mình để chích vào da người hoặc động vật nhằm hút máu, lấy dinh dưỡng nuôi trứng. Chúng sinh sản rất nhanh trong những khu vực có nước đọng, vì vậy chúng ta cần giữ gìn môi trường luôn khô ráo và sạch sẽ."
+    "description": "Muỗi là côn trùng nhỏ hút máu động vật và con người. Chúng có vòi dài để xuyên da và hút máu. Muỗi cái mới là loài hút máu và cần protein từ máu để phát triển trứng. Một số loài muỗi truyền bệnh nguy hiểm."
   },
   {
     "label": "moth",
@@ -255,14 +1295,49 @@
     "description": "Bướm đêm giống như những người anh em sinh đôi tĩnh lặng của loài bướm, nhưng chúng chọn màn đêm làm thời điểm để thức giấc và bay lượn. Chúng thường có màu sắc tối giản hơn như xâu xám hoặc nâu để dễ dàng ngụy trang và lẩn trốn trên thân cây vào ban ngày. Bướm đêm có một đặc điểm thú vị là luôn bị thu hút và bay lượn xung quanh những nguồn ánh sáng rực rỡ."
   },
   {
-    "label": "mouse",
-    "vietnameseName": "Chuột",
-    "description": "Chuột là loài gặm nhấm nhỏ bé với chiếc đuôi dài, đôi tai tròn xoe và hai chiếc răng cửa vô cùng sắc nhọn luôn mọc dài ra mỗi ngày. Chúng có sự linh hoạt đáng kinh ngạc, có thể luồn lách chui qua những khe hở bé tẹo để len lỏi khắp nơi tìm kiếm thức ăn. Dù khá rụt rè, chuột lại rất thông minh và luôn tìm cách sinh tồn khéo léo ở cả nông thôn lẫn thành thị."
+    "label": "mud_turtle",
+    "vietnameseName": "Rùa Mud Turtle",
+    "description": "Mud Turtle là loài bò sát có mai bảo vệ cơ thể, di chuyển chậm nhưng rất bền bỉ và sống lâu."
+  },
+  {
+    "label": "nematode",
+    "vietnameseName": "Giun tròn",
+    "description": "Nematode là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
+  },
+  {
+    "label": "newfoundland",
+    "vietnameseName": "Chó Newfoundland",
+    "description": "Newfoundland là giống chó to lớn, khỏe và thường được dùng để canh gác hoặc hỗ trợ công việc nặng."
+  },
+  {
+    "label": "night_snake",
+    "vietnameseName": "Rắn Night Snake",
+    "description": "Night Snake là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "nile_crocodile",
+    "vietnameseName": "Cá sấu Nile Crocodile",
+    "description": "Nile Crocodile là loài bò sát lớn, da dày và là thợ săn phục kích rất hiệu quả trong tự nhiên."
+  },
+  {
+    "label": "norfolk_terrier",
+    "vietnameseName": "Chó Norfolk terrier",
+    "description": "Norfolk Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "norwegian_elkhound",
+    "vietnameseName": "Chó Norwegian elkhound",
+    "description": "Norwegian Elkhound là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "norwich_terrier",
+    "vietnameseName": "Chó sục Norwich",
+    "description": "Norwich Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
   },
   {
     "label": "octopus",
     "vietnameseName": "Bạch tuộc",
-    "description": "Bạch tuộc là những bộ óc thiên tài của thế giới dưới nước, không có một mảnh xương nào trong cơ thể nên chúng mềm mại đến không ngờ. Chúng có tới 8 chiếc xúc tu dài ngoằng phủ đầy những giác hút mạnh mẽ để di chuyển và tóm lấy con mồi. Đỉnh cao kỹ năng của bạch tuộc là khả năng đổi màu và kết cấu da siêu nhanh, biến hình hoàn hảo vào các tảng đá hay rạn san hô để trốn tìm."
+    "description": "Bạch tuộc là loài động vật có vú thân mềm với 8 xúc tu có mút. Chúng cực kỳ thông minh, có thể thay đổi màu sắc và hình dạng cơ thể để ngụy trang. Bạch tuộc sống ở các đại dương trên thế giới."
   },
   {
     "label": "okapi",
@@ -270,9 +1345,19 @@
     "description": "Hươu okapi là một loài động vật vô cùng quý hiếm và bí ẩn, ẩn mình sâu thẳm trong các khu rừng nhiệt đới ở đất nước Congo. Nhìn từ xa, chúng trông giống như một sự kết hợp kỳ lạ giữa hươu và ngựa vằn, với những sọc đen trắng nổi bật bao quanh đôi chân. Hươu okapi có chiếc lưỡi dài và linh hoạt đến mức có thể dùng để lau sạch tai hoặc quấn lấy những cành lá non tít trên cao."
   },
   {
+    "label": "old_english_sheepdog",
+    "vietnameseName": "Chó Old English sheepdog",
+    "description": "Old English Sheepdog là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
     "label": "orangutan",
     "vietnameseName": "Đười ươi",
     "description": "Đười ươi là những người vượn khổng lồ dịu dàng của rừng già, khoác trên mình bộ lông màu cam đỏ vô cùng rực rỡ và đặc trưng. Tên của chúng có nghĩa là 'Người rừng', bởi chúng sở hữu trí thông minh vượt trội, biết bộc lộ tình cảm và cách chăm con rất chu đáo. Đười ươi có cánh tay rất dài và khỏe mạnh, giúp chúng đu đưa mượt mà từ cành cây này sang cành cây khác một cách dễ dàng."
+  },
+  {
+    "label": "ostrich",
+    "vietnameseName": "Đà điểu",
+    "description": "Đà điểu là loài chim lớn nhất thế giới, có thể cao đến 2.8 mét và nặng 150 kg. Chúng không biết bay nhưng chạy cực nhanh với tốc độ lên đến 70 km/h. Đà điểu sống ở vùng savan châu Phi, có đôi chân khỏe mạnh và móng vuốt sắc nhọn để phòng vệ."
   },
   {
     "label": "otter",
@@ -280,9 +1365,14 @@
     "description": "Rái cá là những vận động viên bơi lội cừ khôi và vui nhộn nhất, sinh sống ở cả sông hồ nước ngọt lẫn dọc theo các bờ biển. Bộ lông dày mượt của chúng chống thấm nước hoàn hảo, giúp rái cá luôn giữ được thân nhiệt ấm áp khi ngụp lặn dưới dòng nước băng giá. Rái cá vô cùng tinh nghịch, thường rượt đuổi nhau, trượt trên bùn lầy hay thả mình nằm ngửa trôi bồng bềnh trên mặt nước."
   },
   {
+    "label": "otterhound",
+    "vietnameseName": "Chó săn rái cá",
+    "description": "Otterhound là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
     "label": "owl",
-    "vietnameseName": "Cú mèo",
-    "description": "Cú mèo là những thợ săn của bóng đêm, sở hữu khuôn mặt hình trái tim hoặc tròn xoe vô cùng ngộ nghĩnh cùng đôi mắt to tròn, tinh anh thấu thị bóng tối. Bộ lông của chúng được cấu tạo đặc biệt giúp chúng bay lượn êm ái mà không phát ra bất kỳ một tiếng động nhỏ nào. Với khả năng xoay đầu linh hoạt gần như một vòng tròn, cú mèo luôn sẵn sàng bắt gọn những chú chuột đồng bất cẩn."
+    "vietnameseName": "Cú",
+    "description": "Cú là loài chim săn mồi đêm với đôi mắt lớn nhìn thấu bóng tối. Chúng có đầu có thể xoay 270 độ và bay gần như không tiếng. Cú dùng thính giác nhạy bén để định vị con mồi trong bóng tối."
   },
   {
     "label": "ox",
@@ -292,7 +1382,12 @@
   {
     "label": "oyster",
     "vietnameseName": "Hàu",
-    "description": "Hàu là những sinh vật hiền lành giấu mình bên trong hai lớp vỏ đá sần sùi và cứng cáp, bám chặt vào các rạn đá sâu dưới đáy biển. Mặc dù vẻ ngoài không hề bắt mắt, nhưng thịt hàu bên trong lại là một món quà của đại dương, chứa đựng rất nhiều chất dinh dưỡng quý giá. Điều kỳ diệu nhất ở một số loài hàu là khả năng biến những hạt cát lọt vào bên trong thành những viên ngọc trai lấp lánh, tuyệt đẹp."
+    "description": "Hàu là loài nhuyễn thể hai mảnh vỏ sống ở biển. Chúng lọc nước để lấy thức ăn và tạo ra ngọc trai. Hàu là thực phẩm phổ biến và được nuôi trồng rộng rãi khắp thế giới."
+  },
+  {
+    "label": "oystercatcher",
+    "vietnameseName": "Mèo oystercatcher",
+    "description": "Oystercatcher là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
   },
   {
     "label": "panda",
@@ -300,19 +1395,59 @@
     "description": "Gấu trúc là sứ giả của sự dễ thương và hòa bình, nổi bật với hai mảng lông màu đen quanh mắt giống như đang đeo kính râm, cùng thân hình mập mạp bọc trong lớp lông đen trắng. Thay vì ăn thịt như các loài gấu khác, gấu trúc lại là những người ăn chay đích thực, dành cả ngày chỉ để nhai lá và măng trúc giòn rụm. Chúng khá lười biếng, rất thích nằm ườn lăn lộn trên các thảm cỏ xanh để ngủ một giấc thật sâu."
   },
   {
+    "label": "pangolin",
+    "vietnameseName": "Tê tê",
+    "description": "Tê tê là loài động vật có vú duy nhất có vảy keratin. Khi gặp nguy hiểm, chúng cuộn tròn thành quả bóng vảy cứng. Tê tê ăn chủ yếu là kiến và mối, dùng móng vuốt mạnh để mở tổ mối."
+  },
+  {
+    "label": "papillon",
+    "vietnameseName": "Chó Papillon",
+    "description": "Chó Papillon là giống chó toy Pháp với đôi tai dựng lớn có lông xòe ra như cánh bướm (tên papillon nghĩa là bướm trong tiếng Pháp). Chúng nhỏ nhắn, thông minh, hoạt bát và được triều đình châu Âu ưa chuộng làm chó cảnh từ thế kỷ 16."
+  },
+  {
     "label": "parrot",
     "vietnameseName": "Vẹt",
-    "description": "Vẹt là những chú chim nghệ sĩ lắm lời và vô cùng thông minh, luôn mặc trên mình những bộ lông rực rỡ mang đầy đủ các màu sắc của cầu vồng. Chúng có chiếc mỏ quặp rất khỏe dùng để cắn vỡ các loại hạt cứng và sử dụng đôi chân khéo léo y như đôi tay để cầm nắm thức ăn. Vẹt có một tài năng đặc biệt làm ai cũng thích thú, đó là khả năng bắt chước tiếng người, tiếng huýt sáo hay tiếng nhạc vô cùng điêu luyện."
+    "description": "Vẹt là loài chim thông minh với bộ lông sặc sỡ và mỏ cong mạnh. Nhiều loài vẹt có khả năng bắt chước giọng nói con người. Vẹt sống ở vùng nhiệt đới và ăn hạt, trái cây và hoa."
+  },
+  {
+    "label": "partridge",
+    "vietnameseName": "Gà gô",
+    "description": "Partridge là loài chim sống chủ yếu trên mặt đất, nhanh nhẹn và thường bay quãng ngắn để thoát hiểm."
+  },
+  {
+    "label": "peacock",
+    "vietnameseName": "Công",
+    "description": "Công trống là loài chim nổi tiếng nhất với bộ đuôi khổng lồ gồm hàng trăm lông vũ màu xanh lục bảo có đốm hình mắt, có thể xòe ra thành một chiếc quang tuyệt đẹp để thu hút bạn tình. Công trống cũng có mào trên đầu và tiếng kêu rất đặc trưng. Công cái thì có bộ lông khiêm tốn hơn màu nâu xám."
+  },
+  {
+    "label": "pekinese",
+    "vietnameseName": "Chó Bắc Kinh",
+    "description": "Chó Bắc Kinh là giống chó cảnh cổ xưa của Trung Quốc với thân hình thấp bé, chân ngắn, mặt phẳng và lông dài rậm rạp. Chúng từng là loài chó độc quyền của hoàng gia Trung Quốc, được thờ trong cung điện và không ai được sở hữu nếu không phải là vua chúa. Pekingese tính cách kiêu hãnh, độc lập và rất trung thành với chủ."
   },
   {
     "label": "pelecaniformes",
-    "vietnameseName": "Bộ bồ nông",
-    "description": "Bộ bồ nông là đại gia đình của những loài chim nước có kích thước lớn, nổi bật nhất với chiếc túi da khổng lồ co giãn linh hoạt nằm ngay dưới mỏ. Chiếc túi này hoạt động giống như một chiếc vợt bắt cá tự nhiên, cho phép chúng xúc gọn hàng lít nước cùng với đàn cá nhỏ chỉ trong một cú lặn. Khi đã no nê, bồ nông thường đậu trên bờ hoặc nổi trên mặt nước để phơi khô những bộ lông dày mượt của mình."
+    "vietnameseName": "Bộ Bồ nông",
+    "description": "Pelican là loài chim nước lớn với mỏ có túi mỡ đặc trưng. Chúng dùng túi mỡ để bắt cá và làm mát cho trứng. Pelican sống thành bầy lớn và săn cá theo nhóm thông minh."
+  },
+  {
+    "label": "pelican",
+    "vietnameseName": "Bồ nông",
+    "description": "Chim Pelican là loài chim nước lớn với mỏ có túi mỡ đặc trưng có thể giãn ra để chứa cá. Chúng sống thành bầy, săn cá theo nhóm thông minh bằng cách vây đàn cá vào vùng nước nông. Chim Pelican có sải cánh rộng đến 3 mét và là thợ săn cá bậc thầy."
+  },
+  {
+    "label": "pembroke",
+    "vietnameseName": "Chó Pembroke",
+    "description": "Chó Pembroke Welsh Corgi là giống chó chăn gia súc nhỏ của xứ Wales với đặc điểm nổi bật là thân hình dài, chân ngắn và đôi tai dựng lớn nhọn. Chúng thông minh, thân thiện, năng nổ và là giống chó yêu thích của Queen Elizabeth II. Corgi rất giỏi chăn cừu dù chân ngắn nhờ cơ thể thấp giúp chúng tránh được đá móng của gia súc."
   },
   {
     "label": "penguin",
     "vietnameseName": "Chim cánh cụt",
-    "description": "Chim cánh cụt là những quý ông diện áo tuxedo đen trắng lịch lãm của thế giới băng giá, dù có đôi cánh nhưng chúng lại không thể bay lượn trên không trung. Thay vào đó, đôi cánh ấy trở thành những chiếc mái chèo hoàn hảo, giúp chúng bơi lội với tốc độ đáng kinh ngạc dưới lòng đại dương sâu thẳm. Trên cạn, chim cánh cụt có dáng đi lạch bạch vô cùng ngộ nghĩnh và thường trượt dài bằng bụng trên những tảng băng trơn trượt."
+    "description": "Chim cánh cụt là loài chim không biết bay nhưng bơi lội cực tốt. Chúng sống ở Nam bán cầu, chủ yếu ở Nam Cực. Chim cánh cụt có bộ lông dày chống thấm nước và sống thành bầy lớn để giữ ấm."
+  },
+  {
+    "label": "persian_cat",
+    "vietnameseName": "Mèo Ba Tư",
+    "description": "Mèo Ba Tư là giống mèo lâu đời nhất với bộ lông dài, mượt mà và mặt bẹ đặc trưng. Chúng bình tĩnh, thích nằm im và là thú cưng sang trọng. Mèo Ba Tư cần chăm sóc lông hàng ngày và là một trong những giống mèo phổ biến nhất thế giới."
   },
   {
     "label": "pig",
@@ -322,7 +1457,22 @@
   {
     "label": "pigeon",
     "vietnameseName": "Bồ câu",
-    "description": "Bồ câu mang trong mình biểu tượng vĩ đại của tình yêu, sự bình yên và hòa bình trên toàn thế giới, thường thân thiện đi dạo quanh các quảng trường ở thành phố. Chúng có bản năng định vị phương hướng cực kỳ thần kỳ, dù bị thả ở một nơi rất xa nhưng vẫn có thể tìm đúng đường bay thẳng về nhà. Nhờ trí thông minh đó, bồ câu đã từng làm công việc của những người đưa thư dũng cảm, mang những tin tức quan trọng vượt qua bao dặm đường dài."
+    "description": "Bồ câu là loài chim thành thị quen thuộc, sống gần nơi con người sinh sống. Chúng có khả năng định hướng tuyệt vời và có thể tìm đường về nhà từ xa. Bồ câu ăn hạt và sống thành đôi một vợ một chồng."
+  },
+  {
+    "label": "platypus",
+    "vietnameseName": "Thú mỏ vịt",
+    "description": "Thú mỏ vịt là một trong những động vật kỳ lạ nhất - có mỏ vịt, đẻ trứng nhưng cho con bú. Chúng sống ở Úc, có chân màng để bơi và mỏ cảm biến điện để tìm con mồi. Thú mỏ vịt là một trong những động vật có độc - con đực có nọc ở chân sau."
+  },
+  {
+    "label": "polar_bear",
+    "vietnameseName": "Gấu trắng Bắc Cực",
+    "description": "Gấu trắng Bắc Cực là loài gấu lớn nhất, là loài săn mồi đỉnh cao trong vùng Bắc Cực. Chúng có bộ lông trắng trong suốt, da đen để hấp thụ nhiệt và bơi lội cực giỏi. Gấu trắng chuyên ăn hải mã và bị đe dọa bởi biến đổi khí hậu."
+  },
+  {
+    "label": "pomeranian",
+    "vietnameseName": "Chó Pomeranian",
+    "description": "Pomeranian là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
   },
   {
     "label": "porcupine",
@@ -335,14 +1485,64 @@
     "description": "Thú có túi possum là những sinh vật hoạt động trong đêm vô cùng linh hoạt, có đôi mắt to để nhìn rõ bóng tối và chiếc đuôi bám chắc vào cành cây giống như một cánh tay thứ năm. Các bà mẹ possum rất yêu thương con, thường cõng cả đàn con nhỏ xíu, bám chặt trên lưng dạo chơi khắp các cành cây cao. Một khả năng vô cùng hài hước và diễn sâu của possum là chúng sẽ giả vờ chết cứng đờ để qua mặt kẻ thù mỗi khi bị hoảng sợ tột độ."
   },
   {
+    "label": "prairie_chicken",
+    "vietnameseName": "Gà đồng cỏ",
+    "description": "Prairie Chicken là loài chim sống chủ yếu trên mặt đất, nhanh nhẹn và thường bay quãng ngắn để thoát hiểm."
+  },
+  {
+    "label": "ptarmigan",
+    "vietnameseName": "Gà tuyết",
+    "description": "Ptarmigan là loài chim có những đặc điểm riêng về mỏ, lông và tập tính sống, thường được nhận biết khá dễ qua hình dáng bên ngoài."
+  },
+  {
+    "label": "pug",
+    "vietnameseName": "Chó Pug",
+    "description": "Chó Pug là giống chó nhỏ với khuôn mặt nhăn, thân hình vuông vức và tính cách hài hước. Chúng là thú cưng hoàn hảo cho căn hộ, không cần nhiều vận động nhưng rất tình cảm. Pug còn được gọi là 'nhật ký sống' vì luôn ở bên chủ và diễn cảm xúc rõ ràng."
+  },
+  {
+    "label": "quail",
+    "vietnameseName": "Cút",
+    "description": "Quail là loài chim sống chủ yếu trên mặt đất, nhanh nhẹn và thường bay quãng ngắn để thoát hiểm."
+  },
+  {
+    "label": "rabbit",
+    "vietnameseName": "Thỏ",
+    "description": "Thỏ là loài động vật nhỏ với đôi tai dài, đôi mắt lớn và khả năng sinh sản nhanh. Chúng là động vật ăn cỏ, với răng cửa liên tục mọc phải mài bằng cách nhai. Thỏ là thú cưng phổ biến, sống đơn độc hoặc theo bầy và cực nhanh nhẹn."
+  },
+  {
     "label": "raccoon",
     "vietnameseName": "Gấu mèo",
     "description": "Gấu mèo trông giống như những tên trộm nhí đáng yêu với hai quầng lông đen xì quanh mắt như đeo mặt nạ và chiếc đuôi lông rậm rạp có nhiều khoang màu. Chân trước của gấu mèo cực kỳ khéo léo, linh hoạt không kém gì bàn tay con người, giúp chúng có thể dễ dàng mở cửa, mở nắp thùng rác hay nhặt nhạnh đồ vật. Trước khi ăn một món gì đó, gấu mèo thường có thói quen ngộ nghĩnh là mang ra suối nhúng nước vò vò như đang giặt đồ."
   },
   {
-    "label": "rat",
-    "vietnameseName": "Chuột cống",
-    "description": "Chuột cống là những nhà thám hiểm tí hon sở hữu trí tuệ vô cùng nhạy bén và khả năng sinh tồn mạnh mẽ ở hầu khắp mọi nơi, từ những cánh đồng lúa cho đến các ngõ ngách sâu trong lòng thành phố. Chúng có khứu giác tuyệt vời, giúp nhanh chóng phát hiện ra những kho thức ăn béo bở giấu kín. Loài chuột này sống rất đoàn kết, luôn chia sẻ thức ăn và giúp đỡ lẫn nhau xây dựng những mạng lưới hang động phức tạp và an toàn."
+    "label": "red-backed_sandpiper",
+    "vietnameseName": "Dẽ trán trắng",
+    "description": "Dẽ trán trắng là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
+    "label": "red-breasted_merganser",
+    "vietnameseName": "Vịt mỏ cưa ngực đỏ",
+    "description": "Red Breasted Merganser là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
+    "label": "red_fox",
+    "vietnameseName": "Cáo đỏ",
+    "description": "Red Fox là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "red_wolf",
+    "vietnameseName": "Sói đỏ",
+    "description": "Red Wolf là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "redbone",
+    "vietnameseName": "Chó Redbone",
+    "description": "Redbone là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "redshank",
+    "vietnameseName": "Chim dẽ chân đỏ",
+    "description": "Chim dẽ chân đỏ là loài chim nước nhỏ với đôi chân màu đỏ cam nổi bật và mỏ thẳng đỏ. Chúng sinh sống ở các đầm lầy, bờ biển và đồng cỏ ẩm, chạy nhảy nhanh nhẹn để tìm côn trùng và giun đất. Chân đỏ giúp chúng dễ dàng nhận diện và là đặc điểm quan trọng để phân biệt với các loài chim nước khác."
   },
   {
     "label": "reindeer",
@@ -352,22 +1552,147 @@
   {
     "label": "rhinoceros",
     "vietnameseName": "Tê giác",
-    "description": "Tê giác là những cỗ xe tăng sống của thế giới hoang dã với lớp da dày cộp, nhăn nheo như mặc giáp sắt và thân hình đồ sộ đáng nể. Nổi bật nhất trên khuôn mặt của chúng là một hoặc hai chiếc sừng lớn vững chãi làm từ chất sừng, giúp chúng phòng vệ và đào rễ cây cực kỳ mạnh mẽ. Tuy mang vẻ ngoài bặm trợn và cục cằn, nhưng tê giác lại là loài động vật hiền lành chỉ yêu thích việc ăn cỏ và ngâm mình thỏa thích trong bùn mát."
+    "description": "Tê giác là loài thú lớn sống ở châu Phi và châu Á. Chúng có sừng trên mũi và lớp da dày. Tê giác gần như không có kẻ thù tự nhiên nhờ kích thước và lớp da dày, nhưng bị đe dọa bởi nạn săn trộm."
+  },
+  {
+    "label": "rhinoceros_beetle",
+    "vietnameseName": "Bọ cánh cứng Rhinoceros Beetle",
+    "description": "Rhinoceros Beetle là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "rhodesian_ridgeback",
+    "vietnameseName": "Chó Rhodesian Ridgeback",
+    "description": "Rhodesian Ridgeback là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "ringlet",
+    "vietnameseName": "Bướm ringlet",
+    "description": "Ringlet là loài bướm có cánh mỏng, màu sắc bắt mắt và thường bay lượn quanh các khu vực có nhiều hoa."
+  },
+  {
+    "label": "ringneck_snake",
+    "vietnameseName": "Rắn cổ vòng",
+    "description": "Rắn cổ vòng là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "robin",
+    "vietnameseName": "Chim cổ đỏ",
+    "description": "Robin là loài chim nhỏ đến trung bình, thường sống theo đàn, ăn hạt hoặc côn trùng và có tiếng hót đặc trưng."
+  },
+  {
+    "label": "rock_crab",
+    "vietnameseName": "Cua đá",
+    "description": "Rock Crab là loài giáp xác có lớp vỏ cứng và đôi càng khỏe, thường sống ở đáy biển hoặc vùng nước mặn, nước lợ."
+  },
+  {
+    "label": "rock_python",
+    "vietnameseName": "Trăn đá châu Phi",
+    "description": "Trăn đá châu Phi là một trong những loài rắn lớn nhất thế giới, có thể dài đến 6 mét và nặng tới 90kg. Chúng có hoa văn hình tam giác màu nâu vàng trên nền xanh xám, giúp ngụy trang hoàn hảo trên các vách đá. Trăn đá sống ở vùng savan và rừng thưa châu Phi, là thợ săn phục kích tuyệt vời có thể nuốt chửng con mồi lớn bằng cách quấn chặt và bóp nghẹt."
+  },
+  {
+    "label": "rodent",
+    "vietnameseName": "Chuột",
+    "description": "Chuột là nhóm động vật mõm nhọn, tai nhỏ tròn, đuôi dài có vảy và tốc độ sinh sản cao."
+  },
+  {
+    "label": "rottweiler",
+    "vietnameseName": "Chó Rottweiler",
+    "description": "Chó Rottweiler là giống chó lớn mạnh mẽ, có nguồn gốc từ Đức. Chúng trung thành, bảo vệ gia đình quyết liệt và cần sự huấn luyện đúng cách. Rottweiler có bộ lông đen nâu, cơ bắp và là một trong những giống chó canh gác tốt nhất."
+  },
+  {
+    "label": "ruddy_turnstone",
+    "vietnameseName": "Dẽ trán trắng",
+    "description": "Dẽ trán trắng là loài chim biển nhỏ với đặc điểm nổi bật là các vạch đen trắng trên lưng và một mảng trắng trên trán. Chúng có đôi chân cam khỏe, mỏ đen ngắn và cứng, chuyên dùng để lật đá, vỏ sò để tìm côn trùng và giun. Chúng di cư xa hàng ngàn km mỗi năm từ vùng Bắc Cực xuống châu Phi."
+  },
+  {
+    "label": "ruffed_grouse",
+    "vietnameseName": "Gà gô ruffed",
+    "description": "Ruffed Grouse là loài chim sống chủ yếu trên mặt đất, nhanh nhẹn và thường bay quãng ngắn để thoát hiểm."
+  },
+  {
+    "label": "saint_bernard",
+    "vietnameseName": "Chó Saint Bernard",
+    "description": "Chó Saint Bernard là giống chó lớn có nguồn gốc từ Thụy Sĩ, nổi tiếng trong việc cứu nạn trên núi. Chúng có khứu giác tuyệt vời, có thể phát hiện nạn nhân bị vùi lở dưới tuyết. Saint Bernard thân thiện, yêu trẻ em và là biểu tượng của sự cứu hộ."
+  },
+  {
+    "label": "saluki",
+    "vietnameseName": "Chó Saluki",
+    "description": "Saluki là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "samoyed",
+    "vietnameseName": "Chó Samoyed",
+    "description": "Samoyed là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
   },
   {
     "label": "sandpiper",
-    "vietnameseName": "Chim choắt",
-    "description": "Chim choắt là những chú chim nhỏ nhắn, nhanh nhẹn mang đôi chân dài gầy guộc thường chạy loăn choăn dọc theo mép nước trên các bãi biển đầy nắng gió. Chúng có thói quen rất dễ thương là chạy theo những đợt sóng biển lúc vừa rút xuống để dùng chiếc mỏ nhọn và dài mổ liên tục vào cát ướt. Cách mổ này giúp chim choắt tìm kiếm những chú tôm, cua hay trùn nhỏ trốn dưới lớp cát làm bữa ăn ngon lành cho mình."
+    "vietnameseName": "Dẽ",
+    "description": "Dẽ là loài chim nước nhỏ với mỏ dài và chân ngắn. Chúng sống ở bờ biển, đầm lầy và ăn côn trùng nhỏ, giáp xác. Dẽ di chuyển quãng đường lớn giữa nơi sinh sản và nơi trú đông."
+  },
+  {
+    "label": "schipperke",
+    "vietnameseName": "Chó Schipperke",
+    "description": "Chó Schipperke là giống chó nhỏ của Bỉ với bộ lông đen tuyền, không có đuôi hoặc đuôi rất ngắn. Chúng từng là chó thuyền, chuyên canh gác trên các con tàu ở kênh đào Bỉ. Schipperke rất thông minh, hiếu động, tò mò và có biệt danh là 'thủ lĩnh đen nhỏ' nhờ tinh thần canh gác cao."
+  },
+  {
+    "label": "scorpion",
+    "vietnameseName": "Bọ cạp",
+    "description": "Bọ cạp là loài động vật chân đốt với đuôi có ngòi độc, sống ở vùng khô nhiệt đới. Chúng có 8 chân, đôi kìm gọn (pedipalps) và phát quang để phát hiện con mồi. Bọ cạp là thợ săn đêm, ăn côn trùng và đôi khi cả bò sát nhỏ."
+  },
+  {
+    "label": "scotch_terrier",
+    "vietnameseName": "Chó Scotch terrier",
+    "description": "Scotch Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "scottish_deerhound",
+    "vietnameseName": "Chó Scottish Deerhound",
+    "description": "Scottish Deerhound là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "sea_anemone",
+    "vietnameseName": "Hải quỳ",
+    "description": "Sea Anemone là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
+  },
+  {
+    "label": "sea_cucumber",
+    "vietnameseName": "Hải sâm",
+    "description": "Đưa biển là loài động vật biển hình dáng dưa chuột, sống ở đáy biển. Chúng ăn cặn hữu cơ bằng rễ miệng và có khả năng phòng vệ độc đáo - có thể nôn ra nội tạng để dụ kẻ thù. Đưa biển là quan trọng cho việc tái tạo chất dinh dưỡng trong đại dương."
+  },
+  {
+    "label": "sea_lion",
+    "vietnameseName": "Sư tử biển",
+    "description": "Sea Lion là loài mèo lớn hoặc mèo hoang có cơ thể linh hoạt, phản xạ nhanh và khả năng săn mồi rất tốt."
+  },
+  {
+    "label": "sea_slug",
+    "vietnameseName": "Sên biển",
+    "description": "Sea Slug là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
+  },
+  {
+    "label": "sea_snake",
+    "vietnameseName": "Rắn Sea Snake",
+    "description": "Sea Snake là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "sea_urchin",
+    "vietnameseName": "Nhím biển",
+    "description": "Đại dương gai là loài động vật biển hình cầu với hàng trăm gai nhọn để bảo vệ. Chúng có cấu trúc cơ thể gọi là 'test' và ăn tảo, rong bằng cấu trúc gọi là 'Aristotle's lantern'. Đại dương gai là quan trọng cho hệ sinh thái rạn san hô."
   },
   {
     "label": "seahorse",
     "vietnameseName": "Cá ngựa",
-    "description": "Cá ngựa mang vẻ đẹp kỳ lạ, độc nhất vô nhị dưới đáy biển với chiếc đầu cong cong trông hệt như đầu của một quân cờ ngựa và chiếc đuôi có khả năng quấn chặt vào các nhành san hô rực rỡ. Thay vì bơi ngang như các loài cá thông thường, cá ngựa lại vỗ những chiếc vây nhỏ xíu trong suốt để bơi theo tư thế đứng thẳng đầy kiêu hãnh. Điều đặc biệt và kỳ diệu nhất là ở loài này, cá ngựa đực sẽ là người mang chiếc túi trước bụng để ấp trứng và sinh ra những chú cá ngựa con."
+    "description": "Cá ngựa là loài cá nhỏ có đầu giống ngựa và đuôi cuộn được. Chúng là loài động vật mà con đực mang thai và sinh con. Cá ngựa bơi không tốt và thường bám vào rong biển để tránh bị trôi."
   },
   {
     "label": "seal",
     "vietnameseName": "Hải cẩu",
-    "description": "Hải cẩu là những tay bơi lội siêu phàm của các vùng biển lạnh giá, với cơ thể được thiết kế hoàn hảo mang hình thoi mượt mà và các chi biến thành những chiếc vây nhịp nhàng bơi lội dưới nước. Chúng sở hữu một lớp mỡ dưới da vô cùng dày dặn, giúp cơ thể hải cẩu luôn ấm áp dù phải ngụp lặn trong vùng nước đóng băng lạnh buốt. Khi lên trên bờ băng, hải cẩu thường nằm phơi nắng, dùng cái bụng tròn trĩnh để trườn đi và giao tiếp bằng những tiếng kêu 'oạp oạp' rất vui tai."
+    "description": "Hải cẩu là động vật có vú sống ở biển nhưng phải lên bờ đẻ. Chúng có cơ thể thon suôn, chân chèo và lớp mỡ dày để giữ ấm. Hải cẩu là thợ lặn xuất sắc và có thể ở dưới nước lâu."
+  },
+  {
+    "label": "sealyham_terrier",
+    "vietnameseName": "Chó Sealyham terrier",
+    "description": "Sealyham Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
   },
   {
     "label": "shark",
@@ -377,7 +1702,62 @@
   {
     "label": "sheep",
     "vietnameseName": "Cừu",
-    "description": "Cừu là những người bạn đáng yêu với tính cách ngoan ngoãn, hiền lành và thường tụ tập sống thành những bầy đàn đông đúc trên những sườn đồi xanh ngát. Chúng sở hữu một bộ lông dày dặn, mềm xốp và vô cùng ấm áp để có thể chịu đựng được cái lạnh của mùa đông sương giá. Lớp lông tuyệt vời ấy của bầy cừu, sau khi được xén cẩn thận, sẽ được kéo sợi và dệt thành những chiếc áo len xinh xắn sưởi ấm cho con người chúng ta."
+    "description": "Cừu là động vật nuôi được nuôi lấy len, thịt và sữa. Chúng có lông dày thu được len, sống theo bầy đàn và có tính xã hội cao. Cừu ăn cỏ và có dạ dày phức tạp để tiêu hóa cellulose."
+  },
+  {
+    "label": "shetland_sheepdog",
+    "vietnameseName": "Chó Shetland sheepdog",
+    "description": "Shetland Sheepdog là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "shih-tzu",
+    "vietnameseName": "Chó Shih Tzu",
+    "description": "Chó Shih Tzu là giống chó cảnh cổ xưa của Trung Quốc với tên gọi nghĩa là 'chó sư tử' nhờ bộ lông dài rậm rạp xõa xuống như bờm sư tử. Chúng từng là thú cưng độc quyền của hoàng gia Trung Quốc, được ưa chuộng nhờ tính cách ôn hòa, tình cảm và không rụng lông nhiều. Shih Tzu nhỏ nhắn, mặt phẳng và rất thích hợp làm thú cưng trong nhà."
+  },
+  {
+    "label": "siamese_cat",
+    "vietnameseName": "Mèo Xiêm",
+    "description": "Mèo Xiêm là giống mèo có nguồn gốc từ Thái Lan, với bộ lông màu điểm (đen, nâu) trên nền trắng và mắt xanh dương. Chúng hoạt bát, thông minh và 'nói chuyện' nhiều với tiếng kêu đặc trưng. Mèo Xiêm cực kỳ tình cảm và gắn bó chặt chẽ với chủ."
+  },
+  {
+    "label": "siamese_crocodile",
+    "vietnameseName": "Cá sấu Xiêm",
+    "description": "Cá sấu Xiêm là loài cá sấu nhỏ hơn cá sấu nước ngọt, sống ở Đông Nam Á. Chúng có mõm rộng hơn và được nuôi lấy da. Loài này gần như tuyệt chủng trong tự nhiên nhưng được nuôi rộng rãi."
+  },
+  {
+    "label": "siberian_husky",
+    "vietnameseName": "Chó Husky Siberia",
+    "description": "Chó Husky Siberia là giống chó kéo xe có nguồn gốc từ Siberia lạnh giá. Chúng có bộ lông dày, đôi mắt xanh hoặc heterochromia (mỗi mắt một màu) và tính cách năng động, vui vẻ. Husky cực kỳ thông minh nhưng cũng khá nghịch ngợm và thích 'trò chuyện' bằng tiếng rú."
+  },
+  {
+    "label": "sidewinder",
+    "vietnameseName": "Thằn lằn Sidewinder",
+    "description": "Sidewinder là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "silky_terrier",
+    "vietnameseName": "Chó silky terrier",
+    "description": "Silky Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "silver_pheasant",
+    "vietnameseName": "Trĩ bạc",
+    "description": "Trĩ bạc là loài chim đẹp sống trong rừng. Con trống có bộ lông trắng bạc với hoa văn đen, con mái có bộ lông nâu để ngụy trang. Chúng ăn trên mặt đất nhưng ngủ trên cây."
+  },
+  {
+    "label": "sloth_bear",
+    "vietnameseName": "Gấu lười",
+    "description": "Gấu lười là loài gấu sống ở Ấn Độ và Sri Lanka, chuyên ăn kiến và mối. Chúng có móng vuốt trước đặc biệt để mở tổ mối, môi thở thô và thiếu răng cửa. Gấu lười ăn sâu bọ và là loài gấu đặc biệt nhất trong họ gấu."
+  },
+  {
+    "label": "slug",
+    "vietnameseName": "Sên trần",
+    "description": "Slug là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
+  },
+  {
+    "label": "snail",
+    "vietnameseName": "Ốc sên",
+    "description": "Snail là loài thân mềm hoặc động vật biển không xương sống có cấu trúc cơ thể mềm và thích nghi riêng với môi trường sống."
   },
   {
     "label": "snake",
@@ -385,19 +1765,69 @@
     "description": "Rắn là những sinh vật bí ẩn, di chuyển hoàn toàn bằng cách trườn mình ngoằn ngoèo trên mặt đất hoặc luồn lách qua các cành cây do không hề có chân tay. Chúng có một chiếc lưỡi chẻ đôi cực kỳ linh hoạt, thường xuyên thè ra để ngửi và thu thập các mùi hương từ môi trường xung quanh một cách chính xác. Mặc dù nhiều loài rắn mang nọc độc để săn mồi, nhưng chúng lại đóng vai trò là những vệ sĩ diệt chuột tuyệt vời giúp bảo vệ mùa màng."
   },
   {
+    "label": "snow_leopard",
+    "vietnameseName": "Báo tuyết",
+    "description": "Snow Leopard là loài mèo lớn hoặc mèo hoang có cơ thể linh hoạt, phản xạ nhanh và khả năng săn mồi rất tốt."
+  },
+  {
+    "label": "soft-coated_wheaten_terrier",
+    "vietnameseName": "Chó soft-coated wheaten terrier",
+    "description": "Soft Coated Wheaten Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "softshell_turtle",
+    "vietnameseName": "Rùa Softshell Turtle",
+    "description": "Softshell Turtle là loài bò sát có mai bảo vệ cơ thể, di chuyển chậm nhưng rất bền bỉ và sống lâu."
+  },
+  {
     "label": "sparrow",
-    "vietnameseName": "Chim sẻ",
-    "description": "Chim sẻ là những người bạn nhỏ xíu, quen thuộc luôn có mặt quanh quẩn ở khắp các làng quê thanh bình cho đến những khu đô thị nhộn nhịp đông đúc. Chúng khoác trên mình bộ lông mang những vệt màu nâu, xám và trắng giản dị, với dáng vẻ nhảy nhót bằng cả hai chân vô cùng nhanh nhẹn. Cứ mỗi buổi sáng thức dậy, chim sẻ lại đậu trên những cành cây hay mái nhà cao râm ran hót những khúc ca líu lo, tràn trề năng lượng chào đón một ngày mới."
+    "vietnameseName": "Sẻ",
+    "description": "Sẻ là loài chim nhỏ thân thuộc với con người. Chúng có bộ lông nâu xám, kích thước nhỏ và ăn hạt, côn trùng. Sẻ sống ở cả đô thị và nông thôn, làm tổ trong các khe hở."
+  },
+  {
+    "label": "spider",
+    "vietnameseName": "Nhện",
+    "description": "Nhện không phải côn trùng mà là động vật chân đốt với 8 chân. Chúng tạo tơ để làm tổ, bắt mồi và di chuyển. Nhện là thợ săn thụ động cực kỳ hiệu quả, kiểm soát côn trùng và có nhiều kỹ thuật săn mồi khác nhau từ tơ đến vũ độc."
+  },
+  {
+    "label": "spiny_lobster",
+    "vietnameseName": "Tôm hùm gai",
+    "description": "Spiny Lobster là loài giáp xác có lớp vỏ cứng và đôi càng khỏe, thường sống ở đáy biển hoặc vùng nước mặn, nước lợ."
+  },
+  {
+    "label": "spoonbill",
+    "vietnameseName": "Khác (Spoonbill)",
+    "description": "Cò thìa là loài chim nước với đặc điểm nhận diện rõ nhất là chiếc mỏ thẳng dài đặc biệt ở phần đầu phình to thành hình thìa. Chúng dùng mỏ thìa này để quét qua nước bùn để tìm cua, cá nhỏ và côn trùng. Cò thìa có bộ lông trắng, đôi chân dài và sinh sống ở các đầm lầy, hồ và sông ở vùng nhiệt đới và ôn đới."
+  },
+  {
+    "label": "spotted_salamander",
+    "vietnameseName": "Kỳ giông Spotted Salamander",
+    "description": "Spotted Salamander là loài lưỡng cư sống trong môi trường ẩm hoặc gần nước, có da mềm và vòng đời gắn với cả nước lẫn cạn."
   },
   {
     "label": "squid",
     "vietnameseName": "Mực",
-    "description": "Mực là những tay bơi cừ khôi mang dáng vẻ độc đáo với chiếc đầu hình tên lửa và vô số những xúc tu vươn dài đầy mạnh mẽ lướt đi trong lòng đại dương. Ở phía cuối thân, chúng sử dụng một chiếc ống phun nước giống hệt như một chiếc động cơ phản lực, giúp mực phóng đi với tốc độ cực nhanh. Đặc biệt, khi gặp phải nguy hiểm, mực sẽ phun ra một đám mây mực màu đen kịt vào dòng nước, tạo thành một màn khói mù mịt để an toàn trốn thoát kẻ thù."
+    "description": "Mực là loài động vật thân mềm sống ở biển với 10 xúc tu (8 ngắn + 2 dài). Mực bơi cực nhanh bằng cách phun nước và có thể thay đổi màu sắc. Mực là thành phần quan trọng trong chuỗi thức ăn biển."
   },
   {
     "label": "squirrel",
     "vietnameseName": "Sóc",
-    "description": "Sóc là những nghệ sĩ đu cây nhanh nhẹn, linh hoạt với chiếc đuôi xù to và bồng bềnh như một chiếc chổi nhỏ xinh. Đặc điểm nổi bật của chúng là hàm răng vô cùng chắc khỏe để dễ dàng cắn vỡ lớp vỏ cứng của các loại hạt dẻ hay quả thông thơm ngon. Sóc còn có trí nhớ cực tốt và thói quen rất cẩn thận, luôn dành thời gian đào đất chôn giấu các loại hạt đi khắp nơi để dành làm thức ăn dự trữ cho những ngày mùa đông khắc nghiệt."
+    "description": "Sóc là loài gặm nhấm nhỏ với đuôi dài rậm. Chúng leo trèo cây giỏi và ăn hạt, quả. Sóc có thính giác và thị giác tốt, rất nhanh nhẹn và thường tích trữ thức ăn cho mùa đông."
+  },
+  {
+    "label": "staffordshire_bullterrier",
+    "vietnameseName": "Chó Staffordshire bullterrier",
+    "description": "Staffordshire Bullterrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "standard_poodle",
+    "vietnameseName": "Chó standard poodle",
+    "description": "Standard Poodle là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "standard_schnauzer",
+    "vietnameseName": "Chó Standard Schnauzer",
+    "description": "Standard Schnauzer là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
   },
   {
     "label": "starfish",
@@ -405,9 +1835,79 @@
     "description": "Sao biển là một món trang sức tuyệt đẹp của đại dương sâu thẳm, sở hữu hình dạng đối xứng giống y hệt như những ngôi sao lấp lánh có năm cánh trải đều. Dưới mỗi cánh sao biển có gắn hàng trăm chiếc ống chân hút nhỏ xíu giúp chúng di chuyển chậm rãi qua các rạn san hô và bám chặt vào bề mặt những tảng đá lớn. Điều kỳ diệu nhất ở sao biển là khả năng tái sinh thần kỳ, nếu chúng vô tình bị đứt đi một cánh thì theo thời gian, một chiếc cánh mới sẽ tự động mọc ra tại vị trí đó."
   },
   {
+    "label": "stingray",
+    "vietnameseName": "Cá đuối ó",
+    "description": "Cá đuối ó là loài cá đuối với đuôi dài có gai nhọn chứa nọc độc. Chúng có cơ thể dẹt giúp ngụy trang hoàn hảo trên đáy biển. Cá đuối ó bơi bằng cách đập đôi cánh như chim bay và là loài thân thiện, hiếm khi tấn công con người trừ khi bị giẫm đạp."
+  },
+  {
+    "label": "sulphur-crested_cockatoo",
+    "vietnameseName": "Vẹt mào lưu huỳnh",
+    "description": "Vẹt mào lưu huỳnh là loài vẹt lớn màu trắng với mào vàng lưu huỳnh rực rỡ trên đầu có thể dựng lên hoặc xẹp xuống tùy theo tâm trạng. Chúng rất thông minh, sống thọ và có khả năng bắt chước giọng nói tốt. Vẹt mào lưu huỳnh sống ở Úc và New Guinea, là loài làm tổ trong các hốc cây và sống theo bầy đàn ồn ào, hoạt bát."
+  },
+  {
+    "label": "sulphur_butterfly",
+    "vietnameseName": "Bướm lưu huỳnh",
+    "description": "Sulphur Butterfly là loài bướm có cánh mỏng, màu sắc bắt mắt và thường bay lượn quanh các khu vực có nhiều hoa."
+  },
+  {
+    "label": "sussex_spaniel",
+    "vietnameseName": "Chó Sussex spaniel",
+    "description": "Sussex Spaniel là giống chó săn chim có tai dài, tính cách thân thiện và khả năng làm việc linh hoạt."
+  },
+  {
     "label": "swan",
     "vietnameseName": "Thiên nga",
-    "description": "Thiên nga là biểu tượng tối cao cho vẻ đẹp kiêu sa, sang trọng và quý phái của các loài chim nước lớn với bộ lông trắng muốt như những bông tuyết tinh khôi. Chúng có chiếc cổ thon dài vô cùng uyển chuyển, luôn nhẹ nhàng uốn cong gập xuống khi thanh lịch lướt đi trên mặt hồ phẳng lặng lấp lánh ánh mặt trời. Thiên nga là loài chim rất tình cảm và thủy chung, khi đã kết đôi, chúng sẽ gắn bó với người bạn đời của mình mãi mãi trong suốt quãng thời gian còn lại."
+    "description": "Thiên nga là loài chim nước lớn và đẹp nhất. Chúng có cổ dài uốn cong, bộ lông trắng muốt và bay mạnh mẽ. Thiên nga sống thành đôi một vợ một chồng và là biểu tượng của tình yêu vĩnh cửu."
+  },
+  {
+    "label": "tabby",
+    "vietnameseName": "Mèo mướp",
+    "description": "Tabby là loài mèo lớn hoặc mèo hoang có cơ thể linh hoạt, phản xạ nhanh và khả năng săn mồi rất tốt."
+  },
+  {
+    "label": "tabby_cat",
+    "vietnameseName": "Mèo vằn",
+    "description": "Mèo vằn không phải là một giống cụ thể mà là mẫu lông phổ biến nhất ở mèo nhà, với vằn sọc, xoắn hoặc đốm. Mèo vằn có chữ 'M' trên trán và là mẫu lưng tự nhiên giúp ngụy trang khi săn mồi. Đây là mẫu lông phổ biến nhất thế giới."
+  },
+  {
+    "label": "tailed_frog",
+    "vietnameseName": "Kỳ giông Tailed Frog",
+    "description": "Tailed Frog là loài lưỡng cư sống trong môi trường ẩm hoặc gần nước, có da mềm và vòng đời gắn với cả nước lẫn cạn."
+  },
+  {
+    "label": "tarantula",
+    "vietnameseName": "Côn trùng Tarantula",
+    "description": "Tarantula là loài côn trùng có cơ thể chia đốt, thường rất linh hoạt và đóng vai trò quan trọng trong hệ sinh thái."
+  },
+  {
+    "label": "tench",
+    "vietnameseName": "Cá vocese",
+    "description": "Cá vocese (Tench) là loài cá nước ngọt thuộc họ Cá chép, phân bố rộng khắp châu Âu và Tây Á. Chúng có thân hình thuôn dài, vảy màu xanh ô liu xỉn và mắt đỏ tươi đặc trưng. Cá vocese sống ở các vùng nước tĩnh, đáy bùn và là loài cá thực phẩm phổ biến ở châu Âu."
+  },
+  {
+    "label": "terrapin",
+    "vietnameseName": "Rùa nước ngọt",
+    "description": "Rùa nước ngọt là loài bò sát có mai bảo vệ cơ thể, di chuyển chậm nhưng rất bền bỉ và sống lâu."
+  },
+  {
+    "label": "thunder_snake",
+    "vietnameseName": "Trăn cây",
+    "description": "Trăn cây là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "tibetan_mastiff",
+    "vietnameseName": "Chó ngao Tây Tạng",
+    "description": "Chó ngao Tây Tạng là giống chó to lớn, khỏe và thường được dùng để canh gác hoặc hỗ trợ công việc nặng."
+  },
+  {
+    "label": "tibetan_terrier",
+    "vietnameseName": "Chó sục Tây Tạng",
+    "description": "Tibetan Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "tick",
+    "vietnameseName": "Nhện Tick",
+    "description": "Tick là loài chân khớp nhỏ, có tập tính riêng để săn mồi hoặc bám ký sinh trong môi trường sống của nó."
   },
   {
     "label": "tiger",
@@ -415,9 +1915,59 @@
     "description": "Hổ là chúa tể dũng mãnh của những khu rừng nhiệt đới âm u, sở hữu thân hình cơ bắp to lớn và sức mạnh phi thường. Chúng khoác lên mình bộ lông màu cam rực rỡ nổi bật cùng những sọc vằn màu đen đặc trưng giúp hổ ngụy trang hoàn hảo khi rình rập, lẻn lỏi trong những đám cỏ cao. Trái ngược với sư tử, hổ là những thợ săn thích hành động một mình đơn độc, di chuyển không tiếng động và chớp lấy cơ hội vồ gọn con mồi trong chớp mắt."
   },
   {
+    "label": "tiger_beetle",
+    "vietnameseName": "Bọ cánh cứng hổ",
+    "description": "Bọ cánh cứng hổ là loài mèo lớn hoặc mèo hoang có cơ thể linh hoạt, phản xạ nhanh và khả năng săn mồi rất tốt."
+  },
+  {
+    "label": "tiger_cat",
+    "vietnameseName": "Mèo cọp",
+    "description": "Mèo cọp là thuật ngữ chỉ mèo nhà với bộ lông vằn sọc giống hổ. Chúng không phải là một giống riêng mà là mèo nhà với mẫu lông tabby sọc. Mèo cọp thường có tính cách hoang dã hơn và là thợ săn giỏi trong sân vườn."
+  },
+  {
+    "label": "tiger_shark",
+    "vietnameseName": "Cá mập hổ",
+    "description": "Cá mập hổ là loài cá mập lớn sống ở các vùng biển nhiệt đới và ôn đới, được gọi là hổ vì có vằn sọc trên cơ thể khi còn nhỏ. Chúng là loài ăn tạp, ăn từ cá, rùa biển đến cả động vật chết. Cá mập hổ có thính giác cực nhạy bén và được mệnh danh là 'thùng rác của đại dương'."
+  },
+  {
+    "label": "timber_wolf",
+    "vietnameseName": "Sói xám",
+    "description": "Timber Wolf là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "toucan",
+    "vietnameseName": "Chim mỏ sừng",
+    "description": "Toucan là loài chim nhiệt đới có mỏ nổi bật, màu lông đẹp và tập tính sống rất sinh động."
+  },
+  {
+    "label": "toy_poodle",
+    "vietnameseName": "Chó Toy Poodle",
+    "description": "Toy Poodle là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "toy_terrier",
+    "vietnameseName": "Chó sục cảnh Nga",
+    "description": "Toy Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
+    "label": "tree_frog",
+    "vietnameseName": "Ếch cây",
+    "description": "Ếch cây là loài lưỡng cư sống trong môi trường ẩm hoặc gần nước, có da mềm và vòng đời gắn với cả nước lẫn cạn."
+  },
+  {
+    "label": "triceratops",
+    "vietnameseName": "Khủng long ba sừng",
+    "description": "Triceratops là loài thú nhỏ, nhanh nhẹn và thường có khả năng kiếm ăn, trốn tránh kẻ thù rất tốt."
+  },
+  {
+    "label": "trilobite",
+    "vietnameseName": "Bọ ba thùy",
+    "description": "Trilobite là loài côn trùng hoặc chân khớp có đặc điểm nhận diện riêng về hình dáng, màu sắc và tập tính."
+  },
+  {
     "label": "turkey",
     "vietnameseName": "Gà tây",
-    "description": "Gà tây là loài chim có vóc dáng đồ sộ mang nguồn gốc từ lục địa Bắc Mỹ, với phần đầu và cổ mang một lớp da nhăn nheo, đỏ rực rất dễ nhận biết. Những chú gà tây đực còn có một tài năng vô cùng lộng lẫy, đó là khả năng xòe rộng toàn bộ bộ lông đuôi của mình ra tạo thành một chiếc quạt khổng lồ rực rỡ để thu hút các nàng gà cái. Chúng thường có những tiếng kêu 'ục ục' rộn rã và đóng vai trò là tâm điểm của những bữa tiệc tưng bừng trong ngày Lễ Tạ ơn."
+    "description": "Gà tây là loài chim lớn có nguồn gốc từ châu Mỹ. Con trống có bộ lông đuôi hình quạt và có 'cà sa' trên da. Gà tây được nuôi rộng rãi để lấy thịt, đặc biệt là trong dịp lễ tạ ơn."
   },
   {
     "label": "turtle",
@@ -425,9 +1975,104 @@
     "description": "Rùa là những ông lão hiền lành mang trong mình sự trầm mặc và bền bỉ của thế giới bò sát, tuổi thọ của chúng có thể lên tới cả trăm năm đằng đẵng. Chở che cho cơ thể rùa là một chiếc mai cứng cáp, vững chãi tựa như một ngôi nhà bằng đá, nơi rùa có thể rụt đầu và tứ chi vào để trốn mỗi khi gặp hiểm nguy. Mặc dù bước đi trên cạn có phần nặng nề và chậm chạp, nhưng khi rùa lặn xuống nước, chúng lại bơi lội thoăn thoắt và duyên dáng vô cùng."
   },
   {
+    "label": "tusker",
+    "vietnameseName": "Voi ngà dài",
+    "description": "Voi ngà dài là những con voi đực trưởng thành có ngà cực kỳ dài và nặng, đôi khi dài tới 3 mét và nặng hơn 100kg mỗi bên. Chúng là những gã khổng lồ của savan châu Phi, dùng ngà để đào nước, bẻ cây, cạnh tranh và bảo vệ. Voi ngà dài là biểu tượng của sức mạnh và sự uy nghiêm trong thế giới tự nhiên, sống theo bầy đàn do con voi già nhất dẫn dắt."
+  },
+  {
+    "label": "vietnamese_mossy_frog",
+    "vietnameseName": "Nhái cây Việt Nam",
+    "description": "Nhái cây Việt Nam là loài ếch có da giống rêu, giúp ngụy trang hoàn hảo trong rừng. Chúng sống ở Việt Nam và Lào, bám vào cây và đá. Khi gặp nguy hiểm, chúng cuộn tròn thành quả bóng."
+  },
+  {
+    "label": "vine_snake",
+    "vietnameseName": "Rắn Vine Snake",
+    "description": "Vine Snake là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "vizsla",
+    "vietnameseName": "Chó Vizsla",
+    "description": "Vizsla là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "vulture",
+    "vietnameseName": "Kền kền",
+    "description": "Vulture là loài chim ăn xác sống có sải cánh lớn và bay lượn tốt để tìm kiếm nguồn thức ăn từ trên cao."
+  },
+  {
+    "label": "walker_hound",
+    "vietnameseName": "Chó Walker hound",
+    "description": "Walker Hound là giống chó săn có vóc dáng thanh thoát, khứu giác hoặc tốc độ rất tốt và bản năng truy đuổi mạnh."
+  },
+  {
+    "label": "walking_stick",
+    "vietnameseName": "Nhện Walking Stick",
+    "description": "Walking Stick là loài chân khớp nhỏ, có tập tính riêng để săn mồi hoặc bám ký sinh trong môi trường sống của nó."
+  },
+  {
+    "label": "wallaby",
+    "vietnameseName": "Chuột túi wallaby",
+    "description": "Wallaby là họ hàng của kanguru nhưng nhỏ hơn, sống ở Úc và New Guinea. Chúng di chuyển bằng cách nhảy, có túi để nuôi con và ăn thực vật. Wallaby thích nghi tốt với nhiều môi trường sống khác nhau và là thú cưng độc đáo ở một số nơi."
+  },
+  {
+    "label": "water_ouzel",
+    "vietnameseName": "Chim chìa vôi nước",
+    "description": "Water Ouzel là loài chim có những đặc điểm riêng về mỏ, lông và tập tính sống, thường được nhận biết khá dễ qua hình dáng bên ngoài."
+  },
+  {
+    "label": "water_snake",
+    "vietnameseName": "Rắn nước",
+    "description": "Rắn nước là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "weevil",
+    "vietnameseName": "Bọ vòi voi",
+    "description": "Weevil là loài côn trùng hoặc chân khớp có đặc điểm nhận diện riêng về hình dáng, màu sắc và tập tính."
+  },
+  {
+    "label": "weimaraner",
+    "vietnameseName": "Chó Weimaraner",
+    "description": "Weimaraner là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "welsh_springer_spaniel",
+    "vietnameseName": "Chó Welsh springer spaniel",
+    "description": "Welsh Springer Spaniel là giống chó săn chim có tai dài, tính cách thân thiện và khả năng làm việc linh hoạt."
+  },
+  {
+    "label": "west_highland_white_terrier",
+    "vietnameseName": "Chó West Highland white terrier",
+    "description": "West Highland White Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
+  },
+  {
     "label": "whale",
     "vietnameseName": "Cá voi",
-    "description": "Cá voi là những gã khổng lồ hiền từ của biển khơi bát ngát, được mệnh danh là loài động vật có kích thước vĩ đại nhất từng xuất hiện trên Trái Đất thân yêu này. Tuy sống ngập chìm dưới đáy đại dương mênh mông, nhưng cá voi không phải là loài cá mà lại là một loài thú có vú tuyệt vời, chúng bắt buộc phải trồi lên mặt nước để thở không khí thông qua lỗ phun nước trên đỉnh đầu. Cá voi giao tiếp bằng những tiếng hát trầm bổng, du dương và vô cùng thiêng liêng có thể vang xa lướt qua hàng vạn dặm dưới lòng biển sâu."
+    "description": "Cá voi là loài động vật lớn nhất từng sống trên Trái đất. Chúng là động vật có vú sống dưới biển, thở bằng phổi và cho con bú. Cá voi di chuyển quãng đường lớn và giao tiếp bằng tiếng hát."
+  },
+  {
+    "label": "whippet",
+    "vietnameseName": "Chó Whippet",
+    "description": "Whippet là một giống chó có đặc điểm hình thể và tính cách riêng, được tuyển chọn để phục vụ săn bắn, chăn đàn hoặc làm bạn đồng hành với con người."
+  },
+  {
+    "label": "whiptail",
+    "vietnameseName": "Thằn lằn Whiptail",
+    "description": "Whiptail là loài bò sát có vảy, cơ thể linh hoạt và khả năng thích nghi tốt với môi trường sống đặc thù."
+  },
+  {
+    "label": "white_stork",
+    "vietnameseName": "Cò trắng",
+    "description": "White Stork là loài chim nước hoặc chim lội nước có hình thể thích nghi tốt với việc kiếm ăn gần ao hồ, bờ biển hoặc đầm lầy."
+  },
+  {
+    "label": "white_wolf",
+    "vietnameseName": "Sói trắng",
+    "description": "White Wolf là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
+    "label": "wire-haired_fox_terrier",
+    "vietnameseName": "Chó Wire Haired Fox Terrier",
+    "description": "Wire Haired Fox Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
   },
   {
     "label": "wolf",
@@ -435,18 +2080,178 @@
     "description": "Sói là tổ tiên dũng mãnh và hoang dã của những chú chó nhà đáng yêu, khoác trên mình vẻ ngoài đầy uy nghiêm với bộ lông bờm xờm ấm áp. Chúng có tính kỷ luật cực cao, luôn sống và săn mồi với tinh thần đồng đội tuyệt đối trong các đàn có một con sói đầu đàn vô cùng mạnh mẽ dẫn dắt. Đêm đến, dưới ánh trăng mờ ảo, đàn sói sẽ cất cao giọng hú dài vang vọng khắp núi rừng tuyết phủ trắng xóa, như một bản hùng ca gọi bầy và khẳng định lãnh thổ đầy oai phong."
   },
   {
+    "label": "wolf_spider",
+    "vietnameseName": "Nhện Wolf Spider",
+    "description": "Wolf Spider là loài họ chó hoang dã, nổi bật với bản năng săn mồi, khứu giác tốt và khả năng thích nghi rất cao."
+  },
+  {
     "label": "wombat",
-    "vietnameseName": "Wombat",
+    "vietnameseName": "Gấu túi wombat",
     "description": "Wombat là những chú gấu túi béo mũm mĩm, lùn tịt và mang đôi chân ngắn cũn vô cùng dễ thương đến từ vùng đất Australia hoang sơ xa xôi. Chúng là những chuyên gia đào hầm thực thụ với bộ móng vuốt mạnh mẽ sắc nhọn, có khả năng kiến tạo ra những hệ thống hang động dưới lòng đất dài dằng dặc và rối rắm như một mê cung khổng lồ. Một đặc điểm đặc biệt thú vị của wombat là chiếc túi nuôi con của gấu mẹ lại được thiết kế quay ngược ra phía sau, mục đích là để đất cát không bị văng trúng vào mặt gấu con khi mẹ đang hì hục đào bới."
   },
   {
+    "label": "wood_rabbit",
+    "vietnameseName": "Thỏ rừng",
+    "description": "Wood Rabbit là loài thú nhỏ, nhanh nhẹn và thường có khả năng kiếm ăn, trốn tránh kẻ thù rất tốt."
+  },
+  {
     "label": "woodpecker",
-    "vietnameseName": "Chim gõ kiến",
-    "description": "Chim gõ kiến là những tay trống cừ khôi nhất của khu rừng già xanh thẳm, được trang bị một chiếc mỏ dài, cứng cáp và sắc nhọn như một chiếc mũi khoan thực thụ. Chúng bám chặt cơ thể vào thân cây bằng đôi chân vững chãi cùng chiếc đuôi cứng để chống đỡ, rồi liên tục dùng mỏ gõ những nhịp điệu dồn dập vào lớp vỏ gỗ sần sùi dội vang khắp không gian. Mục đích của điệu gõ đó chính là khoét ra những lỗ nhỏ sâu thẳm nhằm tìm kiếm và thưởng thức những đàn côn trùng béo ngậy đang lẩn trốn kín đáo ở bên trong."
+    "vietnameseName": "Gõ kiến",
+    "description": "Gõ kiến là loài chim chuyên mổ gỗ để tìm côn trùng. Chúng có mỏ dài mạnh, lưỡi dính và đuôi cứng để bám cây. Gõ kiến có thể mổ tới 20 lần mỗi giây mà không bị đau đầu."
+  },
+  {
+    "label": "yellow_headed_turtle",
+    "vietnameseName": "Rùa đầu vàng",
+    "description": "Rùa đầu vàng là loài rùa cạn với đầu có màu vàng hoặc cam đặc trưng. Chúng sống ở vùng rừng Nam Mỹ và ăn chủ yếu là quả và lá cây. Loài này được buôn bán nhiều làm thú nuôi."
+  },
+  {
+    "label": "yorkshire_terrier",
+    "vietnameseName": "Chó Yorkshire terrier",
+    "description": "Yorkshire Terrier là giống chó nhỏ nhưng lanh lợi, từng được nuôi để săn thú nhỏ và đào hang."
   },
   {
     "label": "zebra",
     "vietnameseName": "Ngựa vằn",
     "description": "Ngựa vằn là biểu tượng quyến rũ không thể nhầm lẫn của thảo nguyên bao la, tự hào với lớp áo khoác nổi bần bật mang những sọc vằn đen trắng kẻ xen kẽ lôi cuốn rực rỡ. Mỗi chú ngựa vằn sinh ra lại sở hữu một họa tiết sọc vằn độc quyền và duy nhất, giống hệt như dấu vân tay phức tạp của con người chúng ta vậy. Khi có một đàn ngựa vằn đông đúc chạy phi nước đại, vô vàn những sọc vằn ấy sẽ hòa quyện nhòe vào nhau, tạo thành một ảo giác quang học xuất sắc khiến cho kẻ săn mồi như sư tử hay báo bị hoa mắt và bối rối không biết nên nhắm vào mục tiêu nào."
+  },
+  {
+    "label": "box_turtle",
+    "vietnameseName": "Rùa hộp",
+    "description": "Rùa hộp là loài rùa cạn có yếm khép lại để bảo vệ cơ thể."
+  },
+  {
+    "label": "banded_gecko",
+    "vietnameseName": "Tắc kè vằn",
+    "description": "Tắc kè vằn là loài thằn lằn nhỏ có các dải vằn rõ trên thân."
+  },
+  {
+    "label": "beaver",
+    "vietnameseName": "Hải ly",
+    "description": "Hải ly là loài gặm nhấm lớn sống bán thủy sinh, nổi tiếng với việc xây đập."
+  },
+  {
+    "label": "guinea_pig",
+    "vietnameseName": "Chuột lang",
+    "description": "Chuột lang là loài gặm nhấm nhỏ, thường được nuôi làm thú cưng."
+  },
+  {
+    "label": "hog",
+    "vietnameseName": "Lợn rừng",
+    "description": "Lợn rừng là loài lợn hoang dã, có thân hình chắc khỏe và nanh cong."
+  },
+  {
+    "label": "water_buffalo",
+    "vietnameseName": "Trâu nước",
+    "description": "Trâu nước là loài trâu lớn đã được thuần hóa, gắn bó với nông nghiệp châu Á."
+  },
+  {
+    "label": "hartebeest",
+    "vietnameseName": "Linh dương hartebeest",
+    "description": "Linh dương hartebeest là loài linh dương châu Phi thân cao, sống ở đồng cỏ và chạy rất nhanh."
+  },
+  {
+    "label": "arabian_camel",
+    "vietnameseName": "Lạc đà Ả Rập",
+    "description": "Lạc đà Ả Rập là loài lạc đà một bướu đã được thuần hóa, có khả năng chịu hạn tốt."
+  },
+  {
+    "label": "polecat",
+    "vietnameseName": "Chồn sương",
+    "description": "Chồn sương là loài chồn có mùi đặc trưng, họ hàng gần với chồn sương nuôi."
+  },
+  {
+    "label": "guenon",
+    "vietnameseName": "Khỉ guenon",
+    "description": "Khỉ guenon là nhóm khỉ Cựu Thế giới sống chủ yếu ở châu Phi."
+  },
+  {
+    "label": "baboon",
+    "vietnameseName": "Khỉ đầu chó",
+    "description": "Khỉ đầu chó là loài khỉ lớn Cựu Thế giới, sống theo đàn ở châu Phi và bán đảo Ả Rập."
+  },
+  {
+    "label": "langur",
+    "vietnameseName": "Voọc",
+    "description": "Voọc là nhóm linh trưởng Cựu Thế giới chủ yếu ăn lá và sống trên cây."
+  },
+  {
+    "label": "proboscis_monkey",
+    "vietnameseName": "Khỉ mũi dài",
+    "description": "Khỉ mũi dài là loài linh trưởng đặc hữu Borneo, con đực có chiếc mũi rất lớn."
+  },
+  {
+    "label": "howler_monkey",
+    "vietnameseName": "Khỉ hú",
+    "description": "Khỉ hú là nhóm khỉ Tân Thế giới nổi tiếng với tiếng kêu vang rất lớn."
+  },
+  {
+    "label": "titi",
+    "vietnameseName": "Khỉ titi",
+    "description": "Khỉ titi là nhóm khỉ Tân Thế giới nhỏ, sống chủ yếu ở Nam Mỹ."
+  },
+  {
+    "label": "spider_monkey",
+    "vietnameseName": "Khỉ nhện",
+    "description": "Khỉ nhện là nhóm khỉ Tân Thế giới có tay chân dài và đuôi có thể cầm nắm."
+  },
+  {
+    "label": "squirrel_monkey",
+    "vietnameseName": "Khỉ sóc",
+    "description": "Khỉ sóc là loài khỉ Tân Thế giới nhỏ, nhanh nhẹn và sống theo đàn."
+  },
+  {
+    "label": "indian_elephant",
+    "vietnameseName": "Voi Ấn Độ",
+    "description": "Voi Ấn Độ là một phân loài voi châu Á, có tai nhỏ hơn voi châu Phi."
+  },
+  {
+    "label": "african_elephant",
+    "vietnameseName": "Voi châu Phi",
+    "description": "Voi châu Phi là loài voi lớn nhất trên cạn, có tai lớn và ngà rất dài."
+  },
+  {
+    "label": "lesser_panda",
+    "vietnameseName": "Gấu trúc đỏ",
+    "description": "Gấu trúc đỏ là loài thú nhỏ ăn tre, sống ở dãy Himalaya và tây nam Trung Quốc."
+  },
+  {
+    "label": "giant_panda",
+    "vietnameseName": "Gấu trúc lớn",
+    "description": "Gấu trúc lớn là loài gấu biểu tượng của công tác bảo tồn, nổi tiếng với bộ lông đen trắng."
+  },
+  {
+    "label": "eel",
+    "vietnameseName": "Lươn",
+    "description": "Lươn là nhóm cá thân dài giống rắn, sống ở cả nước ngọt và nước mặn."
+  },
+  {
+    "label": "coho",
+    "vietnameseName": "Cá hồi Coho",
+    "description": "Cá hồi Coho còn gọi là cá hồi bạc, là một loài cá hồi Thái Bình Dương."
+  },
+  {
+    "label": "rock_beauty",
+    "vietnameseName": "Cá thiên thần đá",
+    "description": "Cá thiên thần đá là loài cá biển nhiệt đới thuộc họ cá thiên thần, có màu sắc rất nổi bật."
+  },
+  {
+    "label": "anemone_fish",
+    "vietnameseName": "Cá hề",
+    "description": "Cá hề là nhóm cá sống cộng sinh với hải quỳ."
+  },
+  {
+    "label": "gar",
+    "vietnameseName": "Cá gar",
+    "description": "Cá gar là nhóm cá cổ xưa có mõm dài, thường được xem là dạng hóa thạch sống."
+  },
+  {
+    "label": "lionfish",
+    "vietnameseName": "Cá sư tử",
+    "description": "Cá sư tử là loài cá biển có vây dài, màu sắc sặc sỡ và gai độc."
+  },
+  {
+    "label": "puffer",
+    "vietnameseName": "Cá nóc",
+    "description": "Cá nóc là nhóm cá có thể phồng to khi bị đe dọa."
   }
 ]
