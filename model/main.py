@@ -147,10 +147,16 @@ def build_gradcam(model, image_batch, image_pil, class_index, layer_name=None, a
     heatmap = conv_outputs @ pooled_grads[..., tf.newaxis]
     heatmap = tf.squeeze(heatmap)
     heatmap = tf.maximum(heatmap, 0) / (tf.reduce_max(heatmap) + tf.keras.backend.epsilon())
-    heatmap = heatmap.numpy()
+    heatmap = np.squeeze(heatmap.numpy())
+    if heatmap.ndim != 2:
+        raise ValueError(f"Grad-CAM heatmap must be 2D, got shape {heatmap.shape}")
 
     original = image_pil.convert("RGB").resize((448, 448))
-    heatmap_image = Image.fromarray(colorize_heatmap(heatmap)).resize(original.size, Image.Resampling.BILINEAR)
+    heatmap_image = (
+        Image.fromarray(colorize_heatmap(heatmap))
+        .resize(original.size, Image.Resampling.BILINEAR)
+        .convert("RGB")
+    )
 
     overlay = Image.blend(original, heatmap_image, alpha)
     buffer = io.BytesIO()

@@ -2,6 +2,10 @@
 
 A web application that uses AI to identify animal species from uploaded images. Users can build a personal collection of species they've discovered.
 
+## Demo
+
+## Architecture
+![Architecture](image.png)
 ## Features
 
 - **AI-powered identification** — Upload a photo to get instant species recognition
