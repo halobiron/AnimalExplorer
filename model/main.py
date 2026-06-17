@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, Form
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from PIL import Image
 import tensorflow as tf
 from preprocess import preprocess
@@ -221,12 +221,15 @@ async def predict(file: UploadFile = File(...), gradcam_layer: Optional[str] = F
         gradcam = None
 
     if use_fallback:
+        gradcam_class_index = int(fallback_preds.argmax(axis=1)[0])
         print(f"DECISION: Using FALLBACK) ({decision_reason})")
         return {
             "class": fallback_class,
             "confidence": fallback_confidence,
             "top5": top5,
             "gradcam": gradcam,
+            "model_used": "fallback",
+            "gradcam_class_index": gradcam_class_index,
             "fallback_used": True,
             "fallback_class": fallback_class,
             "fallback_confidence": fallback_confidence,
@@ -240,9 +243,48 @@ async def predict(file: UploadFile = File(...), gradcam_layer: Optional[str] = F
             "confidence": custom_confidence,
             "top5": top5,
             "gradcam": gradcam,
+            "model_used": "custom",
+            "gradcam_class_index": pred,
             "fallback_used": False,
             "fallback_class": fallback_class,
             "fallback_confidence": fallback_confidence,
             "custom_class": classes[pred],
             "custom_confidence": custom_confidence
         }
+
+
+@app.post("/gradcam")
+async def gradcam(
+    file: UploadFile = File(...),
+    model_used: str = Form(...),
+    class_index: int = Form(...),
+    gradcam_layer: Optional[str] = Form(default=None),
+):
+    image_pil = Image.open(file.file).convert("RGB")
+    selected_model = model_used.lower()
+
+    if selected_model == "fallback":
+        image_batch = np.array(image_pil.resize((240, 240)))
+        image_batch = tf.keras.applications.efficientnet_v2.preprocess_input(image_batch)
+        image_batch = np.expand_dims(image_batch, axis=0)
+        model = fallback_model
+    elif selected_model == "custom":
+        image_batch = preprocess(image_pil)
+        model = custom_model
+    else:
+        raise HTTPException(status_code=400, detail="model_used must be 'custom' or 'fallback'")
+
+    output_shape = model.output_shape[-1]
+    if class_index < 0 or class_index >= output_shape:
+        raise HTTPException(status_code=400, detail="class_index is out of range for selected model")
+
+    try:
+        generated = build_gradcam(model, image_batch, image_pil, class_index, gradcam_layer)
+    except Exception as exc:
+        print(f"DEBUG: Grad-CAM endpoint failed: {exc}")
+        generated = None
+
+    if generated is None:
+        raise HTTPException(status_code=400, detail="Could not generate Grad-CAM for selected layer")
+
+    return {"gradcam": generated}

@@ -2,7 +2,7 @@ import { createElement, useState } from "react";
 import { identifyAPI } from "../services/api";
 import UploadBox from "../components/UploadBox";
 import CameraCapture from "../components/CameraCapture";
-import { Sparkles, AlertCircle, CheckCircle2, Info, RefreshCw, Camera, Leaf, Dna, Camera as CameraIcon, ScanSearch, Layers } from "lucide-react";
+import { Sparkles, AlertCircle, AlertTriangle, CheckCircle2, Info, RefreshCw, Camera, Leaf, Dna, Camera as CameraIcon, ScanSearch, Layers } from "lucide-react";
 
 const ConfidenceBadge = ({ value }) => {
   const color =
@@ -15,6 +15,22 @@ const ConfidenceBadge = ({ value }) => {
       <CheckCircle2 className="w-3.5 h-3.5" />
       {value}% — {label}
     </span>
+  );
+};
+
+const ConfidenceWarning = ({ value }) => {
+  if (value >= 50) return null;
+
+  return (
+    <div className="mt-4 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-left text-amber-800">
+      <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0" />
+      <div>
+        <p className="text-sm font-bold">Mô hình chưa chắc chắn với ảnh này</p>
+        <p className="mt-0.5 text-sm leading-relaxed">
+          Độ tin cậy thấp, ảnh có thể không thuộc các lớp đã huấn luyện hoặc chưa đủ rõ để phân loại chính xác.
+        </p>
+      </div>
+    </div>
   );
 };
 
@@ -78,6 +94,7 @@ const Identify = () => {
 
   const handleCameraCapture = (capturedFile) => {
     setFile(capturedFile);
+    setResult(null);
     setShowCamera(false);
     setError("");
     setSelectedGradcamLayer("");
@@ -94,7 +111,30 @@ const Identify = () => {
   const handleGradcamLayerChange = async (event) => {
     const nextLayer = event.target.value;
     setSelectedGradcamLayer(nextLayer);
-    await handleIdentify(nextLayer);
+    if (!file || !result?.modelUsed || result?.gradcamClassIndex === undefined) {
+      setError("Thiếu thông tin lần nhận diện trước để tạo Grad-CAM.");
+      return;
+    }
+
+    setError("");
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+      formData.append("model_used", result.modelUsed);
+      formData.append("class_index", result.gradcamClassIndex);
+      if (nextLayer) {
+        formData.append("gradcam_layer", nextLayer);
+      }
+
+      const res = await identifyAPI.gradcam(formData);
+      setResult((current) => current ? {
+        ...current,
+        gradcam: res.data.gradcam,
+      } : current);
+      setSelectedGradcamLayer(res.data.gradcam?.layer || nextLayer || "");
+    } catch (err) {
+      setError(err.response?.data?.message || "Không thể tạo Grad-CAM cho layer này.");
+    }
   };
 
   const gradcamLayers = result?.gradcam?.layers || [];
@@ -285,9 +325,21 @@ const Identify = () => {
                       </h3>
                     </div>
                     <ConfidenceBadge value={result.confidence} />
-                    <p className="text-sm text-gray-600 leading-relaxed mt-3">
-                      {result.details.description}
-                    </p>
+                    {result.warning && (
+                      <div className="mt-4 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-left text-amber-800">
+                        <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0" />
+                        <div>
+                          <p className="text-sm font-bold">Không phải dữ liệu loài vật</p>
+                          <p className="mt-0.5 text-sm leading-relaxed">{result.warning}</p>
+                        </div>
+                      </div>
+                    )}
+                    <ConfidenceWarning value={result.confidence} />
+                    {result.details.description && (
+                      <p className="text-sm text-gray-600 leading-relaxed mt-3">
+                        {result.details.description}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -295,7 +347,8 @@ const Identify = () => {
               <div className="p-10 text-center text-gray-400">
                 <p className="text-4xl mb-3">🔍</p>
                 <p className="font-medium text-gray-500 mb-1">Chưa có dữ liệu mô tả</p>
-                <p className="text-sm">Loài vật này chưa có trong cơ sở dữ liệu của chúng tôi.</p>
+                <p className="text-sm">Nhãn này chưa có trong cơ sở dữ liệu của chúng tôi.</p>
+                <ConfidenceWarning value={result.confidence} />
               </div>
             )}
 

@@ -15,6 +15,8 @@ export const authAPI = {
 export const identifyAPI = {
   identify: (formData) =>
     api.post("/identify", formData, { headers: { "Content-Type": "multipart/form-data" } }),
+  gradcam: (formData) =>
+    api.post("/identify/gradcam", formData, { headers: { "Content-Type": "multipart/form-data" } }),
 };
 
 export const collectionAPI = {
