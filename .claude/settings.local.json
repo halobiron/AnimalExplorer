@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__zread__read_file",
+      "mcp__kaggle__get_notebook_info"
+    ]
+  }
+}

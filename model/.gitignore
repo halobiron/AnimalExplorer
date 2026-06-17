@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+.env
+model/*.keras
+model/*.h5
+.DS_Store
+.vscode/
+.idea/
+*.egg-info
+test_images/
+.venv/
+dataset_*/
+.claude/

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { createElement, useState } from "react";
 import { identifyAPI } from "../services/api";
 import UploadBox from "../components/UploadBox";
 import CameraCapture from "../components/CameraCapture";
-import { Sparkles, AlertCircle, CheckCircle2, Info, RefreshCw, Camera, Leaf, Dna, Camera as CameraIcon } from "lucide-react";
+import { Sparkles, AlertCircle, CheckCircle2, Info, RefreshCw, Camera, Leaf, Dna, Camera as CameraIcon, ScanSearch, Layers } from "lucide-react";
 
 const ConfidenceBadge = ({ value }) => {
   const color =
@@ -26,18 +26,26 @@ const TIP_ITEMS = [
 
 const Identify = () => {
   const [file, setFile] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [showCamera, setShowCamera] = useState(false);
+  const [selectedGradcamLayer, setSelectedGradcamLayer] = useState("");
 
   const handleFileSelect = (selectedFile) => {
     setFile(selectedFile);
     setResult(null);
     setError("");
+    setSelectedGradcamLayer("");
+    if (selectedFile) {
+      setPreviewUrl(URL.createObjectURL(selectedFile));
+    } else {
+      setPreviewUrl("");
+    }
   };
 
-  const handleIdentify = async () => {
+  const handleIdentify = async (gradcamLayer = selectedGradcamLayer) => {
     if (!file) return;
     setLoading(true);
     setError("");
@@ -46,8 +54,12 @@ const Identify = () => {
     try {
       const formData = new FormData();
       formData.append("image", file);
+      if (gradcamLayer) {
+        formData.append("gradcam_layer", gradcamLayer);
+      }
       const res = await identifyAPI.identify(formData);
       setResult(res.data.result);
+      setSelectedGradcamLayer(res.data.result?.gradcam?.layer || gradcamLayer || "");
     } catch (err) {
       setError(err.response?.data?.message || "Không thể nhận diện. Thử lại với ảnh khác.");
     } finally {
@@ -57,22 +69,36 @@ const Identify = () => {
 
   const handleReset = () => {
     setFile(null);
+    setPreviewUrl("");
     setResult(null);
     setError("");
     setShowCamera(false);
+    setSelectedGradcamLayer("");
   };
 
   const handleCameraCapture = (capturedFile) => {
     setFile(capturedFile);
     setShowCamera(false);
     setError("");
+    setSelectedGradcamLayer("");
+    setPreviewUrl(URL.createObjectURL(capturedFile));
   };
 
   const openCamera = () => {
     setShowCamera(true);
     setError("");
     setResult(null);
+    setSelectedGradcamLayer("");
   };
+
+  const handleGradcamLayerChange = async (event) => {
+    const nextLayer = event.target.value;
+    setSelectedGradcamLayer(nextLayer);
+    await handleIdentify(nextLayer);
+  };
+
+  const gradcamLayers = result?.gradcam?.layers || [];
+  const visibleGradcamLayers = [...gradcamLayers].reverse();
 
   return (
     <div
@@ -118,10 +144,10 @@ const Identify = () => {
               Mẹo để đạt kết quả tốt nhất
             </p>
             <div className="flex flex-col gap-2">
-              {TIP_ITEMS.map(({ icon: Icon, text }) => (
+              {TIP_ITEMS.map(({ icon, text }) => (
                 <div key={text} className="flex items-center gap-2.5">
                   <div className="w-7 h-7 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-3.5 h-3.5 text-green-600" />
+                    {createElement(icon, { className: "w-3.5 h-3.5 text-green-600" })}
                   </div>
                   <p className="text-sm text-gray-600">{text}</p>
                 </div>
@@ -145,7 +171,7 @@ const Identify = () => {
           )}
 
           <button
-            onClick={handleIdentify}
+            onClick={() => handleIdentify()}
             disabled={!file || loading}
             className={`flex-1 py-4 font-bold text-base rounded-2xl flex items-center justify-center gap-2.5 transition-all duration-200
               ${!file || loading
@@ -270,6 +296,75 @@ const Identify = () => {
                 <p className="text-4xl mb-3">🔍</p>
                 <p className="font-medium text-gray-500 mb-1">Chưa có dữ liệu mô tả</p>
                 <p className="text-sm">Loài vật này chưa có trong cơ sở dữ liệu của chúng tôi.</p>
+              </div>
+            )}
+
+            {result.gradcam?.image && (
+              <div className="border-t border-gray-100 p-6 bg-slate-50/50">
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <div>
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-1">
+                      <ScanSearch className="w-3.5 h-3.5" />
+                      Grad-CAM visualization
+                    </p>
+                    <h3 className="font-extrabold text-gray-900 text-lg">Quyết định của mô hình AI</h3>
+                  </div>
+                  {gradcamLayers.length > 0 && (
+                    <label className="flex items-center gap-2 text-xs font-semibold text-slate-500 bg-white border border-slate-200 px-3 py-2 rounded-xl">
+                      <Layers className="w-4 h-4 text-green-600" />
+                      <select
+                        value={selectedGradcamLayer || result.gradcam.layer || ""}
+                        onChange={handleGradcamLayerChange}
+                        disabled={loading}
+                        className="bg-transparent text-xs font-semibold text-slate-700 outline-none max-w-[180px] cursor-pointer disabled:cursor-not-allowed"
+                        title="Chọn layer Grad-CAM"
+                      >
+                        {visibleGradcamLayers.map((layer) => (
+                          <option key={layer.name} value={layer.name}>
+                            {layer.name}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Original Image */}
+                  <div className="space-y-1.5">
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-wider text-center">Ảnh đã tải lên</p>
+                    <div className="aspect-square rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-sm flex items-center justify-center">
+                      {previewUrl ? (
+                        <img
+                          src={previewUrl}
+                          alt="Ảnh đã tải lên"
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="text-gray-300 text-xs">Không tìm thấy ảnh</div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Grad-CAM Heatmap */}
+                  <div className="space-y-1.5">
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-wider text-center">Vùng AI tập trung</p>
+                    <div className="aspect-square rounded-2xl overflow-hidden border border-slate-100 bg-white shadow-sm flex items-center justify-center">
+                      <img
+                        src={result.gradcam.image}
+                        alt="Grad-CAM heatmap"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4 p-3 bg-blue-50/60 rounded-xl border border-blue-100/50 flex gap-2.5 items-start">
+                  <Info className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-blue-700 leading-relaxed">
+                    Vùng màu nóng (đỏ, cam) thể hiện các khu vực quan trọng nhất giúp mô hình đưa ra quyết định phân loại loài vật này.
+                  </p>
+                </div>
               </div>
             )}
           </div>

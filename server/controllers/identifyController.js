@@ -45,6 +45,9 @@ export const identifySpecies = async (req, res) => {
       filename: req.file.originalname,
       contentType: req.file.mimetype,
     });
+    if (req.body?.gradcam_layer) {
+      formData.append("gradcam_layer", req.body.gradcam_layer);
+    }
 
     const { data: aiData } = await axios.post(process.env.AI_SERVICE_URL, formData, {
       headers: formData.getHeaders(),
@@ -71,7 +74,13 @@ export const identifySpecies = async (req, res) => {
 
     res.json({
       success: true,
-      result: { label, vietnameseName, confidence, details: animalDetails },
+      result: {
+        label,
+        vietnameseName,
+        confidence,
+        details: animalDetails,
+        gradcam: aiData.gradcam || null,
+      },
     });
   } catch (error) {
     console.error("identifySpecies error:", error.message);
