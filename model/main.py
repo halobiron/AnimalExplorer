@@ -12,10 +12,6 @@ app = FastAPI()
 
 custom_model = tf.keras.models.load_model("animal_image_classifier.keras")
 
-# Load EfficientNetV2B1 with ImageNet as fallback
-fallback_model = tf.keras.applications.EfficientNetV2B1(weights="imagenet")
-decode_imagenet = tf.keras.applications.efficientnet_v2.decode_predictions
-
 
 def find_last_conv_layer(model):
     for layer in reversed(model.layers):
@@ -191,98 +187,40 @@ async def predict(file: UploadFile = File(...), gradcam_layer: Optional[str] = F
 
     top5 = [{"class": top_classes[i], "score": float(top_scores[i])} for i in range(len(top_classes))]
 
-    image_efficientnet = np.array(image_pil.resize((240, 240)))
-    image_efficientnet = tf.keras.applications.efficientnet_v2.preprocess_input(image_efficientnet)
-    image_efficientnet = np.expand_dims(image_efficientnet, axis=0)
-
-    # Predict with fallback
-    fallback_preds = fallback_model.predict(image_efficientnet, verbose=0)
-    fallback_decoded = decode_imagenet(fallback_preds, top=1)[0]
-
-    fallback_class = fallback_decoded[0][1]  # Get class name
-    fallback_confidence = float(fallback_decoded[0][2])
-
-    print(f"DEBUG: Fallback model predicted: {fallback_class} with confidence: {fallback_confidence:.2%}")
-
-    if fallback_confidence > 0.90:
-        use_fallback = True
-        decision_reason = "fallback_very_confident"
-    else:
-        use_fallback = fallback_confidence > custom_confidence
-        decision_reason = "compare_confidence"
-
     try:
-        if use_fallback:
-            gradcam = build_gradcam(
-                fallback_model,
-                image_efficientnet,
-                image_pil,
-                int(fallback_preds.argmax(axis=1)[0]),
-                gradcam_layer,
-            )
-        else:
-            gradcam = build_gradcam(custom_model, image, image_pil, pred, gradcam_layer)
+        gradcam = build_gradcam(custom_model, image, image_pil, pred, gradcam_layer)
     except Exception as exc:
         print(f"DEBUG: Grad-CAM failed: {exc}")
         gradcam = None
 
-    if use_fallback:
-        gradcam_class_index = int(fallback_preds.argmax(axis=1)[0])
-        print(f"DECISION: Using FALLBACK) ({decision_reason})")
-        return {
-            "class": fallback_class,
-            "confidence": fallback_confidence,
-            "top5": top5,
-            "gradcam": gradcam,
-            "model_used": "fallback",
-            "gradcam_class_index": gradcam_class_index,
-            "fallback_used": True,
-            "fallback_class": fallback_class,
-            "fallback_confidence": fallback_confidence,
-            "custom_class": classes[pred],
-            "custom_confidence": custom_confidence
-        }
-    else:
-        print(f"DECISION: Using CUSTOM ({custom_confidence:.2%} >= {fallback_confidence:.2%})")
-        return {
-            "class": classes[pred],
-            "confidence": custom_confidence,
-            "top5": top5,
-            "gradcam": gradcam,
-            "model_used": "custom",
-            "gradcam_class_index": pred,
-            "fallback_used": False,
-            "fallback_class": fallback_class,
-            "fallback_confidence": fallback_confidence,
-            "custom_class": classes[pred],
-            "custom_confidence": custom_confidence
-        }
+    return {
+        "class": classes[pred],
+        "confidence": custom_confidence,
+        "top5": top5,
+        "gradcam": gradcam,
+        "gradcam_class_index": pred,
+        "cnn_demo": {
+            "input_shape": list(image.shape[1:]),
+            "class_count": len(classes),
+            "preprocessing": ["RGB", "Resize 224x224", "float32", "Rescaling 1/255 trong CNN"],
+            "conv_layers": list_conv_layers(custom_model),
+        },
+    }
 
 
 @app.post("/gradcam")
 async def gradcam(
     file: UploadFile = File(...),
-    model_used: str = Form(...),
     class_index: int = Form(...),
     gradcam_layer: Optional[str] = Form(default=None),
 ):
     image_pil = Image.open(file.file).convert("RGB")
-    selected_model = model_used.lower()
-
-    if selected_model == "fallback":
-        image_batch = np.array(image_pil.resize((240, 240)))
-        image_batch = tf.keras.applications.efficientnet_v2.preprocess_input(image_batch)
-        image_batch = np.expand_dims(image_batch, axis=0)
-        model = fallback_model
-    elif selected_model == "custom":
-        image_batch = preprocess(image_pil)
-        model = custom_model
-    else:
-        raise HTTPException(status_code=400, detail="model_used must be 'custom' or 'fallback'")
+    image_batch = preprocess(image_pil)
+    model = custom_model
 
     output_shape = model.output_shape[-1]
     if class_index < 0 or class_index >= output_shape:
-        raise HTTPException(status_code=400, detail="class_index is out of range for selected model")
+        raise HTTPException(status_code=400, detail="class_index is out of range for the custom model")
 
     try:
         generated = build_gradcam(model, image_batch, image_pil, class_index, gradcam_layer)

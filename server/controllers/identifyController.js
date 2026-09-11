@@ -2,7 +2,6 @@ import axios from "axios";
 import FormData from "form-data";
 import Collection from "../models/Collection.js";
 import Animal from "../models/Animal.js";
-import { getImagenetFallbackLabel } from "../utils/imagenetLabels.js";
 
 const extractVietnameseName = (aiData) =>
   aiData.class_vi ||
@@ -15,6 +14,18 @@ const extractVietnameseName = (aiData) =>
 const getAIGradcamUrl = () => {
   const predictUrl = process.env.AI_SERVICE_URL;
   return process.env.AI_GRADCAM_URL || predictUrl.replace(/\/predict\/?$/, "/gradcam");
+};
+
+const getAIServiceError = (error) => {
+  if (error.code === "ECONNREFUSED" || error.code === "ECONNABORTED") {
+    return "Dịch vụ CNN chưa chạy tại http://localhost:8000. Hãy khởi động FastAPI trước khi nhận diện.";
+  }
+
+  if (error.response?.data?.detail) {
+    return `Dịch vụ CNN báo lỗi: ${error.response.data.detail}`;
+  }
+
+  return "Dịch vụ CNN không thể xử lý ảnh. Kiểm tra terminal FastAPI để xem chi tiết.";
 };
 
 const addToCollection = async (userId, label, vietnameseName, confidence, imageUrl) => {
@@ -61,7 +72,16 @@ export const identifySpecies = async (req, res) => {
 
     const label = aiData.class || aiData.label;
     const confidence = Math.round(aiData.confidence * 100);
-    const modelUsed = aiData.model_used || (aiData.fallback_used ? "fallback" : "custom");
+    const top5 = Array.isArray(aiData.top5) ? aiData.top5.map(({ class: className, score }) => ({
+      label: className,
+      confidence: Math.round(Number(score) * 100),
+    })) : [];
+    const cnnDemo = aiData.cnn_demo ? {
+      inputShape: aiData.cnn_demo.input_shape,
+      classCount: aiData.cnn_demo.class_count,
+      preprocessing: aiData.cnn_demo.preprocessing,
+      convLayers: aiData.cnn_demo.conv_layers,
+    } : null;
     let vietnameseName = extractVietnameseName(aiData);
     let animalDetails = null;
     let isAnimal = false;
@@ -75,16 +95,6 @@ export const identifySpecies = async (req, res) => {
         vietnameseName: dbAnimal.vietnameseName,
         description: dbAnimal.description,
         imageUrl: dbAnimal.imageUrl || "",
-      };
-    } else if (modelUsed === "fallback") {
-      const imagenetLabel = getImagenetFallbackLabel(label);
-      vietnameseName = imagenetLabel.vietnameseName;
-      warning = `ImageNet dự phòng nhận diện ảnh là "${imagenetLabel.englishName}". Nhãn này không nằm trong danh sách loài vật của hệ thống.`;
-      animalDetails = {
-        vietnameseName: imagenetLabel.vietnameseName,
-        imageUrl: "",
-        isFallbackLabel: true,
-        englishName: imagenetLabel.englishName,
       };
     }
 
@@ -101,14 +111,20 @@ export const identifySpecies = async (req, res) => {
         details: animalDetails,
         isAnimal,
         warning,
+        top5,
+        cnnDemo,
         gradcam: aiData.gradcam || null,
-        modelUsed,
         gradcamClassIndex: aiData.gradcam_class_index,
       },
     });
   } catch (error) {
-    console.error("identifySpecies error:", error.message);
-    res.status(500).json({ success: false, message: "Lỗi nhận diện. Thử lại sau." });
+    console.error("identifySpecies error:", {
+      code: error.code,
+      message: error.message,
+      status: error.response?.status,
+      detail: error.response?.data,
+    });
+    res.status(error.response?.status || 503).json({ success: false, message: getAIServiceError(error) });
   }
 };
 
@@ -118,9 +134,9 @@ export const generateGradcam = async (req, res) => {
       return res.status(400).json({ success: false, message: "Vui lòng upload ảnh" });
     }
 
-    const { model_used, class_index, gradcam_layer } = req.body;
-    if (!model_used || class_index === undefined) {
-      return res.status(400).json({ success: false, message: "Thiếu thông tin model hoặc lớp cần xem Grad-CAM" });
+    const { class_index, gradcam_layer } = req.body;
+    if (class_index === undefined) {
+      return res.status(400).json({ success: false, message: "Thiếu lớp cần xem Grad-CAM" });
     }
 
     const formData = new FormData();
@@ -128,7 +144,6 @@ export const generateGradcam = async (req, res) => {
       filename: req.file.originalname,
       contentType: req.file.mimetype,
     });
-    formData.append("model_used", model_used);
     formData.append("class_index", class_index);
     if (gradcam_layer) {
       formData.append("gradcam_layer", gradcam_layer);
@@ -143,7 +158,12 @@ export const generateGradcam = async (req, res) => {
       gradcam: aiData.gradcam || null,
     });
   } catch (error) {
-    console.error("generateGradcam error:", error.response?.data || error.message);
-    res.status(500).json({ success: false, message: "Lỗi tạo Grad-CAM. Thử lại sau." });
+    console.error("generateGradcam error:", {
+      code: error.code,
+      message: error.message,
+      status: error.response?.status,
+      detail: error.response?.data,
+    });
+    res.status(error.response?.status || 503).json({ success: false, message: getAIServiceError(error) });
   }
 };

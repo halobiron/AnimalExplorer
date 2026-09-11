@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/fee084fc-9edf-454c-ab6d-b4ea45b93ef4
 ![Architecture](image.png)
 ## Features
 
-- **AI-powered identification** — Upload a photo to get instant species recognition
+- **CNN demo nhận diện** — Upload ảnh để xem pipeline preprocessing, Softmax Top-5 và Grad-CAM
 - **Animal dictionary** — Browse 90+ species with biological information
 - **Personal collection** — Each user builds a unique Pokédex-style collection (requires login)
 - **Authentication** — Register / login with JWT cookie-based sessions
@@ -134,7 +134,7 @@ The app will be available at `http://localhost:5173`.
 | POST | `/api/auth/login` | No | Login |
 | POST | `/api/auth/logout` | No | Logout |
 | GET | `/api/auth/me` | Yes | Get current user |
-| POST | `/api/identify` | Yes | Identify an animal from an image |
+| POST | `/api/identify` | No | CNN demo: nhận diện, Softmax Top-5 và Grad-CAM |
 | GET | `/api/animals` | No | Get all animals in the dictionary |
 | GET | `/api/collection` | Yes | Get the user's personal collection |
 
