@@ -1,15 +1,36 @@
-import { createElement, useEffect, useState } from "react";
+import { useState, useEffect, createElement } from "react";
 import { identifyAPI } from "../services/api";
 import UploadBox from "../components/UploadBox";
 import CameraCapture from "../components/CameraCapture";
-import { Sparkles, AlertCircle, AlertTriangle, CheckCircle2, Info, RefreshCw, Camera, Leaf, Dna, Camera as CameraIcon, ScanSearch, Image as ImageIcon, SlidersHorizontal, BrainCircuit, Waypoints, LoaderCircle } from "lucide-react";
+import CnnInteractiveLab from "../components/cnn/CnnInteractiveLab";
+import {
+  Sparkles,
+  AlertCircle,
+  AlertTriangle,
+  CheckCircle2,
+  Info,
+  RefreshCw,
+  Camera,
+  Leaf,
+  Dna,
+  Camera as CameraIcon,
+  Layers,
+  BrainCircuit,
+  Cpu,
+  HelpCircle,
+  BookOpen,
+} from "lucide-react";
+import toast from "react-hot-toast";
 
 const ConfidenceBadge = ({ value }) => {
   const color =
-    value >= 80 ? "bg-green-100 text-green-700 border-green-200" :
-    value >= 50 ? "bg-amber-100 text-amber-700 border-amber-200" :
-                  "bg-red-100 text-red-700 border-red-200";
-  const label = value >= 80 ? "Độ chính xác cao" : value >= 50 ? "Tương đối chính xác" : "Độ chính xác thấp";
+    value >= 80
+      ? "bg-green-100 text-green-700 border-green-200"
+      : value >= 50
+      ? "bg-amber-100 text-amber-700 border-amber-200"
+      : "bg-red-100 text-red-700 border-red-200";
+  const label =
+    value >= 80 ? "Độ chính xác cao" : value >= 50 ? "Tương đối chính xác" : "Độ chính xác thấp";
   return (
     <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full border ${color}`}>
       <CheckCircle2 className="w-3.5 h-3.5" />
@@ -26,8 +47,8 @@ const ConfidenceWarning = ({ value }) => {
       <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0" />
       <div>
         <p className="text-sm font-bold">Mô hình chưa chắc chắn với ảnh này</p>
-        <p className="mt-0.5 text-sm leading-relaxed">
-          Độ tin cậy thấp, ảnh có thể không thuộc các lớp đã huấn luyện hoặc chưa đủ rõ để phân loại chính xác.
+        <p className="mt-0.5 text-xs leading-relaxed">
+          Độ tin cậy thấp, ảnh có thể không thuộc các lớp đã huấn luyện hoặc góc chụp chưa đủ rõ để phân loại chính xác.
         </p>
       </div>
     </div>
@@ -35,121 +56,49 @@ const ConfidenceWarning = ({ value }) => {
 };
 
 const TIP_ITEMS = [
-  { icon: Camera, text: "Ảnh chụp rõ nét, đủ sáng" },
-  { icon: Leaf,   text: "Loài vật chiếm phần lớn khung hình" },
-  { icon: Dna,    text: "Tránh ảnh mờ, nhiều vật thể" },
+  { icon: Camera, text: "Ảnh chụp rõ nét, đủ sáng, không bị mờ" },
+  { icon: Leaf, text: "Loài vật chiếm phần lớn khung hình" },
+  { icon: Dna, text: "Tránh ảnh có quá nhiều vật thể gây nhiễu" },
 ];
 
-const CnnDemoPanel = ({ result, previewUrl, activeStep = 5, isRunning = false, onReplay, onSelectStep, selectedGradcamLayer, onGradcamLayerChange }) => {
-  const cnn = result?.cnnDemo;
-  const inputShape = cnn?.inputShape?.join(" × ") || "224 × 224 × 3";
-  const classCount = cnn?.classCount || "47";
-  const top5 = result?.top5 || [];
-
-  const stages = [
-    { title: "Input", detail: "Ảnh RGB tải lên", icon: ImageIcon },
-    { title: "Preprocess", detail: `${inputShape}; RGB, resize, float32`, icon: SlidersHorizontal },
-    { title: "CNN", detail: "Conv2D → BatchNorm → MaxPooling", icon: BrainCircuit },
-    { title: "Softmax", detail: `${classCount} xác suất lớp`, icon: Waypoints },
-    { title: "Grad-CAM", detail: "Vùng mô hình tập trung", icon: ScanSearch },
-  ];
-
-  const displayedStep = Math.min(Math.max(activeStep, 1), stages.length);
-  const currentStage = stages[displayedStep - 1];
-  const CurrentIcon = currentStage.icon;
-
-  const renderScene = () => {
-    if (displayedStep === 1) return (
-      <div className="grid grid-cols-[auto_1fr] items-center gap-5">
-        <div className="h-28 w-28 overflow-hidden rounded-2xl border-4 border-white bg-slate-100 shadow-lg">
-          {previewUrl ? <img src={previewUrl} alt="Ảnh RGB đầu vào" className="h-full w-full object-cover" /> : <ImageIcon className="m-8 h-12 w-12 text-slate-300" />}
-        </div>
-        <div><p className="font-bold text-slate-900">Ảnh được đọc thành ba kênh màu</p><p className="mt-1 text-sm leading-relaxed text-slate-600">Mỗi điểm ảnh gồm Red, Green, Blue — đây là dữ liệu mô hình nhận đầu tiên.</p><div className="mt-3 flex gap-1">{["bg-red-400", "bg-green-400", "bg-blue-400"].map((color) => <span key={color} className={`h-2 flex-1 rounded-full ${color}`} />)}</div></div>
-      </div>
-    );
-    if (displayedStep === 2) return (
-      <div className="grid grid-cols-[auto_1fr] items-center gap-5">
-        <div className="grid h-28 w-28 grid-cols-7 gap-0.5 rounded-xl bg-slate-900 p-2 shadow-lg">{Array.from({ length: 49 }, (_, i) => <span key={i} className="rounded-sm bg-emerald-300/80" style={{ opacity: 0.2 + ((i * 13) % 70) / 100 }} />)}</div>
-        <div><p className="font-bold text-slate-900">Chuẩn hoá về cùng một khuôn ảnh</p><p className="mt-1 text-sm leading-relaxed text-slate-600">Ảnh được resize về {inputShape}, giữ RGB và chuyển thành số <code>float32</code> để CNN xử lý nhất quán.</p><span className="mt-3 inline-block rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-700">Resize → tensor số</span></div>
-      </div>
-    );
-    if (displayedStep === 3) return (
-      <div className="grid grid-cols-[auto_1fr] items-center gap-5">
-        <div className="flex h-28 w-28 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 shadow-lg"><BrainCircuit className="h-14 w-14 text-white animate-pulse" /></div>
-        <div><p className="font-bold text-slate-900">CNN tìm các đặc trưng của con vật</p><p className="mt-1 text-sm leading-relaxed text-slate-600">Các lớp convolution quét ảnh để nhận ra đường viền, da, sừng và các đặc trưng phức tạp hơn.</p><div className="mt-3 flex items-center gap-2 text-xs font-bold text-emerald-700"><span className="rounded bg-emerald-100 px-2 py-1">Conv2D</span><span>→</span><span className="rounded bg-teal-100 px-2 py-1">BatchNorm</span><span>→</span><span className="rounded bg-green-100 px-2 py-1">Pooling</span></div></div>
-      </div>
-    );
-    if (displayedStep === 4) return (
-      <div className="space-y-3">
-        <div><p className="font-bold text-slate-900">Softmax biến kết quả thành xác suất</p><p className="mt-1 text-sm text-slate-600">Mô hình đã so sánh {classCount} lớp. Thanh dài hơn nghĩa là mô hình tin tưởng hơn.</p></div>
-        {top5.length > 0 ? <div className="space-y-2">{top5.map((item, index) => <div key={item.label} className="grid grid-cols-[1.25rem_6.5rem_1fr_2.5rem] items-center gap-2 text-xs"><span className="font-bold text-slate-400">{index + 1}</span><span className="truncate font-semibold text-slate-700">{item.label}</span><div className="h-2.5 overflow-hidden rounded-full bg-slate-100"><div className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-600 transition-all duration-1000" style={{ width: `${item.confidence}%` }} /></div><span className="text-right font-bold text-green-700">{item.confidence}%</span></div>)}</div> : <div className="h-10 rounded-xl bg-slate-100 animate-pulse" />}
-      </div>
-    );
-    const gradcam = result?.gradcam;
-    const layers = [...(gradcam?.layers || [])].reverse();
-    return (
-      <div>
-        <div className="mb-4 flex items-start justify-between gap-3"><div><p className="font-bold text-slate-900">CNN đã nhìn vào đâu để đưa ra nhãn?</p><p className="mt-1 text-sm text-slate-600">Màu đỏ, cam là vùng có ảnh hưởng lớn nhất đến quyết định.</p></div>{layers.length > 0 && <select value={selectedGradcamLayer || gradcam?.layer || ""} onChange={onGradcamLayerChange} className="rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-xs font-semibold text-slate-700 outline-none"><option value="" disabled>Chọn layer</option>{layers.map((layer) => <option key={layer.name} value={layer.name}>{layer.name}</option>)}</select>}</div>
-        {gradcam?.image ? <div className="grid grid-cols-2 gap-3"><div><p className="mb-1.5 text-center text-[11px] font-bold uppercase tracking-wider text-slate-400">Ảnh đầu vào</p><img src={previewUrl} alt="Ảnh đầu vào" className="aspect-square w-full rounded-xl object-cover shadow-sm" /></div><div><p className="mb-1.5 text-center text-[11px] font-bold uppercase tracking-wider text-slate-400">Vùng AI tập trung</p><img src={gradcam.image} alt="Grad-CAM heatmap" className="aspect-square w-full rounded-xl object-cover shadow-sm" /></div></div> : <div className="flex h-32 items-center justify-center rounded-xl bg-slate-100 text-sm text-slate-400">Đang tạo bản đồ Grad-CAM…</div>}
-      </div>
-    );
-  };
-
-  return (
-    <section className="border-t border-gray-100 bg-slate-50/70 p-6">
-      <div className="mb-5 flex items-start justify-between gap-3">
-        <div>
-        <p className="text-xs font-bold text-green-700 uppercase tracking-wider flex items-center gap-1.5 mb-1">
-          <Dna className="w-3.5 h-3.5" /> CNN inference pipeline
-        </p>
-        <h3 className="font-extrabold text-gray-900 text-lg">Ảnh được mô hình xử lý như thế nào?</h3>
-        <p className="mt-1 text-sm text-gray-600">
-          {isRunning
-            ? "FastAPI đang chạy lần lượt qua các bước. Hãy quan sát ô đang sáng."
-            : "Các giá trị bên dưới là kết quả thực tế của lần dự đoán này, không phải nhãn dự phòng."}
-        </p>
-        </div>
-        {!isRunning && result && <button onClick={onReplay} className="flex shrink-0 items-center gap-1.5 rounded-xl border border-emerald-200 bg-white px-3 py-2 text-xs font-bold text-emerald-700 transition hover:bg-emerald-50"><RefreshCw className="h-3.5 w-3.5" /> Xem lại</button>}
-      </div>
-
-      <div className="relative mb-5 grid grid-cols-5 gap-1.5">
-        {stages.map((stage, index) => {
-          const step = index + 1;
-          const isActive = isRunning && displayedStep === step;
-          const isComplete = displayedStep > step || (!isRunning && displayedStep === stages.length);
-          const StageIcon = stage.icon;
-          return (
-            <button
-              type="button"
-              onClick={() => !isRunning && onSelectStep?.(step)}
-              disabled={isRunning}
-              key={stage.title}
-              className={`flex flex-col items-center gap-1 text-center transition-all duration-500 ${isActive ? "scale-105" : ""} ${isRunning ? "cursor-default" : "cursor-pointer"}`}
-              aria-label={`Xem bước ${step}: ${stage.title}`}
-            >
-              <span className={`flex h-9 w-9 items-center justify-center rounded-full border-2 ${isActive ? "border-green-600 bg-green-600 text-white shadow-lg shadow-green-200" : isComplete ? "border-emerald-300 bg-emerald-50 text-emerald-700" : "border-slate-200 bg-white text-slate-400"}`}>{isActive ? <LoaderCircle className="h-4 w-4 animate-spin" /> : isComplete ? <CheckCircle2 className="h-4 w-4" /> : <StageIcon className="h-4 w-4" />}</span>
-              <p className={`text-[11px] font-extrabold ${isActive ? "text-green-700" : "text-slate-500"}`}>{step}. {stage.title}</p>
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="min-h-44 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm animate-fade-in" key={displayedStep}>
-        <div className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-700"><CurrentIcon className="h-4 w-4" /> Cảnh {displayedStep}/5 · {currentStage.title}{isRunning && <span className="ml-auto normal-case text-green-600">Đang xử lý…</span>}</div>
-        {renderScene()}
-      </div>
-
-      {!isRunning && displayedStep === 3 && cnn?.convLayers?.length > 0 && (
-        <details className="mt-4 rounded-xl border border-slate-200 bg-white px-4 py-3">
-          <summary className="cursor-pointer text-sm font-bold text-slate-700">Các convolution layer được FastAPI phát hiện trong model</summary>
-          <div className="mt-3 grid gap-1.5 text-xs text-slate-600">
-            {cnn.convLayers.map((layer) => <div key={layer.name} className="flex justify-between gap-4"><code>{layer.name}</code><span className="text-right">{layer.shape}</span></div>)}
-          </div>
-        </details>
-      )}
-    </section>
-  );
-};
+// Sample presets for quick testing without searching for photos on disk
+const SAMPLE_PRESETS = [
+  {
+    name: "Cá sấu",
+    label: "african_crocodile",
+    color: "#2e7d32",
+    svgBg: "linear-gradient(135deg, #1b5e20, #4caf50)",
+    icon: "🐊",
+  },
+  {
+    name: "Hổ",
+    label: "tiger",
+    color: "#e65100",
+    svgBg: "linear-gradient(135deg, #e65100, #ff9800)",
+    icon: "🐅",
+  },
+  {
+    name: "Voi",
+    label: "elephant",
+    color: "#455a64",
+    svgBg: "linear-gradient(135deg, #37474f, #78909c)",
+    icon: "🐘",
+  },
+  {
+    name: "Bướm",
+    label: "butterfly",
+    color: "#c2185b",
+    svgBg: "linear-gradient(135deg, #880e4f, #e91e63)",
+    icon: "🦋",
+  },
+  {
+    name: "Đại bàng",
+    label: "eagle",
+    color: "#5d4037",
+    svgBg: "linear-gradient(135deg, #3e2723, #8d6e63)",
+    icon: "🦅",
+  },
+];
 
 const Identify = () => {
   const [file, setFile] = useState(null);
@@ -159,35 +108,30 @@ const Identify = () => {
   const [error, setError] = useState("");
   const [showCamera, setShowCamera] = useState(false);
   const [selectedGradcamLayer, setSelectedGradcamLayer] = useState("");
-  const [pipelineStep, setPipelineStep] = useState(0);
-  const [demoPlaying, setDemoPlaying] = useState(false);
+  const [pipelineStep, setPipelineStep] = useState(1);
+  const [loadingGradcam, setLoadingGradcam] = useState(false);
 
-  // The request remains the source of truth: this only paces the visual explanation
-  // while FastAPI is working, then marks every stage complete when its response arrives.
+  // Synchronize visual stage pace during inference
   useEffect(() => {
-    if (!loading && !demoPlaying) {
-      if (result) setPipelineStep(5);
-      return undefined;
-    }
+    if (!loading) return undefined;
 
     setPipelineStep(1);
     const timers = [
-      window.setTimeout(() => setPipelineStep(2), 900),
-      window.setTimeout(() => setPipelineStep(3), 2100),
-      window.setTimeout(() => setPipelineStep(4), 3400),
-      window.setTimeout(() => setPipelineStep(5), 4700),
+      window.setTimeout(() => setPipelineStep(2), 700),
+      window.setTimeout(() => setPipelineStep(3), 1600),
+      window.setTimeout(() => setPipelineStep(4), 2600),
+      window.setTimeout(() => setPipelineStep(5), 3600),
+      window.setTimeout(() => setPipelineStep(6), 4600),
     ];
-    if (demoPlaying && !loading) timers.push(window.setTimeout(() => setDemoPlaying(false), 6100));
     return () => timers.forEach(window.clearTimeout);
-  }, [loading, result, demoPlaying]);
+  }, [loading]);
 
   const handleFileSelect = (selectedFile) => {
     setFile(selectedFile);
     setResult(null);
     setError("");
     setSelectedGradcamLayer("");
-    setPipelineStep(0);
-    setDemoPlaying(false);
+    setPipelineStep(1);
     if (selectedFile) {
       setPreviewUrl(URL.createObjectURL(selectedFile));
     } else {
@@ -195,8 +139,47 @@ const Identify = () => {
     }
   };
 
+  // Helper to load sample preset by creating a synthetic image canvas / blob
+  const handleSelectPreset = (preset) => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 448;
+    canvas.height = 448;
+    const ctx = canvas.getContext("2d");
+
+    // Draw stylized gradient background
+    const grad = ctx.createLinearGradient(0, 0, 448, 448);
+    grad.addColorStop(0, preset.color);
+    grad.addColorStop(1, "#111827");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 448, 448);
+
+    // Draw animal icon and text
+    ctx.font = "140px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(preset.icon, 224, 200);
+
+    ctx.font = "bold 26px sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(preset.name, 224, 340);
+
+    ctx.font = "18px sans-serif";
+    ctx.fillStyle = "#a7f3d0";
+    ctx.fillText(`Mẫu thử: ${preset.label}`, 224, 380);
+
+    canvas.toBlob((blob) => {
+      if (!blob) return;
+      const sampleFile = new File([blob], `${preset.label}.png`, { type: "image/png" });
+      handleFileSelect(sampleFile);
+      toast.success(`Đã chọn ảnh mẫu: ${preset.name}`);
+    }, "image/png");
+  };
+
   const handleIdentify = async (gradcamLayer = selectedGradcamLayer) => {
-    if (!file) return;
+    if (!file) {
+      toast.error("Vui lòng chọn hoặc tải ảnh lên trước khi nhận diện");
+      return;
+    }
     setLoading(true);
     setError("");
     setResult(null);
@@ -208,10 +191,15 @@ const Identify = () => {
         formData.append("gradcam_layer", gradcamLayer);
       }
       const res = await identifyAPI.identify(formData);
-      setResult(res.data.result);
-      setSelectedGradcamLayer(res.data.result?.gradcam?.layer || gradcamLayer || "");
+      const dataResult = res.data.result;
+      setResult(dataResult);
+      setSelectedGradcamLayer(dataResult?.gradcam?.layer || gradcamLayer || "");
+      setPipelineStep(6); // Navigate to Grad-CAM stage upon completion
+      toast.success(`Nhận diện thành công: ${dataResult.vietnameseName || dataResult.label}`);
     } catch (err) {
-      setError(err.response?.data?.message || "Không thể nhận diện. Thử lại với ảnh khác.");
+      const errMsg = err.response?.data?.message || "Không thể nhận diện. Vui lòng kiểm tra lại dịch vụ AI.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setLoading(false);
     }
@@ -224,8 +212,7 @@ const Identify = () => {
     setError("");
     setShowCamera(false);
     setSelectedGradcamLayer("");
-    setPipelineStep(0);
-    setDemoPlaying(false);
+    setPipelineStep(1);
   };
 
   const handleCameraCapture = (capturedFile) => {
@@ -234,8 +221,7 @@ const Identify = () => {
     setShowCamera(false);
     setError("");
     setSelectedGradcamLayer("");
-    setPipelineStep(0);
-    setDemoPlaying(false);
+    setPipelineStep(1);
     setPreviewUrl(URL.createObjectURL(capturedFile));
   };
 
@@ -244,13 +230,7 @@ const Identify = () => {
     setError("");
     setResult(null);
     setSelectedGradcamLayer("");
-    setPipelineStep(0);
-    setDemoPlaying(false);
-  };
-
-  const replayPipeline = () => {
     setPipelineStep(1);
-    setDemoPlaying(true);
   };
 
   const handleGradcamLayerChange = async (event) => {
@@ -261,6 +241,7 @@ const Identify = () => {
       return;
     }
 
+    setLoadingGradcam(true);
     setError("");
     try {
       const formData = new FormData();
@@ -271,252 +252,346 @@ const Identify = () => {
       }
 
       const res = await identifyAPI.gradcam(formData);
-      setResult((current) => current ? {
-        ...current,
-        gradcam: res.data.gradcam,
-      } : current);
+      setResult((current) =>
+        current
+          ? {
+              ...current,
+              gradcam: res.data.gradcam,
+            }
+          : current
+      );
       setSelectedGradcamLayer(res.data.gradcam?.layer || nextLayer || "");
+      toast.success(`Đã cập nhật Grad-CAM với layer: ${nextLayer}`);
     } catch (err) {
-      setError(err.response?.data?.message || "Không thể tạo Grad-CAM cho layer này.");
+      const msg = err.response?.data?.message || "Không thể tạo Grad-CAM cho layer này.";
+      setError(msg);
+      toast.error(msg);
+    } finally {
+      setLoadingGradcam(false);
     }
   };
 
   return (
     <div
-      className="min-h-screen py-12 px-4"
-      style={{ background: "linear-gradient(160deg, #f0fdf4 0%, #ecfdf5 40%, #f8fafc 100%)" }}
+      className="min-h-screen pb-20"
+      style={{ background: "linear-gradient(180deg, #f0fdf4 0%, #f8fafc 40%, #f0fdf4 100%)" }}
     >
-      <div className="max-w-2xl mx-auto">
+      {/* ── Page Hero Banner ── */}
+      <div className="relative overflow-hidden bg-white border-b border-gray-100 py-10 sm:py-12 mb-8">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-green-100 rounded-full opacity-40 blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-100 rounded-full opacity-30 blur-3xl -translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
-        {/* ── Header ── */}
-        <div className="text-center mb-10 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-5 border border-green-200">
-            <Sparkles className="w-4 h-4 text-yellow-500" />
-            Nhận diện bằng AI
-          </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-3">
-            Nhận Diện <span className="text-green-600">Loài Vật</span>
-          </h1>
-          <p className="text-gray-500 text-base max-w-sm mx-auto leading-relaxed">
-            Tải ảnh để quan sát toàn bộ quy trình CNN: preprocessing, Softmax và Grad-CAM.
-          </p>
-        </div>
-
-        {/* ── Upload card ── */}
-        {!showCamera ? (
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 mb-4 animate-fade-in-up delay-100">
-            <UploadBox onFileSelect={handleFileSelect} disabled={loading} initialFile={file} />
-          </div>
-        ) : (
-          <div className="mb-4 animate-fade-in-up delay-100">
-            <CameraCapture
-              onCapture={handleCameraCapture}
-              onClose={() => setShowCamera(false)}
-              disabled={loading}
-            />
-          </div>
-        )}
-
-        {/* ── Tips (no file selected) ── */}
-        {!file && !result && (
-          <div className="mb-4 bg-white rounded-2xl border border-gray-100 p-4 shadow-sm animate-fade-in delay-200">
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-              <Info className="w-3.5 h-3.5" />
-              Mẹo để đạt kết quả tốt nhất
-            </p>
-            <div className="flex flex-col gap-2">
-              {TIP_ITEMS.map(({ icon, text }) => (
-                <div key={text} className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                    {createElement(icon, { className: "w-3.5 h-3.5 text-green-600" })}
-                  </div>
-                  <p className="text-sm text-gray-600">{text}</p>
-                </div>
-              ))}
+        <div className="max-w-[1700px] mx-auto px-6 sm:px-10 relative z-10">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div className="max-w-3xl animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-xs font-bold mb-3.5 border border-green-200 uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-yellow-500" />
+                Phòng Thí Nghiệm Học Sâu CNN & Trực Quan Hoá AI
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                Thực Nghiệm &amp; Giải Mã <span className="text-green-600">Mạng CNN</span>
+              </h1>
+              <p className="text-gray-600 mt-2.5 text-sm sm:text-base font-medium leading-relaxed">
+                Khám phá chi tiết cách mạng nơ-ron tích chập tiếp nhận ảnh số (RGB Tensor), tiền xử lý, trích xuất đặc trưng bằng Kernel, giảm chiều MaxPooling, phân loại Softmax và giải thích quyết định bằng bản đồ nhiệt Grad-CAM.
+              </p>
             </div>
-          </div>
-        )}
 
-        {/* ── Identify button ── */}
-        <div className="flex gap-3 animate-fade-in-up delay-200">
-          {/* Camera button - only show when not in camera mode */}
-          {!showCamera && !file && (
-            <button
-              onClick={openCamera}
-              disabled={loading}
-              className="px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-base rounded-2xl flex items-center justify-center gap-2.5 transition-all duration-200 shadow-md hover:shadow-blue-200"
-            >
-              <CameraIcon className="w-5 h-5" />
-              <span className="hidden sm:inline">Mở Camera</span>
-            </button>
-          )}
-
-          <button
-            onClick={() => handleIdentify()}
-            disabled={!file || loading}
-            className={`flex-1 py-4 font-bold text-base rounded-2xl flex items-center justify-center gap-2.5 transition-all duration-200
-              ${!file || loading
-                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                : "btn-shimmer text-white shadow-lg hover:shadow-green-200"
-              }`}
-          >
-            {loading ? (
-              <>
-                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin-slow" />
-                Đang phân tích...
-              </>
-            ) : (
-              <>
-                <Sparkles className="w-5 h-5" />
-                Nhận diện ngay
-              </>
-            )}
-          </button>
-
-          {/* Reset button */}
-          {(file || result) && (
-            <button
-              onClick={handleReset}
-              className="px-4 py-4 bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-500 hover:text-gray-700 rounded-2xl transition-all duration-200 shadow-sm"
-              title="Làm lại từ đầu"
-            >
-              <RefreshCw className="w-5 h-5" />
-            </button>
-          )}
-        </div>
-
-        {/* ── Error ── */}
-        {error && (
-          <div className="mt-5 flex items-start gap-3 bg-red-50 border border-red-200 text-red-700 px-4 py-4 rounded-2xl animate-fade-in">
-            <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="text-sm font-bold mb-0.5">Nhận diện thất bại</p>
-              <p className="text-sm">{error}</p>
-            </div>
-          </div>
-        )}
-
-        {/* Live teaching view: shown while the model request is in flight. */}
-        {loading && (
-          <div className="mt-6 overflow-hidden rounded-3xl border border-green-100 bg-white shadow-md animate-fade-in-up">
-            <CnnDemoPanel
-              previewUrl={previewUrl}
-              activeStep={pipelineStep}
-              isRunning
-            />
-          </div>
-        )}
-
-        {/* ── Result ── */}
-        {result && (
-          <div className="mt-6 bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden animate-fade-in-up">
-
-            {/* Result header */}
-            <div className="relative bg-gradient-to-br from-green-700 via-emerald-600 to-teal-600 text-white p-7 overflow-hidden">
-              <div className="absolute top-0 right-0 w-52 h-52 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
-              <div className="absolute top-4 right-4 w-20 h-20 bg-white/5 rounded-full" />
-
-              <div className="relative">
-                <div className="flex items-center gap-2 mb-3">
-                  <CheckCircle2 className="w-4 h-4 text-green-300" />
-                  <p className="text-xs font-bold opacity-70 uppercase tracking-wider">CNN prediction result</p>
+            {/* Quick stats pills */}
+            <div className="flex flex-wrap items-center gap-2.5 animate-fade-in-up delay-100">
+              <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 px-3.5 py-2 rounded-2xl shadow-sm">
+                <BrainCircuit className="w-4 h-4 text-emerald-700" />
+                <div className="text-left">
+                  <p className="text-[10px] uppercase font-bold text-emerald-600">Kiến trúc</p>
+                  <p className="text-xs font-extrabold text-emerald-950">Deep CNN + Grad-CAM</p>
                 </div>
+              </div>
 
-                <h2 className="text-2xl md:text-3xl font-extrabold capitalize leading-tight mb-4">
-                  {result.vietnameseName
-                    ? (
-                      <>
-                        {result.vietnameseName}
-                        <span className="text-green-200 text-lg font-semibold block mt-0.5 italic">
-                          {result.label}
-                        </span>
-                      </>
-                    )
-                    : result.label}
-                </h2>
-
-                {/* Confidence bar */}
-                <div className="space-y-1.5">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="opacity-70">Độ chính xác</span>
-                    <span className="font-bold bg-white/20 px-2.5 py-0.5 rounded-full">{result.confidence}%</span>
-                  </div>
-                  <div className="w-full bg-white/20 rounded-full h-2.5 overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all duration-1000 ease-out"
-                      style={{
-                        width: `${result.confidence}%`,
-                        background: result.confidence >= 80
-                          ? "linear-gradient(90deg, #4ade80, #22c55e)"
-                          : result.confidence >= 50
-                          ? "linear-gradient(90deg, #fbbf24, #f59e0b)"
-                          : "linear-gradient(90deg, #f87171, #ef4444)",
-                      }}
-                    />
-                  </div>
+              <div className="flex items-center gap-2 bg-blue-50 border border-blue-200 px-3.5 py-2 rounded-2xl shadow-sm">
+                <Cpu className="w-4 h-4 text-blue-700" />
+                <div className="text-left">
+                  <p className="text-[10px] uppercase font-bold text-blue-600">Kích thước Tensor</p>
+                  <p className="text-xs font-extrabold text-blue-950">224 × 224 × 3</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <CnnDemoPanel
-              result={result}
-              previewUrl={previewUrl}
-              activeStep={pipelineStep}
-              isRunning={demoPlaying}
-              onReplay={replayPipeline}
-              onSelectStep={setPipelineStep}
-              selectedGradcamLayer={selectedGradcamLayer}
-              onGradcamLayerChange={handleGradcamLayerChange}
-            />
+      {/* ── Main Workspace ── */}
+      <div className="max-w-[1700px] mx-auto px-6 sm:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* ══════════════════════════════════════════════════════════════
+              LEFT PANEL (4.5 cols on desktop): Input & Prediction Console
+             ══════════════════════════════════════════════════════════════ */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* Quick Sample Presets */}
+            <div className="bg-white rounded-3xl border border-gray-100 p-4 sm:p-5 shadow-sm space-y-3 animate-fade-in-up">
+              <div className="flex items-center justify-between">
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  Mẫu thử nghiệm nhanh (1-Click Presets)
+                </p>
+                <span className="text-[11px] text-emerald-700 font-semibold">Thử không cần tìm ảnh</span>
+              </div>
 
-            {/* Thông tin loài trong cơ sở dữ liệu, nếu nhãn có dữ liệu mô tả. */}
-            {result.details ? (
-              <div className="p-6">
-                <div className="flex gap-5">
-                  {result.details.imageUrl && (
-                    <img
-                      src={result.details.imageUrl}
-                      alt={result.details.vietnameseName}
-                      className="w-32 h-32 object-cover rounded-2xl flex-shrink-0 shadow-md ring-2 ring-green-100"
-                    />
+              <div className="grid grid-cols-5 gap-2">
+                {SAMPLE_PRESETS.map((preset) => (
+                  <button
+                    key={preset.label}
+                    type="button"
+                    onClick={() => handleSelectPreset(preset)}
+                    className="flex flex-col items-center gap-1 p-2 rounded-2xl border border-gray-200/70 hover:border-emerald-400 hover:bg-emerald-50/50 transition-all duration-200 group text-center"
+                    title={`Chọn mẫu: ${preset.name}`}
+                  >
+                    <span className="text-2xl group-hover:scale-110 transition-transform duration-200">
+                      {preset.icon}
+                    </span>
+                    <span className="text-[11px] font-bold text-gray-700 group-hover:text-emerald-700 truncate w-full">
+                      {preset.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Upload Box or Camera */}
+            <div className="bg-white rounded-3xl border border-gray-100 p-5 sm:p-6 shadow-sm animate-fade-in-up delay-100">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                  Nguồn dữ liệu hình ảnh
+                </p>
+                {previewUrl && (
+                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                    Đã nạp Tensor ảnh
+                  </span>
+                )}
+              </div>
+
+              {!showCamera ? (
+                <UploadBox onFileSelect={handleFileSelect} disabled={loading} initialFile={file} />
+              ) : (
+                <CameraCapture
+                  onCapture={handleCameraCapture}
+                  onClose={() => setShowCamera(false)}
+                  disabled={loading}
+                />
+              )}
+
+              {/* Action Toolbar */}
+              <div className="flex gap-2.5 mt-4">
+                {!showCamera && !file && (
+                  <button
+                    type="button"
+                    onClick={openCamera}
+                    disabled={loading}
+                    className="px-4 py-3.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-sm rounded-2xl flex items-center justify-center gap-2 transition-all duration-200 shadow-md hover:shadow-blue-200"
+                  >
+                    <CameraIcon className="w-4 h-4" />
+                    <span>Camera</span>
+                  </button>
+                )}
+
+                <button
+                  type="button"
+                  onClick={() => handleIdentify()}
+                  disabled={!file || loading}
+                  className={`flex-1 py-3.5 font-bold text-sm rounded-2xl flex items-center justify-center gap-2.5 transition-all duration-200 shadow-md ${
+                    !file || loading
+                      ? "bg-gray-100 text-gray-400 cursor-not-allowed shadow-none"
+                      : "btn-shimmer text-white hover:shadow-green-200 scale-[1.01]"
+                  }`}
+                >
+                  {loading ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang giải mã mạng CNN...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-4 h-4" />
+                      <span>Nhận diện &amp; Phân tích CNN</span>
+                    </>
                   )}
-                  <div className={`${result.details.imageUrl ? "flex-1 min-w-0" : "flex-1"}`}>
-                    <div className="flex items-start justify-between gap-2 flex-wrap mb-3">
-                      <h3 className="font-extrabold text-gray-900 text-lg leading-tight capitalize">
-                        {result.details.vietnameseName}
-                      </h3>
+                </button>
+
+                {(file || result) && (
+                  <button
+                    type="button"
+                    onClick={handleReset}
+                    className="p-3.5 bg-white border border-gray-200 hover:border-gray-300 text-gray-500 hover:text-gray-700 rounded-2xl transition-all shadow-sm"
+                    title="Làm mới từ đầu"
+                  >
+                    <RefreshCw className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+
+              {/* Error Box */}
+              {error && (
+                <div className="mt-4 flex items-start gap-3 bg-red-50 border border-red-200 text-red-700 px-4 py-3.5 rounded-2xl animate-fade-in text-xs">
+                  <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold">Lỗi xử lý</p>
+                    <p className="mt-0.5">{error}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Prediction Result Card */}
+            {result && (
+              <div className="bg-white rounded-3xl border border-gray-100 overflow-hidden shadow-md animate-fade-in-up">
+                {/* Result header banner */}
+                <div className="relative bg-gradient-to-br from-green-700 via-emerald-600 to-teal-700 text-white p-6 overflow-hidden">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-1.5 mb-2 text-green-200 text-xs font-bold uppercase tracking-wider">
+                      <CheckCircle2 className="w-4 h-4 text-green-300" />
+                      Kết quả phân loại từ mô hình
                     </div>
+
+                    <h2 className="text-2xl sm:text-3xl font-extrabold capitalize leading-tight mb-2">
+                      {result.vietnameseName ? (
+                        <>
+                          {result.vietnameseName}
+                          <span className="text-green-200 text-sm font-semibold block mt-0.5 italic lowercase">
+                            ({result.label})
+                          </span>
+                        </>
+                      ) : (
+                        result.label
+                      )}
+                    </h2>
+
+                    {/* Confidence percentage bar */}
+                    <div className="mt-4 space-y-1.5">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="opacity-80 font-medium">Độ tin cậy của Softmax:</span>
+                        <span className="font-extrabold bg-white/20 px-2.5 py-0.5 rounded-full font-mono">
+                          {result.confidence}%
+                        </span>
+                      </div>
+                      <div className="w-full bg-white/20 rounded-full h-2.5 overflow-hidden">
+                        <div
+                          className="h-full rounded-full transition-all duration-1000 ease-out"
+                          style={{
+                            width: `${result.confidence}%`,
+                            background:
+                              result.confidence >= 80
+                                ? "linear-gradient(90deg, #4ade80, #22c55e)"
+                                : result.confidence >= 50
+                                ? "linear-gradient(90deg, #fbbf24, #f59e0b)"
+                                : "linear-gradient(90deg, #f87171, #ef4444)",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Result Biological Details */}
+                <div className="p-5 sm:p-6 space-y-4">
+                  <div className="flex items-center justify-between flex-wrap gap-2">
                     <ConfidenceBadge value={result.confidence} />
-                    {result.warning && (
-                      <div className="mt-4 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-left text-amber-800">
-                        <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0" />
-                        <div>
-                          <p className="text-sm font-bold">Không phải dữ liệu loài vật</p>
-                          <p className="mt-0.5 text-sm leading-relaxed">{result.warning}</p>
+                    <span className="text-xs text-gray-400 font-mono">
+                      Class ID: #{result.gradcamClassIndex ?? "--"}
+                    </span>
+                  </div>
+
+                  <ConfidenceWarning value={result.confidence} />
+
+                  {result.details ? (
+                    <div className="space-y-3 pt-2">
+                      <div className="flex gap-4 items-start">
+                        {result.details.imageUrl && (
+                          <img
+                            src={result.details.imageUrl}
+                            alt={result.details.vietnameseName}
+                            className="w-24 h-24 object-cover rounded-2xl flex-shrink-0 shadow-sm ring-2 ring-green-100"
+                          />
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-extrabold text-gray-900 text-base leading-snug">
+                            {result.details.vietnameseName}
+                          </h3>
+                          {result.details.description && (
+                            <p className="text-xs text-gray-600 leading-relaxed line-clamp-4 mt-1">
+                              {result.details.description}
+                            </p>
+                          )}
                         </div>
                       </div>
-                    )}
-                    <ConfidenceWarning value={result.confidence} />
-                    {result.details.description && (
-                      <p className="text-sm text-gray-600 leading-relaxed mt-3">
-                        {result.details.description}
-                      </p>
-                    )}
+                    </div>
+                  ) : (
+                    <div className="p-4 bg-gray-50 rounded-2xl text-center text-xs text-gray-500">
+                      Chưa có mô tả bách khoa chi tiết cho nhãn này trong CSDL.
+                    </div>
+                  )}
+
+                  {/* Model Specs Card */}
+                  <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 space-y-2 text-xs">
+                    <p className="font-bold text-slate-800 flex items-center gap-1.5">
+                      <Cpu className="w-3.5 h-3.5 text-emerald-600" /> Thông số mô hình đã dùng
+                    </p>
+                    <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600">
+                      <div>
+                        Đầu vào: <strong className="text-slate-800">224×224×3 (RGB)</strong>
+                      </div>
+                      <div>
+                        Tổng số lớp: <strong className="text-slate-800">{result?.cnnDemo?.classCount || "47"} loài</strong>
+                      </div>
+                      <div>
+                        Hàm kích hoạt: <strong className="text-slate-800">ReLU + Softmax</strong>
+                      </div>
+                      <div>
+                        Giải thích: <strong className="text-slate-800">Grad-CAM XAI</strong>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            ) : (
-              <div className="p-10 text-center text-gray-400">
-                <p className="text-4xl mb-3">🔍</p>
-                <p className="font-medium text-gray-500 mb-1">Chưa có dữ liệu mô tả</p>
-                <p className="text-sm">Nhãn này chưa có trong cơ sở dữ liệu của chúng tôi.</p>
-                <ConfidenceWarning value={result.confidence} />
-              </div>
             )}
 
+            {/* Tips Card (when no result yet) */}
+            {!result && (
+              <div className="bg-white rounded-3xl border border-gray-100 p-5 shadow-sm animate-fade-in space-y-3">
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <Info className="w-3.5 h-3.5 text-emerald-600" />
+                  Mẹo để mạng CNN nhận diện chính xác nhất
+                </p>
+                <div className="space-y-2">
+                  {TIP_ITEMS.map(({ icon, text }) => (
+                    <div key={text} className="flex items-center gap-2.5">
+                      <div className="w-7 h-7 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        {createElement(icon, { className: "w-3.5 h-3.5 text-green-600" })}
+                      </div>
+                      <p className="text-xs text-gray-600 font-medium">{text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
-        )}
+
+          {/* ══════════════════════════════════════════════════════════════
+              RIGHT PANEL (7.5 cols on desktop): CNN Interactive Neural Lab
+             ══════════════════════════════════════════════════════════════ */}
+          <div className="lg:col-span-7 space-y-6">
+            <CnnInteractiveLab
+              result={result}
+              previewUrl={previewUrl}
+              currentStep={pipelineStep}
+              onStepChange={setPipelineStep}
+              isRunning={loading}
+              selectedGradcamLayer={selectedGradcamLayer}
+              onGradcamLayerChange={handleGradcamLayerChange}
+              loadingGradcam={loadingGradcam}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

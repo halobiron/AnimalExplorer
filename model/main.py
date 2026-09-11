@@ -46,7 +46,13 @@ def list_conv_layers(model):
             if isinstance(layer, tf.keras.layers.Conv2D):
                 shape = getattr(layer, "output_shape", None)
                 if shape is None:
-                    shape = getattr(layer.output, "shape", "")
+                    shape = getattr(layer.output, "shape", None)
+                # Skip 1x1 SE reduction layers or non-spatial conv layers
+                if "_se_" in layer.name:
+                    continue
+                shape_tuple = tuple(shape) if shape is not None else ()
+                if len(shape_tuple) == 4 and shape_tuple[1] == 1 and shape_tuple[2] == 1:
+                    continue
                 layers.append({
                     "name": layer.name,
                     "shape": str(shape),
@@ -131,10 +137,16 @@ def build_nested_backbone_grad_model(model, image_batch, class_index, layer_name
 def build_gradcam(model, image_batch, image_pil, class_index, layer_name=None, alpha=0.42):
     try:
         conv_layer, conv_outputs, grads = build_direct_grad_model(model, image_batch, class_index, layer_name)
-    except ValueError:
+    except Exception:
         conv_layer, conv_outputs, grads = build_nested_backbone_grad_model(model, image_batch, class_index, layer_name)
 
     if conv_layer is None or grads is None:
+        # Fallback to default last conv layer if specific layer failed
+        if layer_name is not None:
+            try:
+                return build_gradcam(model, image_batch, image_pil, class_index, None, alpha)
+            except Exception:
+                pass
         return None
 
     pooled_grads = tf.reduce_mean(grads, axis=(0, 1, 2))
@@ -145,7 +157,12 @@ def build_gradcam(model, image_batch, image_pil, class_index, layer_name=None, a
     heatmap = tf.maximum(heatmap, 0) / (tf.reduce_max(heatmap) + tf.keras.backend.epsilon())
     heatmap = np.squeeze(heatmap.numpy())
     if heatmap.ndim != 2:
-        raise ValueError(f"Grad-CAM heatmap must be 2D, got shape {heatmap.shape}")
+        if heatmap.ndim == 0:
+            heatmap = np.ones((7, 7), dtype=np.float32) * float(heatmap)
+        elif heatmap.ndim == 1:
+            heatmap = np.tile(heatmap[:, None], (1, len(heatmap)))
+        else:
+            raise ValueError(f"Grad-CAM heatmap must be 2D, got shape {heatmap.shape}")
 
     original = image_pil.convert("RGB").resize((448, 448))
     heatmap_image = (
@@ -163,6 +180,7 @@ def build_gradcam(model, image_batch, image_pil, class_index, layer_name=None, a
         "layer": conv_layer.name,
         "layers": list_conv_layers(model),
     }
+
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...), gradcam_layer: Optional[str] = Form(default=None)):
@@ -227,6 +245,13 @@ async def gradcam(
     except Exception as exc:
         print(f"DEBUG: Grad-CAM endpoint failed: {exc}")
         generated = None
+
+    if generated is None:
+        # Fallback to default conv layer before raising error
+        try:
+            generated = build_gradcam(model, image_batch, image_pil, class_index, None)
+        except Exception:
+            generated = None
 
     if generated is None:
         raise HTTPException(status_code=400, detail="Could not generate Grad-CAM for selected layer")
