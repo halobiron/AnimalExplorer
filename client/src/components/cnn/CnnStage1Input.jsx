@@ -303,36 +303,91 @@ const CnnStage1Input = ({ previewUrl }) => {
     </div>
   );
 
-  // Theory View
+  // Theory View: Deep, structured, and pedagogical explanations
   const theoryView = (
     <div className="space-y-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 space-y-2">
-          <p className="text-xs font-black text-emerald-900 uppercase flex items-center gap-1.5">
-            <Database className="w-4 h-4 text-emerald-600" />
-            Quy Trình Quản Lý &amp; Phân Chia Dataset
-          </p>
-          <p className="text-xs text-emerald-800 leading-relaxed">
-            Tập dữ liệu huấn luyện gồm 47 loài động vật được cấu trúc tại <code>model/dataset_raw/animals/animals</code> theo định dạng chuẩn <code>tên_loài/ảnh.jpg</code>.
-          </p>
-          <div className="pt-2 flex items-center gap-2 text-xs font-bold text-emerald-950">
-            <span className="bg-emerald-200/80 px-2.5 py-1 rounded-lg">80% Huấn luyện (Train)</span>
-            <span>+</span>
-            <span className="bg-teal-200/80 px-2.5 py-1 rounded-lg">20% Kiểm định (Validation)</span>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Card 1: 3D Tensor Representation */}
+        <div className="bg-emerald-50/80 border border-emerald-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-emerald-600 text-white shadow-sm">
+              <Layers className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-emerald-950 uppercase">
+              1. Biểu Diễn Ảnh Số Dạng Tensor (H × W × C)
+            </p>
           </div>
+          <p className="text-xs text-emerald-900 leading-relaxed">
+            Ảnh kỹ thuật số được máy tính lưu trữ dưới dạng <strong>Tensor ma trận 3 chiều</strong>: Chiều cao (Height), Chiều rộng (Width) và Kênh màu (Channels: Red, Green, Blue).
+          </p>
+          <div className="bg-white/90 border border-emerald-300/80 rounded-xl p-2.5 text-center font-mono text-xs font-bold text-emerald-950 shadow-sm">
+            Tensor ma trận (224 × 224 × 3) ⇒ 150,528 điểm số uint8 [0, 255]
+          </div>
+          <ul className="space-y-1 text-[11px] text-emerald-800 leading-relaxed">
+            <li className="flex items-start gap-1.5">
+              <span className="text-emerald-600 font-bold">•</span>
+              <span><strong>Mỗi điểm ảnh (Pixel):</strong> Là tổ hợp 3 giá trị màu [R, G, B] thể hiện cường độ ánh sáng từ 0 (tối nhất) đến 255 (sáng nhất).</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <span className="text-emerald-600 font-bold">•</span>
+              <span><strong>Định dạng nạp:</strong> Keras sử dụng chuẩn <code>(Batch, H, W, C)</code> trong khi PyTorch sử dụng chuẩn <code>(Batch, C, H, W)</code>.</span>
+            </li>
+          </ul>
         </div>
 
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-2">
-          <p className="text-xs font-black text-slate-900 uppercase flex items-center gap-1.5">
-            <Layers className="w-4 h-4 text-emerald-600" />
-            Cấu Trúc Tensor Số Học (H × W × 3)
+        {/* Card 2: Dataset Partitioning & Generalization */}
+        <div className="bg-teal-50/80 border border-teal-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-teal-600 text-white shadow-sm">
+              <Database className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-teal-950 uppercase">
+              2. Quản Lý &amp; Phân Chia Tập Dữ Liệu
+            </p>
+          </div>
+          <p className="text-xs text-teal-900 leading-relaxed">
+            Tập dữ liệu 47 loài động vật được cấu trúc phân cấp theo danh mục thư mục <code>loài/ảnh.jpg</code> để mô hình học cách phân biệt đặc trưng sinh học:
           </p>
-          <p className="text-xs text-slate-700 leading-relaxed">
-            Mỗi bức ảnh kỹ thuật số là một ma trận 3 chiều. Mỗi điểm ảnh là tổ hợp của 3 giá trị màu cơ bản (Red, Green, Blue) nằm trong khoảng nguyên uint8 <code>[0, 255]</code>.
+          <div className="grid grid-cols-2 gap-2 text-center text-xs font-bold">
+            <div className="bg-white/90 border border-teal-300 rounded-xl p-2 text-teal-950 shadow-sm">
+              <span className="text-teal-700 block text-[10px] uppercase">Train Set (80%)</span>
+              Tối ưu trọng số W, b
+            </div>
+            <div className="bg-white/90 border border-teal-300 rounded-xl p-2 text-teal-950 shadow-sm">
+              <span className="text-teal-700 block text-[10px] uppercase">Val Set (20%)</span>
+              Đánh giá chống Overfitting
+            </div>
+          </div>
+          <p className="text-[11px] text-teal-800 leading-relaxed">
+            • <strong>Ý nghĩa tổng quát hóa:</strong> Việc kiểm định độc lập trên tập Validation đảm bảo AI nhận diện đúng ngay cả khi gặp ảnh động vật chụp ở bối cảnh và góc nhìn mới lạ.
           </p>
-          <p className="text-[11px] text-slate-500 font-mono pt-1">
-            Kích thước chuẩn đầu vào mạng: 224 × 224 × 3 (150,528 giá trị số)
+        </div>
+      </div>
+
+      {/* Standard Resolution Card */}
+      <div className="bg-slate-900 text-slate-100 rounded-2xl p-4 border border-slate-800 space-y-2">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            Tại Sao Chọn Kích Thước Chuẩn 224 × 224 × 3?
           </p>
+          <span className="text-[10px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">
+            ImageNet Standard
+          </span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-xs text-slate-300">
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-emerald-400 block">1. Cân bằng Thông tin &amp; Tốc độ</strong>
+            <p className="text-[11px] text-slate-400">Đủ lớn để giữ các chi tiết vi mô (mắt, mỏ, vảy), đủ nhỏ để nạp vừa bộ nhớ GPU.</p>
+          </div>
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-cyan-400 block">2. Giảm lũy thừa qua 5 tầng Pool</strong>
+            <p className="text-[11px] text-slate-400">224 → 112 → 56 → 28 → 14 → 7 (chia hết cho 2 năm lần liên tiếp không bị lẻ kích thước).</p>
+          </div>
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-amber-400 block">3. Kế thừa Transfer Learning</strong>
+            <p className="text-[11px] text-slate-400">Tương thích hoàn hảo với các mô hình nạp sẵn trọng số (Pretrained Weights) trong thị giác máy tính.</p>
+          </div>
         </div>
       </div>
     </div>

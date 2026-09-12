@@ -250,54 +250,87 @@ const CnnStage6Gradcam = ({
     </div>
   );
 
-  // Theory View
+  // Theory View: Deep, structured, and mathematical explanation of Grad-CAM (XAI)
   const theoryView = (
     <div className="space-y-4">
-      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 space-y-2">
-        <p className="text-xs font-black text-amber-900 uppercase flex items-center gap-1.5">
-          <ScanSearch className="w-4 h-4 text-amber-600" />
-          Nguyên Lý Bản Đồ Nhiệt Giải Thích AI (Grad-CAM XAI)
-        </p>
-        <p className="text-xs text-amber-800 leading-relaxed">
-          <strong>Grad-CAM</strong> (Gradient-weighted Class Activation Mapping) sử dụng gradient của điểm số lớp dự đoán $y^c$ truyền ngược về Feature Map $A^k$ ở tầng tích chập cuối cùng để tính trọng số đóng góp $\alpha_k^c$, sau đó tổ hợp tuyến tính và đưa qua hàm <strong>ReLU</strong> để làm nổi bật chính xác các đặc trưng sinh học kích hoạt quyết định phân loại.
+      {/* Overview Card */}
+      <div className="bg-amber-50/80 border border-amber-200 rounded-2xl p-4 space-y-2.5">
+        <div className="flex items-center gap-2">
+          <span className="p-1.5 rounded-lg bg-amber-600 text-white shadow-sm">
+            <ScanSearch className="w-4 h-4" />
+          </span>
+          <p className="text-xs font-black text-amber-950 uppercase">
+            Nguyên Lý Bản Đồ Nhiệt Giải Thích AI (Grad-CAM XAI)
+          </p>
+        </div>
+        <p className="text-xs text-amber-900 leading-relaxed">
+          <strong>Grad-CAM (Gradient-weighted Class Activation Mapping)</strong> sử dụng luồng gradient của điểm số lớp dự đoán <em>yᶜ</em> truyền ngược về Feature Map <em>Aᵏ</em> ở tầng tích chập cuối cùng để định lượng trọng số đóng góp của từng vùng không gian đối với quyết định phân loại.
         </p>
       </div>
 
+      {/* 3 Algorithmic Step Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-        <div className="bg-white border border-gray-200 rounded-2xl p-3.5 space-y-1.5 shadow-xs">
-          <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">
-            1. Global Average Pooling
+        <div className="bg-white border border-amber-200/80 rounded-2xl p-3.5 space-y-2 shadow-xs">
+          <span className="text-[10px] font-bold text-amber-800 bg-amber-100/80 px-2 py-0.5 rounded-md uppercase">
+            1. Global Average Pooling Gradient
           </span>
-          <p className="font-mono text-[11px] font-bold text-gray-800 bg-gray-50 p-1.5 rounded-lg border border-gray-200">
-            α_k^c = (1/Z) ∑∑ (∂y^c / ∂A_ij^k)
-          </p>
+          <div className="font-mono text-[11px] font-bold text-amber-950 bg-amber-50/70 p-2 rounded-xl border border-amber-200 text-center">
+            α<sub>k</sub><sup>c</sup> = (1/Z) ∑<sub>i</sub> ∑<sub>j</sub> (∂y<sup>c</sup> / ∂A<sub>ij</sub><sup>k</sup>)
+          </div>
           <p className="text-[11px] text-gray-600 leading-relaxed">
-            Tính trọng số tầm quan trọng của từng kênh Feature Map đối với lớp động vật mục tiêu.
+            Tính trọng số tầm quan trọng α<sub>k</sub><sup>c</sup> của kênh Feature Map thứ <em>k</em> đối với lớp loài <em>c</em>.
           </p>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-2xl p-3.5 space-y-1.5 shadow-xs">
-          <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md uppercase">
-            2. Tổ hợp tuyến tính &amp; ReLU
+        <div className="bg-white border border-emerald-200/80 rounded-2xl p-3.5 space-y-2 shadow-xs">
+          <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md uppercase">
+            2. Tổ Hợp Tuyến Tính &amp; ReLU
           </span>
-          <p className="font-mono text-[11px] font-bold text-gray-800 bg-gray-50 p-1.5 rounded-lg border border-gray-200">
-            L_GradCAM = ReLU(∑ α_k^c · A^k)
-          </p>
+          <div className="font-mono text-[11px] font-bold text-emerald-950 bg-emerald-50/70 p-2 rounded-xl border border-emerald-200 text-center">
+            L<sub>GradCAM</sub><sup>c</sup> = ReLU(∑<sub>k</sub> α<sub>k</sub><sup>c</sup> · A<sup>k</sup>)
+          </div>
           <p className="text-[11px] text-gray-600 leading-relaxed">
-            Hàm ReLU loại bỏ các đặc trưng âm, chỉ giữ lại các pixel làm tăng độ tin cậy của kết quả.
+            Hàm ReLU lọc bỏ các đặc trưng âm, chỉ giữ lại các điểm ảnh làm tăng xác suất của loài mục tiêu.
           </p>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-2xl p-3.5 space-y-1.5 shadow-xs">
-          <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md uppercase">
-            3. Phóng to &amp; Phủ màu (Overlay)
+        <div className="bg-white border border-blue-200/80 rounded-2xl p-3.5 space-y-2 shadow-xs">
+          <span className="text-[10px] font-bold text-blue-800 bg-blue-100/80 px-2 py-0.5 rounded-md uppercase">
+            3. Phóng To &amp; Phủ Màu (Heatmap)
           </span>
-          <p className="font-mono text-[11px] font-bold text-gray-800 bg-gray-50 p-1.5 rounded-lg border border-gray-200">
-            Overlay = α · Heatmap + (1-α) · Img
-          </p>
+          <div className="font-mono text-[11px] font-bold text-blue-950 bg-blue-50/70 p-2 rounded-xl border border-blue-200 text-center">
+            Overlay = 0.5 · Heatmap + 0.5 · Img
+          </div>
           <p className="text-[11px] text-gray-600 leading-relaxed">
-            Nội suy bilinear bản đồ 7×7 lên 224×224 và phủ dải màu Jet/Turbo lên ảnh gốc để người dùng quan sát.
+            Nội suy bilinear bản đồ 7×7 lên 224×224 và phủ dải màu Turbo/Jet trực quan lên ảnh gốc.
           </p>
+        </div>
+      </div>
+
+      {/* Auditing and Trust Card */}
+      <div className="bg-slate-900 text-slate-100 rounded-2xl p-4 border border-slate-800 space-y-2">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+            Ý Nghĩa Của Grad-CAM Trong Kiểm Định Sinh Học (Model Auditing)
+          </p>
+          <span className="text-[10px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">
+            Trustworthy AI
+          </span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs text-slate-300">
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-emerald-400 block">Kiểm tra đặc trưng sinh học thực thụ</strong>
+            <p className="text-[11px] text-slate-400 leading-relaxed">
+              Chứng minh mạng CNN nhận diện Đại bàng nhờ mỏ khoằm và mắt sắc, nhận diện Hổ nhờ sọc vằn trên thân, chứ không dựa vào phông nền cỏ cây ngẫu nhiên.
+            </p>
+          </div>
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-cyan-400 block">Khắc phục hiện tượng "Hộp đen" (Black Box)</strong>
+            <p className="text-[11px] text-slate-400 leading-relaxed">
+              Tạo sự tin cậy tuyệt đối cho người dùng và các nhà nghiên cứu sinh học khi ứng dụng mô hình Deep Learning vào giám sát bảo tồn động vật hoang dã.
+            </p>
+          </div>
         </div>
       </div>
     </div>

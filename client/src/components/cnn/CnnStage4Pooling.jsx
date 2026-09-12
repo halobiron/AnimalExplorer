@@ -199,37 +199,90 @@ const CnnStage4Pooling = ({ previewUrl }) => {
     </div>
   );
 
-  // Theory View
+  // Theory View: Deep, structured, and mathematical explanation of Pooling
   const theoryView = (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-      <div className="bg-cyan-50 border border-cyan-200 rounded-2xl p-4 space-y-2">
-        <div className="w-8 h-8 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-700">
-          <Shrink className="w-4 h-4" />
+    <div className="space-y-4">
+      {/* 2 Core Mechanism Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Card 1: Max Pooling 2x2 Stride 2 Mechanism */}
+        <div className="bg-cyan-50/80 border border-cyan-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-cyan-600 text-white shadow-sm">
+              <Shrink className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-cyan-950 uppercase">
+              1. Cơ Chế Giảm Chiều Max Pooling (2×2, Stride 2)
+            </p>
+          </div>
+          <p className="text-xs text-cyan-900 leading-relaxed">
+            Cửa sổ trượt kích thước 2×2 quét qua Feature Map với bước trượt <em>S = 2</em>, chỉ trích xuất duy nhất <strong>giá trị cực đại (Maximum Value)</strong> trong mỗi ô 4 điểm ảnh:
+          </p>
+          <div className="bg-white/90 border border-cyan-300/80 rounded-xl p-2.5 text-center font-mono text-xs font-bold text-cyan-950 shadow-sm">
+            y[r, c] = max &#123; x[2r : 2r+2, 2c : 2c+2] &#125;
+          </div>
+          <ul className="space-y-1 text-[11px] text-cyan-800 leading-relaxed">
+            <li className="flex items-start gap-1.5">
+              <span className="text-cyan-600 font-bold">•</span>
+              <span><strong>Tiết kiệm 75% tài nguyên:</strong> Kích thước <em>H</em> và <em>W</em> giảm 50% (224 → 112 → 56 → 28), giảm 4 lần số lượng phép tính ở tầng kế tiếp.</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <span className="text-cyan-600 font-bold">•</span>
+              <span><strong>Không chứa tham số học (Zero Parameters):</strong> Tầng Pooling thuần túy là phép chọn lọc số học, không làm tăng dung lượng mô hình.</span>
+            </li>
+          </ul>
         </div>
-        <h4 className="text-xs font-bold text-gray-900">Giảm 75% dung lượng tính toán</h4>
-        <p className="text-[11px] text-gray-600 leading-relaxed">
-          Kích thước chiều cao và rộng giảm đi 50% (224 → 112 → 56), giúp các tầng sau tính toán cực nhanh.
-        </p>
+
+        {/* Card 2: Translation Invariance & Receptive Field */}
+        <div className="bg-emerald-50/80 border border-emerald-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-emerald-600 text-white shadow-sm">
+              <ShieldCheck className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-emerald-950 uppercase">
+              2. Tính Bất Biến Vị Trí &amp; Trường Nhìn
+            </p>
+          </div>
+          <p className="text-xs text-emerald-900 leading-relaxed">
+            Pooling đem lại 2 đặc tính sinh học mô phỏng cách hệ thần kinh thị giác sinh vật xử lý hình ảnh:
+          </p>
+          <ul className="space-y-2 text-[11px] text-emerald-900 leading-relaxed">
+            <li className="bg-white/90 border border-emerald-300/80 rounded-xl p-2 space-y-0.5 shadow-sm">
+              <strong className="text-emerald-950 block">• Tính bất biến không gian (Translation Invariance):</strong>
+              <span>Khi động vật di chuyển nhẹ trong khung hình, đặc trưng nổi bật nhất vẫn được giữ lại tại ô Max, giúp AI nhận diện chuẩn xác dù góc chụp lệch.</span>
+            </li>
+            <li className="bg-white/90 border border-emerald-300/80 rounded-xl p-2 space-y-0.5 shadow-sm">
+              <strong className="text-emerald-950 block">• Mở rộng Trường nhìn hiệu dụng (Receptive Field):</strong>
+              <span>Gộp các điểm cục bộ giúp các tầng sau có thể quan sát toàn cảnh con vật (dáng đứng, đầu, chân, đuôi) thay vì chỉ nhìn từng điểm ảnh lẻ tẻ.</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 space-y-2">
-        <div className="w-8 h-8 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700">
-          <ShieldCheck className="w-4 h-4" />
+      {/* Pooling Types Comparison Card */}
+      <div className="bg-slate-900 text-slate-100 rounded-2xl p-4 border border-slate-800 space-y-2">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+            <Zap className="w-3.5 h-3.5 text-cyan-400" />
+            So Sánh Các Kỹ Thuật Pooling Phổ Biến
+          </p>
+          <span className="text-[10px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">
+            Pooling Paradigms
+          </span>
         </div>
-        <h4 className="text-xs font-bold text-gray-900">Tính bất biến không gian</h4>
-        <p className="text-[11px] text-gray-600 leading-relaxed">
-          Khi con vật dịch chuyển nhẹ hay đổi góc chụp, giá trị đặc trưng cực đại vẫn được bảo toàn trọn vẹn.
-        </p>
-      </div>
-
-      <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 space-y-2">
-        <div className="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center text-blue-700">
-          <Zap className="w-4 h-4" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-xs text-slate-300">
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-cyan-400 block">1. Max Pooling (Đang dùng)</strong>
+            <p className="text-[11px] text-slate-400">Lấy giá trị lớn nhất. Xuất sắc trong việc giữ lại các đường nét biên sắc nhọn và hoa văn tương phản cao.</p>
+          </div>
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-amber-400 block">2. Average Pooling</strong>
+            <p className="text-[11px] text-slate-400">Tính trung bình cộng cửa sổ. Làm mịn đặc trưng, giữ thông tin bối cảnh mượt mà hơn nhưng dễ làm mờ cạnh.</p>
+          </div>
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-emerald-400 block">3. Global Average Pooling (GAP)</strong>
+            <p className="text-[11px] text-slate-400">Nén toàn bộ ma trận 7×7 thành 1 số duy nhất ở cuối mạng, thay thế tầng Flatten để giảm 90% tham số.</p>
+          </div>
         </div>
-        <h4 className="text-xs font-bold text-gray-900">Mở rộng Receptive Field</h4>
-        <p className="text-[11px] text-gray-600 leading-relaxed">
-          Cho phép các tầng nơ-ron phía sau nhìn được bối cảnh tổng thể (dáng thân, cấu trúc toàn thân).
-        </p>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { BrainCircuit, Sparkles, Check, Play, Pause, RotateCcw, Info, Sliders, ChevronRight, Eye, GitFork, ShieldCheck, Zap } from "lucide-react";
 import CnnStageShell from "./CnnStageShell";
-import CnnImprovedArchitectures from "./CnnImprovedArchitectures";
 
 const STAGE3_CODE_DATA = {
   concept: "Tầng Conv2D trích xuất đặc trưng biên nét bằng phép nhân chập einsum. Hàm kích hoạt phi tuyến ReLU f(x) = max(0, x) loại bỏ các giá trị âm để mạng học được các quan hệ phi tuyến phức tạp.",
@@ -301,21 +300,102 @@ const CnnStage3Convolution = ({ previewUrl, cnnDemo }) => {
     </div>
   );
 
-  // Theory & Improved Architectures View
+  // Theory View: Clear, structured, and pedagogical focus on Conv2D & ReLU
   const theoryView = (
     <div className="space-y-4">
-      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 space-y-2">
-        <p className="text-xs font-black text-emerald-900 uppercase flex items-center gap-1.5">
-          <Zap className="w-4 h-4 text-emerald-600" />
-          Cơ Chế Tích Chập (Conv2D) &amp; Hàm Kích Hoạt ReLU
-        </p>
-        <p className="text-xs text-emerald-800 leading-relaxed">
-          Phép nhân chập <code>Conv2D</code> sử dụng bộ lọc Kernel 3×3 trượt trên ảnh để trích xuất các đặc trưng cơ bản (góc, cạnh, hoa văn). Hàm phi tuyến <code>ReLU f(x) = max(0, x)</code> loại bỏ toàn bộ các giá trị âm, giữ lại các kích hoạt tích cực.
-        </p>
+      {/* 2 Main Pillar Cards: Conv2D Mechanism & ReLU Activation */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Card 1: Conv2D Dot Product & Local Receptive Field */}
+        <div className="bg-emerald-50/80 border border-emerald-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-emerald-600 text-white shadow-sm">
+              <BrainCircuit className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-emerald-950 uppercase">
+              1. Cơ Chế Phép Tích Chập (Conv2D)
+            </p>
+          </div>
+          <p className="text-xs text-emerald-900 leading-relaxed">
+            Bộ lọc <strong>Kernel 3×3</strong> (ma trận trọng số <em>W</em>) trượt qua từng vùng cục bộ (Local Receptive Field) của ảnh. Tại mỗi vị trí, thực hiện phép <strong>nhân từng phần tử và tính tổng (Dot Product)</strong> cộng với hệ số điều chỉnh Bias:
+          </p>
+          <div className="bg-white/90 border border-emerald-300/80 rounded-xl p-2.5 text-center font-mono text-xs font-bold text-emerald-950 shadow-sm">
+            y[i, j] = ∑<sub>m,n</sub> (x[i+m, j+n] × K[m, n]) + bias
+          </div>
+          <p className="text-[11px] text-emerald-800 leading-relaxed">
+            • <strong>Tác dụng:</strong> Tự động học trích xuất các đặc trưng không gian (đường biên ngang/dọc, góc cạnh, hoa văn, vảy và lông động vật) thay vì phải rút trích thủ công.
+          </p>
+        </div>
+
+        {/* Card 2: Non-linear ReLU Activation */}
+        <div className="bg-amber-50/80 border border-amber-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-amber-600 text-white shadow-sm">
+              <Zap className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-amber-950 uppercase">
+              2. Hàm Kích Hoạt Phi Tuyến ReLU
+            </p>
+          </div>
+          <p className="text-xs text-amber-900 leading-relaxed">
+            Hàm kích hoạt <strong>ReLU (Rectified Linear Unit)</strong> áp dụng quy tắc đơn giản nhưng có ý nghĩa sống còn đối với mạng nơ-ron:
+          </p>
+          <div className="bg-white/90 border border-amber-300/80 rounded-xl p-2.5 text-center font-mono text-xs font-bold text-amber-950 shadow-sm">
+            f(x) = max(0, x) = &#123; x nếu x &gt; 0, ngược lại 0 &#125;
+          </div>
+          <ul className="space-y-1 text-[11px] text-amber-900 leading-relaxed">
+            <li className="flex items-start gap-1.5">
+              <span className="text-amber-600 font-bold">•</span>
+              <span><strong>Phi tuyến tính:</strong> Cho phép mạng học các quan hệ phức tạp. Nếu không có ReLU, dù chồng 100 tầng Conv vẫn chỉ tương đương 1 phép biến đổi tuyến tính đơn giản.</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <span className="text-amber-600 font-bold">•</span>
+              <span><strong>Lọc âm &amp; Tính thưa thớt (Sparsity):</strong> Triệt tiêu nhiễu âm, chỉ giữ lại các nơ-ron phản hồi tích cực.</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <span className="text-amber-600 font-bold">•</span>
+              <span><strong>Chống triệt tiêu Gradient:</strong> Đạo hàm bằng 1 ở miền dương giúp tốc độ huấn luyện nhanh gấp 6 lần Sigmoid/Tanh.</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      {/* Embedded Improved Architectures (VGG, ResNet, Inception) */}
-      <CnnImprovedArchitectures />
+      {/* Dimension Formula Calculation Card */}
+      <div className="bg-slate-900 text-slate-100 rounded-2xl p-4 border border-slate-800 space-y-2">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+            Công Thức Kích Thước Bản Đồ Đặc Trưng (Output Feature Map Size)
+          </p>
+          <span className="text-[10px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">
+            Spatial Dimensions
+          </span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center space-y-1">
+            <span className="text-[10px] text-slate-400 uppercase font-semibold">Công thức tổng quát</span>
+            <div className="font-mono text-cyan-300 font-bold text-xs">
+              O = ⌊(W - K + 2P) / S⌋ + 1
+            </div>
+            <p className="text-[10px] text-slate-500">W: Input, K: Kernel, P: Pad, S: Stride</p>
+          </div>
+
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center space-y-1">
+            <span className="text-[10px] text-slate-400 uppercase font-semibold">Ví dụ mô phỏng bên trên</span>
+            <div className="font-mono text-emerald-300 font-bold text-xs">
+              (5 - 3 + 0) / 1 + 1 = 3 &times; 3
+            </div>
+            <p className="text-[10px] text-slate-500">Đầu vào 5&times;5 &rarr; Feature Map 3&times;3</p>
+          </div>
+
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 text-center space-y-1">
+            <span className="text-[10px] text-slate-400 uppercase font-semibold">Trong mô hình thực tế (padding='same')</span>
+            <div className="font-mono text-amber-300 font-bold text-xs">
+              224 &times; 224 &rarr; 224 &times; 224
+            </div>
+            <p className="text-[10px] text-slate-500">Padding=1 giúp bảo toàn kích thước</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 

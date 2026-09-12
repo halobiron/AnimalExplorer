@@ -174,23 +174,91 @@ const CnnStage5Softmax = ({ result, cnnDemo }) => {
     </div>
   );
 
-  // Theory View
+  // Theory View: Deep, structured, and mathematical explanation of Dense & Softmax
   const theoryView = (
-    <div className="space-y-3">
-      <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 space-y-2">
-        <p className="text-xs font-black text-blue-900 uppercase flex items-center gap-1.5">
-          <Activity className="w-4 h-4 text-blue-600" />
-          Công Thức Xác Suất Softmax &amp; Hàm Mất Mát Cross-Entropy
-        </p>
-        <p className="text-xs text-blue-800 leading-relaxed">
-          Hàm <strong>Softmax</strong> chuẩn hóa vector điểm số logits $z$ thành phân phối xác suất hợp lệ:
-        </p>
-        <div className="p-2 bg-blue-100/70 rounded-xl text-center font-mono text-xs font-bold text-blue-950">
-          P(y = i | x) = &sigma;(z)_i = e^(z_i) / &sum;_j e^(z_j)
+    <div className="space-y-4">
+      {/* 2 Core Mechanism Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Card 1: Dense Layer & Logits Formulation */}
+        <div className="bg-blue-50/80 border border-blue-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-blue-600 text-white shadow-sm">
+              <Waypoints className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-blue-950 uppercase">
+              1. Tầng Kết Nối Đầy Đủ (Dense / FC Layer)
+            </p>
+          </div>
+          <p className="text-xs text-blue-900 leading-relaxed">
+            Sau khi phẳng hóa Feature Map thành vector 1D, tầng Dense thực hiện phép nhân ma trận trọng số <em>W</em> và cộng hệ số chệch <em>b</em> để tổng hợp đặc trưng thành <strong>vector Logits <em>z</em></strong> gồm 47 điểm số:
+          </p>
+          <div className="bg-white/90 border border-blue-300/80 rounded-xl p-2.5 text-center font-mono text-xs font-bold text-blue-950 shadow-sm">
+            z = W · x + b &isin; ℝ⁴⁷
+          </div>
+          <ul className="space-y-1 text-[11px] text-blue-800 leading-relaxed">
+            <li className="flex items-start gap-1.5">
+              <span className="text-blue-600 font-bold">•</span>
+              <span><strong>Mỗi nơ-ron:</strong> Đại diện cho điểm thô (Logit) của 1 loài động vật trong số 47 loài của tập dữ liệu huấn luyện.</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <span className="text-blue-600 font-bold">•</span>
+              <span><strong>Tầng Dropout (0.3):</strong> Vô hiệu hóa ngẫu nhiên 30% nơ-ron trong quá trình Train để ngăn ngừa học vẹt.</span>
+            </li>
+          </ul>
         </div>
-        <p className="text-[11px] text-blue-800/90 leading-relaxed pt-1">
-          Hàm mất mát <strong>Cross-Entropy Loss</strong> L = -&sum; y_i &middot; log(p_i) giúp tính gradient lỗi &part;L/&part;z = p - y truyền ngược qua các tầng để cập nhật trọng số trong quá trình huấn luyện.
-        </p>
+
+        {/* Card 2: Softmax Function with Numerical Stability */}
+        <div className="bg-emerald-50/80 border border-emerald-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-emerald-600 text-white shadow-sm">
+              <Activity className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-emerald-950 uppercase">
+              2. Hàm Xác Suất Softmax Chuẩn Hoá
+            </p>
+          </div>
+          <p className="text-xs text-emerald-900 leading-relaxed">
+            Chuyển đổi các điểm số Logits tự do trong khoảng (-∞, +∞) thành <strong>phân phối xác suất hợp lệ</strong> có tổng đúng bằng 100%:
+          </p>
+          <div className="bg-white/90 border border-emerald-300/80 rounded-xl p-2.5 text-center font-mono text-xs font-bold text-emerald-950 shadow-sm">
+            P(y = i | x) = σ(z)<sub>i</sub> = e<sup>z<sub>i</sub> - max(z)</sup> / ∑<sub>j=1..47</sub> e<sup>z<sub>j</sub> - max(z)</sup>
+          </div>
+          <ul className="space-y-1 text-[11px] text-emerald-800 leading-relaxed">
+            <li className="flex items-start gap-1.5">
+              <span className="text-emerald-600 font-bold">•</span>
+              <span><strong>Kỹ thuật trừ max(z):</strong> Chống tràn số học (Overflow) khi tính hàm mũ eᶻ với các số lớn.</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <span className="text-emerald-600 font-bold">•</span>
+              <span><strong>Khuếch đại độ tự tin:</strong> Hàm eᶻ làm nổi bật rõ rệt loài có điểm số cao nhất so với các loài còn lại.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Cross-Entropy Loss & Backprop Card */}
+      <div className="bg-slate-900 text-slate-100 rounded-2xl p-4 border border-slate-800 space-y-2">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
+            Hàm Mất Mát Cross-Entropy &amp; Đạo Hàm Lan Truyền Ngược
+          </p>
+          <span className="text-[10px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">
+            Loss &amp; Gradient
+          </span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs text-slate-300">
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-amber-400 block">Công thức hàm mất mát (Categorical Cross-Entropy)</strong>
+            <div className="font-mono text-xs text-slate-200">L = - ∑<sub>i=1..47</sub> y<sub>i</sub> · log(p<sub>i</sub>) = - log(p<sub>true</sub>)</div>
+            <p className="text-[11px] text-slate-400">Phạt nặng khi mô hình dự đoán sai loài thật với độ tự tin cao.</p>
+          </div>
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-emerald-400 block">Gradient đạo hàm tại tầng Softmax (∂L/∂z)</strong>
+            <div className="font-mono text-xs text-emerald-300 font-bold">∂L / ∂z<sub>i</sub> = p<sub>i</sub> - y<sub>i</sub></div>
+            <p className="text-[11px] text-slate-400">Công thức đạo hàm cực kỳ đơn giản (Xác suất dự đoán - Nhãn thực tế) giúp Backpropagation siêu nhanh.</p>
+          </div>
+        </div>
       </div>
     </div>
   );

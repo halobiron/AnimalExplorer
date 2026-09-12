@@ -158,17 +158,92 @@ const CnnStage2Preprocess = ({ previewUrl, cnnDemo }) => {
     </div>
   );
 
-  // Theory View
+  // Theory View: Deep, structured, and mathematical explanation of Preprocessing
   const theoryView = (
-    <div className="space-y-3">
-      <div className="bg-teal-50 border border-teal-200 rounded-2xl p-4 space-y-2">
-        <p className="text-xs font-black text-teal-900 uppercase flex items-center gap-1.5">
-          <Zap className="w-4 h-4 text-teal-600" />
-          Tại sao chuẩn hoá [0.0, 1.0] lại mang tính quyết định trong CNN?
-        </p>
-        <p className="text-xs text-teal-800 leading-relaxed">
-          Nếu giữ nguyên dải số nguyên <code>[0, 255]</code>, các phép nhân ma trận liên tiếp qua hàng chục tầng nơ-ron sẽ làm giá trị kích hoạt tăng theo cấp số nhân, dẫn đến hiện tượng <strong>bùng nổ gradient (Exploding Gradients)</strong>. Chuẩn hóa về khoảng <code>[0.0, 1.0]</code> đảm bảo hàm mất mát có bề mặt lồi đều, giúp thuật toán tối ưu (Adam, SGD) hội tụ nhanh và ổn định.
-        </p>
+    <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Card 1: Min-Max Normalization (0 - 1) */}
+        <div className="bg-teal-50/80 border border-teal-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-teal-600 text-white shadow-sm">
+              <Scale className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-teal-950 uppercase">
+              1. Phép Chia Tỉ Lệ Min-Max (x / 255.0)
+            </p>
+          </div>
+          <p className="text-xs text-teal-900 leading-relaxed">
+            Chuyển đổi dải giá trị số nguyên <code>uint8 [0, 255]</code> về dải số thực liên tục <code>float32 [0.0, 1.0]</code>:
+          </p>
+          <div className="bg-white/90 border border-teal-300/80 rounded-xl p-2.5 text-center font-mono text-xs font-bold text-teal-950 shadow-sm">
+            x<sub>norm</sub> = x<sub>raw</sub> / 255.0 &isin; [0.0, 1.0]
+          </div>
+          <ul className="space-y-1 text-[11px] text-teal-800 leading-relaxed">
+            <li className="flex items-start gap-1.5">
+              <span className="text-teal-600 font-bold">•</span>
+              <span><strong>Cân bằng hàm mất mát:</strong> Giúp mặt cong của hàm Loss (Loss Landscape) trở nên đối xứng tròn đều, triệt tiêu dao động zic-zac (Zig-zagging) khi cập nhật Gradient.</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <span className="text-teal-600 font-bold">•</span>
+              <span><strong>Tăng tốc hội tụ:</strong> Cho phép sử dụng Learning Rate lớn hơn và ổn định hơn với các bộ tối ưu như Adam hay SGD.</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Card 2: Z-Score Standardization (ImageNet Mean/Std) */}
+        <div className="bg-emerald-50/80 border border-emerald-200 rounded-2xl p-4 space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="p-1.5 rounded-lg bg-emerald-600 text-white shadow-sm">
+              <ShieldCheck className="w-4 h-4" />
+            </span>
+            <p className="text-xs font-black text-emerald-950 uppercase">
+              2. Chuẩn Hoá Phân Phối Chuẩn (Z-Score)
+            </p>
+          </div>
+          <p className="text-xs text-emerald-900 leading-relaxed">
+            Trong các mô hình thị giác hiện đại (PyTorch / Torchvision), dữ liệu tiếp tục được trừ giá trị trung bình (μ) và chia cho độ lệch chuẩn (σ):
+          </p>
+          <div className="bg-white/90 border border-emerald-300/80 rounded-xl p-2.5 text-center font-mono text-xs font-bold text-emerald-950 shadow-sm">
+            z = (x - μ) / σ &nbsp;(với μ ≈ 0.45, σ ≈ 0.22)
+          </div>
+          <ul className="space-y-1 text-[11px] text-emerald-800 leading-relaxed">
+            <li className="flex items-start gap-1.5">
+              <span className="text-emerald-600 font-bold">•</span>
+              <span><strong>Tâm điểm không (Zero-centered):</strong> Đưa phân phối điểm ảnh về trung bình bằng 0, giúp đạo hàm lan truyền ngược không bị lệch hẳn về một dấu.</span>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <span className="text-emerald-600 font-bold">•</span>
+              <span><strong>Đồng bộ độ tương phản:</strong> Khử sự chênh lệch ánh sáng giữa ảnh chụp ngoài trời nắng gắt và trong bóng râm.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Exploding Gradient Prevention Card */}
+      <div className="bg-slate-900 text-slate-100 rounded-2xl p-4 border border-slate-800 space-y-2">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+            <Zap className="w-3.5 h-3.5 text-amber-400" />
+            Hậu Quả Nếu Không Tiền Xử Lý Chuẩn Hoá?
+          </p>
+          <span className="text-[10px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">
+            Exploding Gradients Risk
+          </span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs text-slate-300">
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-rose-400 block">❌ Nếu giữ nguyên [0, 255]:</strong>
+            <p className="text-[11px] text-slate-400 leading-relaxed">
+              Các phép nhân ma trận trọng số liên tiếp làm giá trị kích hoạt tăng vọt lên hàng triệu. Đạo hàm bị tràn số sinh ra lỗi <code>NaN (Not a Number)</code> và mô hình mất khả năng học.
+            </p>
+          </div>
+          <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1">
+            <strong className="text-emerald-400 block">✅ Khi chuẩn hoá về [0.0, 1.0]:</strong>
+            <p className="text-[11px] text-slate-400 leading-relaxed">
+              Các tầng nơ-ron nhận đầu vào có biên độ đồng đều, hàm mất mát giảm đều đặn sau từng epoch và mô hình nhanh chóng đạt độ chính xác tối ưu.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
