@@ -45,7 +45,7 @@ const CnnInteractiveLab = ({
 
   return (
     <div className="space-y-5">
-      {/* 6-Stage Interactive Map */}
+      {/* 6-Stage Architecture Flow Map - Direct & Unified */}
       <CnnArchitectureMap
         currentStep={currentStep}
         onSelectStep={onStepChange}
@@ -54,7 +54,7 @@ const CnnInteractiveLab = ({
 
       {/* Stage Container Card */}
       <div className="bg-white rounded-3xl border border-gray-100 p-6 sm:p-7 shadow-sm transition-all duration-300 relative overflow-hidden">
-        {/* Dynamic Stage View */}
+        {/* Dynamic Stage View with fully integrated requirements, code, and improved architectures */}
         <div key={currentStep} className="animate-fade-in">
           {renderStageContent()}
         </div>

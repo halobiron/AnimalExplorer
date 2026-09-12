@@ -12,6 +12,19 @@ https://github.com/user-attachments/assets/fee084fc-9edf-454c-ab6d-b4ea45b93ef4
 - **Animal dictionary** — Browse 90+ species with biological information
 - **Personal collection** — Each user builds a unique Pokédex-style collection (requires login)
 - **Authentication** — Register / login with JWT cookie-based sessions
+- **CNN Learning Lab** — Ngay trong trang CNN Demo có các tab giải thích yêu cầu, dataset, kiến trúc và mã nguồn NumPy/Keras/PyTorch.
+
+## Đáp ứng yêu cầu môn học
+
+| Nội dung | Nơi kiểm tra |
+|---|---|
+| Dataset ảnh dùng chung | `model/dataset_raw/animals/animals` |
+| CNN tự cài đặt bằng NumPy | [model/cnn_from_scratch.py](model/cnn_from_scratch.py) |
+| CNN Keras/TensorFlow | [model/train_keras.ipynb](model/train_keras.ipynb), notebook và FastAPI |
+| CNN PyTorch | [model/train_pytorch.ipynb](model/train_pytorch.ipynb) |
+| Ma trận yêu cầu, kiến trúc cải tiến và kịch bản bảo vệ | [docs/REQUIREMENTS_TRACEABILITY.md](docs/REQUIREMENTS_TRACEABILITY.md) |
+
+Mở `/identify` để chạy model, quan sát Top-5 Softmax và Grad-CAM; phía dưới cùng trang là các tab mô tả yêu cầu, kiến trúc và mã nguồn trọng tâm.
 
 ## Tech Stack
 
@@ -21,7 +34,7 @@ https://github.com/user-attachments/assets/fee084fc-9edf-454c-ab6d-b4ea45b93ef4
 | Backend | Node.js, Express 5 |
 | Database | MongoDB + Mongoose |
 | Storage | Cloudinary (animal reference images) |
-| AI Service | FastAPI (separate service, not included in this repo) |
+| AI Service | FastAPI + TensorFlow (thư mục `model/`) |
 | Auth | JWT stored in HttpOnly cookies |
 
 ## Project Structure
@@ -29,7 +42,7 @@ https://github.com/user-attachments/assets/fee084fc-9edf-454c-ab6d-b4ea45b93ef4
 ```
 AnimalExplorer/
 ├── client/          # React frontend (Vite)
-│   └── src/
+│   └── src/             # có Learning.jsx và CNN Interactive Lab
 │       ├── components/
 │       ├── context/
 │       ├── pages/
@@ -42,6 +55,22 @@ AnimalExplorer/
     ├── models/
     ├── routes/
     └── scripts/         # seedAnimals.js
+├── model/               # NumPy, TensorFlow/Keras, PyTorch và FastAPI
+└── docs/                # tài liệu truy vết yêu cầu
+```
+
+## Huấn luyện và tái lập thí nghiệm
+
+Ba notebook dùng chung thư mục `model/dataset_raw/animals/animals`, theo cấu trúc `class_name/image_file`. Sửa một đường dẫn duy nhất trong từng notebook nếu dataset được đặt ở nơi khác.
+
+```powershell
+cd model
+# 1) Minh hoạ CNN tự viết, không dùng framework deep learning
+python cnn_from_scratch.py
+
+# 2) Mở notebook Keras/TensorFlow hoặc PyTorch
+jupyter notebook train_keras.ipynb
+jupyter notebook train_pytorch.ipynb
 ```
 
 ## Prerequisites

@@ -7,16 +7,16 @@ export const STAGES_CONFIG = [
     shortTitle: "1. Ảnh RGB",
     desc: "Biểu diễn số học 3 kênh màu (H × W × 3)",
     icon: ImageIcon,
-    badge: "Dữ liệu thô",
+    badge: "224×224×3",
     color: "emerald",
   },
   {
     id: 2,
     title: "Tiền xử lý",
     shortTitle: "2. Chuẩn hoá",
-    desc: "Resize 224×224 & chia 255 sang float32 [0, 1]",
+    desc: "Resize & chia 255 sang float32 [0, 1]",
     icon: SlidersHorizontal,
-    badge: "Tensor hoá",
+    badge: "Chuẩn hoá [0, 1]",
     color: "teal",
   },
   {
@@ -34,7 +34,7 @@ export const STAGES_CONFIG = [
     shortTitle: "4. Pooling",
     desc: "Giảm 75% kích thước không gian, giữ đặc trưng mạnh",
     icon: Shrink,
-    badge: "Giảm chiều",
+    badge: "Giảm chiều 50%",
     color: "cyan",
   },
   {
@@ -43,7 +43,7 @@ export const STAGES_CONFIG = [
     shortTitle: "5. Softmax",
     desc: "Phẳng hóa tensor và tính xác suất Top-5 lớp",
     icon: Waypoints,
-    badge: "Phân loại",
+    badge: "Phân loại 47 loài",
     color: "blue",
   },
   {
@@ -52,7 +52,7 @@ export const STAGES_CONFIG = [
     shortTitle: "6. Grad-CAM",
     desc: "Bản đồ nhiệt giải thích vùng AI tập trung",
     icon: ScanSearch,
-    badge: "Giải thích AI",
+    badge: "Bản đồ nhiệt XAI",
     color: "amber",
   },
 ];
@@ -128,6 +128,14 @@ const CnnArchitectureMap = ({ currentStep, onSelectStep, isRunning }) => {
               >
                 {stage.title}
               </p>
+
+              <div className="mt-1 flex items-center justify-between w-full">
+                <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
+                  isActive ? "bg-emerald-200/80 text-emerald-900" : "bg-gray-200/60 text-gray-600"
+                }`}>
+                  {stage.badge}
+                </span>
+              </div>
 
               <p className="text-[10px] text-gray-500 leading-tight mt-1 line-clamp-2">
                 {stage.desc}

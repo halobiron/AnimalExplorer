@@ -6,3 +6,5 @@ numpy
 python-multipart
 openpyxl
 requests
+torch
+torchvision

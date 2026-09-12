@@ -1,8 +1,82 @@
 import { useState, useEffect, useRef } from "react";
-import { Image as ImageIcon, Layers, Eye, Info, Sparkles, Grid3X3, Play, Pause, Scan } from "lucide-react";
+import { Image as ImageIcon, Layers, Eye, Info, Sparkles, Grid3X3, Play, Pause, Scan, Database, CheckCircle2, ShieldCheck } from "lucide-react";
+import CnnStageShell from "./CnnStageShell";
+
+const STAGE1_CODE_DATA = {
+  concept: "Dữ liệu ảnh thô từ thư mục class_name/image.jpg được đọc thành mảng Tensor 3 chiều (Height, Width, 3 Color Channels RGB), chia tập Train/Val và nạp vào mô hình.",
+  frameworks: {
+    numpy: {
+      file: "model/cnn_from_scratch.py",
+      code: `# Đọc ảnh trực tiếp từ file và chuyển thành Tensor ma trận số
+from PIL import Image
+import numpy as np
+
+def load_and_preprocess_image(image_path):
+    # 1. Đọc và đảm bảo định dạng 3 kênh màu RGB
+    img = Image.open(image_path).convert("RGB")
+    # 2. Resize kích thước chuẩn 224x224
+    img = img.resize((224, 224))
+    # 3. Chuyển sang mảng NumPy 3 chiều (224, 224, 3)
+    arr = np.array(img, dtype=np.float32)
+    # 4. Đổi thứ tự kênh màu sang NCHW: (1, 3, 224, 224)
+    tensor = np.transpose(arr, (2, 0, 1))[np.newaxis, ...]
+    return tensor`,
+    },
+    keras: {
+      file: "model/train_keras.ipynb",
+      code: `# Nạp tự động toàn bộ thư mục và phân chia Train / Validation
+import tensorflow as tf
+
+DATASET_DIR = "model/dataset_raw/animals/animals"
+IMAGE_SIZE = (224, 224)
+BATCH_SIZE = 32
+
+train_ds = tf.keras.utils.image_dataset_from_directory(
+    DATASET_DIR,
+    validation_split=0.2,
+    subset="training",
+    seed=42,
+    image_size=IMAGE_SIZE,
+    batch_size=BATCH_SIZE
+)
+
+val_ds = tf.keras.utils.image_dataset_from_directory(
+    DATASET_DIR,
+    validation_split=0.2,
+    subset="validation",
+    seed=42,
+    image_size=IMAGE_SIZE,
+    batch_size=BATCH_SIZE
+)`,
+    },
+    pytorch: {
+      file: "model/train_pytorch.ipynb",
+      code: `# Sử dụng torchvision ImageFolder và DataLoader đa luồng
+import torch
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader, random_split
+
+transform = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(), # Chuyển ảnh PIL sang Tensor [C, H, W]
+])
+
+full_dataset = datasets.ImageFolder("model/dataset_raw/animals/animals", transform=transform)
+train_size = int(0.8 * len(full_dataset))
+val_size = len(full_dataset) - train_size
+
+train_set, val_set = random_split(
+    full_dataset, [train_size, val_size],
+    generator=torch.Generator().manual_seed(42)
+)
+
+train_loader = DataLoader(train_set, batch_size=32, shuffle=True, num_workers=2)`,
+    },
+  },
+};
 
 const CnnStage1Input = ({ previewUrl }) => {
-  const [activeChannel, setActiveChannel] = useState("all"); // 'all' | 'r' | 'g' | 'b'
+  const [activeChannel, setActiveChannel] = useState("all");
   const [hoveredPixel, setHoveredPixel] = useState({ x: 2, y: 2, r: 180, g: 120, b: 75 });
   const [isScanning, setIsScanning] = useState(true);
   const [scanPos, setScanPos] = useState(0);
@@ -11,7 +85,6 @@ const CnnStage1Input = ({ previewUrl }) => {
   const channelCanvasRef = useRef(null);
   const [pixelMatrix, setPixelMatrix] = useState([]);
 
-  // Scanning laser animation
   useEffect(() => {
     if (!isScanning) return undefined;
     const interval = setInterval(() => {
@@ -20,10 +93,8 @@ const CnnStage1Input = ({ previewUrl }) => {
     return () => clearInterval(interval);
   }, [isScanning]);
 
-  // Extract actual RGB pixels from image onto canvas when previewUrl changes
   useEffect(() => {
     if (!previewUrl) {
-      // Default fallback sample matrix
       const defaultGrid = Array.from({ length: 6 }, (_, y) =>
         Array.from({ length: 6 }, (_, x) => ({
           r: Math.min(255, 120 + x * 20 + y * 10),
@@ -65,7 +136,6 @@ const CnnStage1Input = ({ previewUrl }) => {
         setHoveredPixel({ x: 2, y: 2, ...matrix[2][2] });
       }
 
-      // Render channel-filtered full canvas
       if (channelCanvasRef.current) {
         const fullCanvas = channelCanvasRef.current;
         fullCanvas.width = 240;
@@ -78,14 +148,14 @@ const CnnStage1Input = ({ previewUrl }) => {
           const data = fullData.data;
           for (let i = 0; i < data.length; i += 4) {
             if (activeChannel === "r") {
-              data[i + 1] = 0; // zero out green
-              data[i + 2] = 0; // zero out blue
+              data[i + 1] = 0;
+              data[i + 2] = 0;
             } else if (activeChannel === "g") {
-              data[i] = 0;     // zero out red
-              data[i + 2] = 0; // zero out blue
+              data[i] = 0;
+              data[i + 2] = 0;
             } else if (activeChannel === "b") {
-              data[i] = 0;     // zero out red
-              data[i + 1] = 0; // zero out green
+              data[i] = 0;
+              data[i + 1] = 0;
             }
           }
           fullCtx.putImageData(fullData, 0, 0);
@@ -94,226 +164,135 @@ const CnnStage1Input = ({ previewUrl }) => {
     };
   }, [previewUrl, activeChannel]);
 
-  return (
-    <div className="space-y-6">
-      {/* Hidden processing canvas */}
+  // Simulation View (Interactive canvas + channel filters + pixel matrix)
+  const simView = (
+    <div className="space-y-4">
       <canvas ref={canvasRef} className="hidden" />
 
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-gray-100">
-        <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 mb-1.5">
-            <Layers className="w-3.5 h-3.5" /> Giai đoạn 1: Biểu diễn Tensor ảnh đầu vào
-          </div>
-          <h3 className="text-lg font-extrabold text-gray-900">
-            Quét Laser &amp; Phân Tách 3 Kênh Màu RGB Thực Tế
-          </h3>
+      <div className="flex items-center justify-between flex-wrap gap-2">
+        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+          {[
+            { id: "all", label: "Gộp RGB (Full)" },
+            { id: "r", label: "Kênh Đỏ (Red)" },
+            { id: "g", label: "Kênh Lục (Green)" },
+            { id: "b", label: "Kênh Lam (Blue)" },
+          ].map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => setActiveChannel(c.id)}
+              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
+                activeChannel === c.id
+                  ? "bg-white text-emerald-950 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              {c.label}
+            </button>
+          ))}
         </div>
 
-        {/* Scan & Channel Controls */}
-        <div className="flex items-center gap-2 self-start sm:self-auto flex-wrap">
-          <button
-            type="button"
-            onClick={() => setIsScanning(!isScanning)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all ${
-              isScanning
-                ? "bg-emerald-100 border-emerald-300 text-emerald-800 shadow-sm"
-                : "bg-gray-100 border-gray-200 text-gray-600"
-            }`}
-          >
-            {isScanning ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 text-emerald-600" />}
-            <span>Tia quét Laser: {isScanning ? "Đang quét" : "Tạm dừng"}</span>
-          </button>
-
-          <div className="flex items-center bg-gray-100 p-1 rounded-xl gap-1 text-xs font-semibold">
-            <button
-              onClick={() => setActiveChannel("all")}
-              className={`px-2.5 py-1 rounded-lg transition-all ${
-                activeChannel === "all" ? "bg-white text-gray-900 shadow-sm font-bold" : "text-gray-600"
-              }`}
-            >
-              RGB
-            </button>
-            <button
-              onClick={() => setActiveChannel("r")}
-              className={`px-2 py-1 rounded-lg transition-all ${
-                activeChannel === "r" ? "bg-red-500 text-white shadow-sm font-bold" : "text-red-600"
-              }`}
-            >
-              Đỏ (R)
-            </button>
-            <button
-              onClick={() => setActiveChannel("g")}
-              className={`px-2 py-1 rounded-lg transition-all ${
-                activeChannel === "g" ? "bg-green-600 text-white shadow-sm font-bold" : "text-green-700"
-              }`}
-            >
-              Lục (G)
-            </button>
-            <button
-              onClick={() => setActiveChannel("b")}
-              className={`px-2 py-1 rounded-lg transition-all ${
-                activeChannel === "b" ? "bg-blue-600 text-white shadow-sm font-bold" : "text-blue-700"
-              }`}
-            >
-              Lam (B)
-            </button>
-          </div>
-        </div>
+        <button
+          type="button"
+          onClick={() => setIsScanning(!isScanning)}
+          className={`flex items-center gap-1.5 px-3 py-1 rounded-xl border text-xs font-bold transition-all ${
+            isScanning
+              ? "bg-emerald-100 border-emerald-300 text-emerald-800"
+              : "bg-gray-100 border-gray-200 text-gray-600"
+          }`}
+        >
+          {isScanning ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 text-emerald-600" />}
+          <span>{isScanning ? "Laser quét: Đang chạy" : "Tạm dừng"}</span>
+        </button>
       </div>
 
-      {/* Visual Workspace */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-        {/* Left: Dynamic Scanner on real Image */}
-        <div className="md:col-span-5 flex flex-col items-center">
-          <div className="relative w-full max-w-[240px] aspect-square rounded-2xl overflow-hidden border-4 border-white shadow-lg bg-slate-950 group">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+        <div className="lg:col-span-5 flex flex-col items-center">
+          <div className="relative w-56 h-56 rounded-2xl overflow-hidden border-2 border-slate-700 bg-slate-950 shadow-md">
             {previewUrl ? (
-              <>
-                <canvas
-                  ref={channelCanvasRef}
-                  className="w-full h-full object-cover transition-all duration-300"
-                />
-
-                {/* Animated Laser Scanning Beam */}
-                {isScanning && (
-                  <div
-                    className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent shadow-[0_0_15px_rgba(52,211,153,1)] z-20 pointer-events-none transition-all ease-linear"
-                    style={{ top: `${scanPos}%` }}
-                  >
-                    <div className="absolute right-2 -top-2 bg-emerald-500 text-slate-950 font-mono text-[9px] font-extrabold px-1.5 rounded shadow">
-                      SCAN {Math.round(scanPos)}%
-                    </div>
-                  </div>
-                )}
-
-                {/* Digital matrix grid overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-              </>
+              <canvas ref={channelCanvasRef} className="w-full h-full object-cover" />
             ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-center">
-                <ImageIcon className="w-12 h-12 mb-2 opacity-40 animate-pulse" />
-                <span className="text-xs">Chưa nạp ảnh</span>
+              <div className="w-full h-full flex flex-col items-center justify-center text-slate-500 bg-slate-900 text-xs p-4 text-center">
+                <ImageIcon className="w-8 h-8 mb-2 opacity-50" />
+                <span>Nạp ảnh từ bảng điều khiển bên trái để phân tích</span>
               </div>
             )}
-
-            <div className="absolute top-2 left-2 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1 z-30">
-              <Eye className="w-3 h-3 text-emerald-400 animate-pulse" />
-              {activeChannel === "all" ? "Kênh RGB Tổng Hợp" : `Kênh ${activeChannel.toUpperCase()} Thực Tế`}
-            </div>
-          </div>
-
-          {/* Dynamic RGB Level Meters */}
-          <div className="w-full max-w-[240px] mt-3 space-y-1.5">
-            <div className="flex items-center justify-between text-[11px] font-semibold text-gray-500">
-              <span>Độ sáng kênh đang soi:</span>
-              <span className="font-mono text-emerald-700 font-bold">
-                R:{hoveredPixel.r} G:{hoveredPixel.g} B:{hoveredPixel.b}
-              </span>
-            </div>
-            <div className="space-y-1">
-              <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                <div
-                  className="h-full bg-red-500 transition-all duration-300"
-                  style={{ width: `${(hoveredPixel.r / 255) * 100}%` }}
-                />
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                <div
-                  className="h-full bg-green-500 transition-all duration-300"
-                  style={{ width: `${(hoveredPixel.g / 255) * 100}%` }}
-                />
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                <div
-                  className="h-full bg-blue-500 transition-all duration-300"
-                  style={{ width: `${(hoveredPixel.b / 255) * 100}%` }}
-                />
-              </div>
-            </div>
+            {isScanning && (
+              <div
+                className="absolute left-0 right-0 h-0.5 bg-emerald-400 shadow-[0_0_12px_#34d399] transition-all duration-75 pointer-events-none"
+                style={{ top: `${scanPos}%` }}
+              />
+            )}
           </div>
         </div>
 
-        {/* Right: Live Interactive Pixel Matrix */}
-        <div className="md:col-span-7 bg-slate-900 text-slate-100 p-4 sm:p-5 rounded-3xl shadow-inner space-y-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Grid3X3 className="w-4 h-4 text-emerald-400" />
-              <p className="text-xs font-bold text-emerald-300 uppercase tracking-wider">
-                Ma trận điểm ảnh thực tế ({pixelMatrix.length}×{pixelMatrix.length || 6})
-              </p>
-            </div>
-            <span className="text-[10px] text-slate-400 animate-pulse">Rê chuột để soi điểm</span>
+        <div className="lg:col-span-7 bg-slate-900 text-slate-100 p-4 rounded-2xl border border-slate-800 space-y-3">
+          <div className="flex items-center justify-between text-xs">
+            <span className="font-bold text-emerald-400 uppercase flex items-center gap-1">
+              <Grid3X3 className="w-3.5 h-3.5" />
+              Ma trận điểm ảnh 6×6 vùng trung tâm
+            </span>
+            <span className="text-[11px] text-slate-400 font-mono">0 - 255 uint8</span>
           </div>
 
-          {/* Matrix Cells */}
-          <div className="grid grid-cols-6 gap-1 bg-slate-950 p-2 rounded-2xl border border-slate-800">
+          <div className="grid grid-cols-6 gap-1.5 p-2 bg-slate-950 rounded-xl border border-slate-800">
             {pixelMatrix.map((row, y) =>
               row.map((pixel, x) => {
-                const isSelected = hoveredPixel?.x === x && hoveredPixel?.y === y;
-                const displayVal =
-                  activeChannel === "r"
-                    ? pixel.r
-                    : activeChannel === "g"
-                    ? pixel.g
-                    : activeChannel === "b"
-                    ? pixel.b
-                    : pixel.r;
+                const isHovered = hoveredPixel?.x === x && hoveredPixel?.y === y;
+                let bgStyle = `rgb(${pixel.r}, ${pixel.g}, ${pixel.b})`;
+                if (activeChannel === "r") bgStyle = `rgb(${pixel.r}, 0, 0)`;
+                if (activeChannel === "g") bgStyle = `rgb(0, ${pixel.g}, 0)`;
+                if (activeChannel === "b") bgStyle = `rgb(0, 0, ${pixel.b})`;
 
                 return (
                   <button
                     key={`${y}-${x}`}
                     type="button"
                     onMouseEnter={() => setHoveredPixel({ x, y, ...pixel })}
-                    className={`aspect-square rounded-lg flex items-center justify-center text-[10px] font-mono font-extrabold transition-all duration-200 cursor-pointer ${
-                      isSelected
-                        ? "ring-2 ring-emerald-400 scale-110 z-10 shadow-lg shadow-emerald-500/50"
-                        : "opacity-85 hover:opacity-100 hover:scale-105"
+                    className={`h-9 rounded-lg transition-all relative flex items-center justify-center text-[10px] font-mono font-bold ${
+                      isHovered
+                        ? "ring-2 ring-emerald-400 scale-110 z-10 shadow-lg"
+                        : "hover:opacity-90 opacity-80"
                     }`}
-                    style={{
-                      backgroundColor:
-                        activeChannel === "r"
-                          ? `rgb(${pixel.r}, 0, 0)`
-                          : activeChannel === "g"
-                          ? `rgb(0, ${pixel.g}, 0)`
-                          : activeChannel === "b"
-                          ? `rgb(0, 0, ${pixel.b})`
-                          : `rgb(${pixel.r}, ${pixel.g}, ${pixel.b})`,
-                      color:
-                        pixel.r * 0.299 + pixel.g * 0.587 + pixel.b * 0.114 > 130
-                          ? "#000"
-                          : "#fff",
-                    }}
+                    style={{ backgroundColor: bgStyle }}
+                    title={`(${x}, ${y}) - R:${pixel.r} G:${pixel.g} B:${pixel.b}`}
                   >
-                    {displayVal}
+                    <span className="bg-black/60 px-1 rounded text-white text-[9px]">
+                      {activeChannel === "r"
+                        ? pixel.r
+                        : activeChannel === "g"
+                        ? pixel.g
+                        : activeChannel === "b"
+                        ? pixel.b
+                        : pixel.r}
+                    </span>
                   </button>
                 );
               })
             )}
           </div>
 
-          {/* Hovered pixel inspection detail */}
           {hoveredPixel && (
-            <div className="bg-slate-800/90 rounded-xl p-3 border border-slate-700 flex flex-wrap items-center justify-between gap-2 text-xs">
+            <div className="flex items-center justify-between text-xs bg-slate-950 px-3 py-2 rounded-xl border border-slate-800">
               <div className="flex items-center gap-2">
                 <div
-                  className="w-5 h-5 rounded-md border border-white/30 shadow-md transition-all duration-200"
+                  className="w-3.5 h-3.5 rounded-full border border-white/40"
                   style={{
                     backgroundColor: `rgb(${hoveredPixel.r}, ${hoveredPixel.g}, ${hoveredPixel.b})`,
                   }}
                 />
-                <span className="font-mono text-slate-200 font-bold">
-                  Tọa độ [{hoveredPixel.y}, {hoveredPixel.x}]:
+                <span className="font-mono text-slate-300 font-bold">
+                  Pixel [{hoveredPixel.y}, {hoveredPixel.x}]:
                 </span>
               </div>
-
               <div className="flex items-center gap-1.5 font-mono text-[11px]">
-                <span className="bg-red-950/80 text-red-300 px-2 py-0.5 rounded border border-red-800">
+                <span className="bg-red-950 text-red-300 px-2 py-0.5 rounded border border-red-800">
                   R: {hoveredPixel.r}
                 </span>
-                <span className="bg-green-950/80 text-green-300 px-2 py-0.5 rounded border border-green-800">
+                <span className="bg-green-950 text-green-300 px-2 py-0.5 rounded border border-green-800">
                   G: {hoveredPixel.g}
                 </span>
-                <span className="bg-blue-950/80 text-blue-300 px-2 py-0.5 rounded border border-blue-800">
+                <span className="bg-blue-950 text-blue-300 px-2 py-0.5 rounded border border-blue-800">
                   B: {hoveredPixel.b}
                 </span>
               </div>
@@ -321,22 +300,55 @@ const CnnStage1Input = ({ previewUrl }) => {
           )}
         </div>
       </div>
+    </div>
+  );
 
-      {/* Pedagogical Insight */}
-      <div className="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-4 flex items-start gap-3">
-        <div className="w-8 h-8 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0 text-emerald-700 mt-0.5">
-          <Info className="w-4 h-4" />
-        </div>
-        <div className="text-xs sm:text-sm text-emerald-950 space-y-1">
-          <p className="font-bold text-emerald-900">
-            Khái niệm cốt lõi: Ảnh là Tensor 3 chiều (H × W × 3)
+  // Theory View
+  const theoryView = (
+    <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 space-y-2">
+          <p className="text-xs font-black text-emerald-900 uppercase flex items-center gap-1.5">
+            <Database className="w-4 h-4 text-emerald-600" />
+            Quy Trình Quản Lý &amp; Phân Chia Dataset
           </p>
-          <p className="text-emerald-800/90 leading-relaxed text-xs">
-            Mỗi điểm ảnh gồm 3 giá trị nguyên từ <code>0</code> đến <code>255</code>. Khi đổi kênh màu, bạn có thể thấy rõ các chi tiết lông hoặc màu da phát sáng mạnh nhất trên kênh tương ứng (ví dụ da/vân cam nổi bật trên kênh Red).
+          <p className="text-xs text-emerald-800 leading-relaxed">
+            Tập dữ liệu huấn luyện gồm 47 loài động vật được cấu trúc tại <code>model/dataset_raw/animals/animals</code> theo định dạng chuẩn <code>tên_loài/ảnh.jpg</code>.
+          </p>
+          <div className="pt-2 flex items-center gap-2 text-xs font-bold text-emerald-950">
+            <span className="bg-emerald-200/80 px-2.5 py-1 rounded-lg">80% Huấn luyện (Train)</span>
+            <span>+</span>
+            <span className="bg-teal-200/80 px-2.5 py-1 rounded-lg">20% Kiểm định (Validation)</span>
+          </div>
+        </div>
+
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-2">
+          <p className="text-xs font-black text-slate-900 uppercase flex items-center gap-1.5">
+            <Layers className="w-4 h-4 text-emerald-600" />
+            Cấu Trúc Tensor Số Học (H × W × 3)
+          </p>
+          <p className="text-xs text-slate-700 leading-relaxed">
+            Mỗi bức ảnh kỹ thuật số là một ma trận 3 chiều. Mỗi điểm ảnh là tổ hợp của 3 giá trị màu cơ bản (Red, Green, Blue) nằm trong khoảng nguyên uint8 <code>[0, 255]</code>.
+          </p>
+          <p className="text-[11px] text-slate-500 font-mono pt-1">
+            Kích thước chuẩn đầu vào mạng: 224 × 224 × 3 (150,528 giá trị số)
           </p>
         </div>
       </div>
     </div>
+  );
+
+  return (
+    <CnnStageShell
+      stageId={1}
+      stageTitle="1. Ảnh Đầu Vào &amp; Dataset (Input Tensor)"
+      stageDesc="Biểu diễn số học 3 kênh màu RGB và quy trình nạp tập dữ liệu ảnh"
+      badgeTag="224×224×3 RGB"
+      icon={ImageIcon}
+      simView={simView}
+      theoryView={theoryView}
+      codeData={STAGE1_CODE_DATA[1] || STAGE1_CODE_DATA}
+    />
   );
 };
 

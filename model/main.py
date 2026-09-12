@@ -175,8 +175,10 @@ def build_gradcam(model, image_batch, image_pil, class_index, layer_name=None, a
     buffer = io.BytesIO()
     overlay.save(buffer, format="JPEG", quality=90)
 
+    b64_image = "data:image/jpeg;base64," + base64.b64encode(buffer.getvalue()).decode("utf-8")
     return {
-        "image": "data:image/jpeg;base64," + base64.b64encode(buffer.getvalue()).decode("utf-8"),
+        "image": b64_image,
+        "overlay": b64_image,
         "layer": conv_layer.name,
         "layers": list_conv_layers(model),
     }

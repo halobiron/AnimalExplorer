@@ -61,42 +61,43 @@ const TIP_ITEMS = [
   { icon: Dna, text: "Tránh ảnh có quá nhiều vật thể gây nhiễu" },
 ];
 
-// Sample presets for quick testing without searching for photos on disk
+// Sample presets for quick testing with real photos from dataset
 const SAMPLE_PRESETS = [
   {
     name: "Cá sấu",
     label: "african_crocodile",
-    color: "#2e7d32",
-    svgBg: "linear-gradient(135deg, #1b5e20, #4caf50)",
-    icon: "🐊",
-  },
-  {
-    name: "Hổ",
-    label: "tiger",
-    color: "#e65100",
-    svgBg: "linear-gradient(135deg, #e65100, #ff9800)",
-    icon: "🐅",
-  },
-  {
-    name: "Voi",
-    label: "elephant",
-    color: "#455a64",
-    svgBg: "linear-gradient(135deg, #37474f, #78909c)",
-    icon: "🐘",
-  },
-  {
-    name: "Bướm",
-    label: "butterfly",
-    color: "#c2185b",
-    svgBg: "linear-gradient(135deg, #880e4f, #e91e63)",
-    icon: "🦋",
+    vietnameseName: "Cá sấu châu Phi",
+    image: "/samples/african_crocodile.jpg",
   },
   {
     name: "Đại bàng",
     label: "eagle",
-    color: "#5d4037",
-    svgBg: "linear-gradient(135deg, #3e2723, #8d6e63)",
-    icon: "🦅",
+    vietnameseName: "Đại bàng",
+    image: "/samples/eagle.jpg",
+  },
+  {
+    name: "Hươu cao cổ",
+    label: "giraffe",
+    vietnameseName: "Hươu cao cổ",
+    image: "/samples/giraffe.jpg",
+  },
+  {
+    name: "Chim cánh cụt",
+    label: "penguin",
+    vietnameseName: "Chim cánh cụt",
+    image: "/samples/penguin.jpg",
+  },
+  {
+    name: "Cá heo",
+    label: "dolphin",
+    vietnameseName: "Cá heo",
+    image: "/samples/dolphin.jpg",
+  },
+  {
+    name: "Cú mèo",
+    label: "owl",
+    vietnameseName: "Cú mèo",
+    image: "/samples/owl.jpg",
   },
 ];
 
@@ -139,40 +140,22 @@ const Identify = () => {
     }
   };
 
-  // Helper to load sample preset by creating a synthetic image canvas / blob
-  const handleSelectPreset = (preset) => {
-    const canvas = document.createElement("canvas");
-    canvas.width = 448;
-    canvas.height = 448;
-    const ctx = canvas.getContext("2d");
-
-    // Draw stylized gradient background
-    const grad = ctx.createLinearGradient(0, 0, 448, 448);
-    grad.addColorStop(0, preset.color);
-    grad.addColorStop(1, "#111827");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 448, 448);
-
-    // Draw animal icon and text
-    ctx.font = "140px sans-serif";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(preset.icon, 224, 200);
-
-    ctx.font = "bold 26px sans-serif";
-    ctx.fillStyle = "#ffffff";
-    ctx.fillText(preset.name, 224, 340);
-
-    ctx.font = "18px sans-serif";
-    ctx.fillStyle = "#a7f3d0";
-    ctx.fillText(`Mẫu thử: ${preset.label}`, 224, 380);
-
-    canvas.toBlob((blob) => {
-      if (!blob) return;
-      const sampleFile = new File([blob], `${preset.label}.png`, { type: "image/png" });
+  // Helper to load sample preset using real images from the dataset
+  const handleSelectPreset = async (preset) => {
+    try {
+      const response = await fetch(preset.image);
+      if (!response.ok) {
+        throw new Error("Không thể tải ảnh mẫu");
+      }
+      const blob = await response.blob();
+      const sampleFile = new File([blob], `${preset.label}.jpg`, {
+        type: blob.type || "image/jpeg",
+      });
       handleFileSelect(sampleFile);
-      toast.success(`Đã chọn ảnh mẫu: ${preset.name}`);
-    }, "image/png");
+      toast.success(`Đã chọn ảnh mẫu thật: ${preset.name}`);
+    } catch (err) {
+      toast.error(`Lỗi tải ảnh mẫu: ${preset.name}`);
+    }
   };
 
   const handleIdentify = async (gradcamLayer = selectedGradcamLayer) => {
@@ -335,19 +318,23 @@ const Identify = () => {
                 <span className="text-[11px] text-emerald-700 font-semibold">Thử không cần tìm ảnh</span>
               </div>
 
-              <div className="grid grid-cols-5 gap-2">
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
                 {SAMPLE_PRESETS.map((preset) => (
                   <button
                     key={preset.label}
                     type="button"
                     onClick={() => handleSelectPreset(preset)}
-                    className="flex flex-col items-center gap-1 p-2 rounded-2xl border border-gray-200/70 hover:border-emerald-400 hover:bg-emerald-50/50 transition-all duration-200 group text-center"
-                    title={`Chọn mẫu: ${preset.name}`}
+                    className="flex flex-col items-center gap-1.5 p-1.5 rounded-2xl border border-gray-200/80 hover:border-emerald-500 hover:bg-emerald-50/70 transition-all duration-200 group text-center"
+                    title={`Chọn mẫu thật: ${preset.name} (${preset.vietnameseName})`}
                   >
-                    <span className="text-2xl group-hover:scale-110 transition-transform duration-200">
-                      {preset.icon}
-                    </span>
-                    <span className="text-[11px] font-bold text-gray-700 group-hover:text-emerald-700 truncate w-full">
+                    <div className="w-12 h-12 rounded-xl overflow-hidden shadow-xs ring-1 ring-gray-200 group-hover:ring-emerald-400 group-hover:scale-105 transition-all duration-200">
+                      <img
+                        src={preset.image}
+                        alt={preset.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <span className="text-[11px] font-bold text-gray-700 group-hover:text-emerald-700 truncate w-full px-0.5">
                       {preset.name}
                     </span>
                   </button>
